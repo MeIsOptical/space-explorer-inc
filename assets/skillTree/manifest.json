@@ -46,6 +46,53 @@
     },
 
 
+    "timeEfficient": {
+        "name": "Time Efficient",
+        "description": "Reduce all resource cooldowns by 10%.",
+        "icon": "timer",
+        "cost": 8,
+        "skills": [
+            { "type": "cooldownReduction", "value": 0.1 }
+        ],
+        "requires": ["wastelessCollectingPlus"]
+    },
+
+    "timeEfficientPlus": {
+        "name": "Time Efficient+",
+        "description": "Reduce all resource cooldowns by 10%.",
+        "icon": "timer",
+        "cost": 14,
+        "skills": [
+            { "type": "cooldownReduction", "value": 0.1 }
+        ],
+        "requires": ["timeEfficient"]
+    },
+
+
+    "cascadingHits": {
+        "name": "Cascading Hits",
+        "description": "Hitting a resource has a 5% chance of hitting a second one.",
+        "icon": "travel",
+        "cost": 10,
+        "skills": [
+            { "type": "ricochetChance", "value": 0.05 }
+        ],
+        "requires": ["wastelessCollectingPlus"]
+    },
+
+
+    "cascadingHitsPlus": {
+        "name": "Cascading Hits+",
+        "description": "Hitting a resource has a 5% chance of hitting a second one.",
+        "icon": "travel",
+        "cost": 20,
+        "skills": [
+            { "type": "ricochetChance", "value": 0.05 }
+        ],
+        "requires": ["cascadingHits"]
+    },
+
+
 
     "muscleMemory": {
         "name": "Muscle Memory",
@@ -80,16 +127,7 @@
         "requires": ["muscleMemoryPlus"]
     },
 
-    "timeEfficient": {
-        "name": "Time Efficient",
-        "description": "Reduce all resource cooldowns by 10%.",
-        "icon": "timer",
-        "cost": 8,
-        "skills": [
-            { "type": "cooldownReduction", "value": 0.1 }
-        ],
-        "requires": ["wastelessCollectingPlus"]
-    },
+    
 
 
 

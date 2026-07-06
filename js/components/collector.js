@@ -146,8 +146,8 @@ export class Collector {
     // background loop that processes auto-selling (genius)
     initAutoSell() {
         setInterval(() => {
-            const stats = this.player.skillTree.getStatBonuses();
-            if (!stats.autoSell) return;
+            const skillStats = this.player.skillTree.getStatBonuses();
+            if (!skillStats.autoSell) return;
 
             const dt = 0.1; 
             let didSellAnything = false;
@@ -158,7 +158,13 @@ export class Collector {
                     
                     const resInfo = this.resourceManager.getResourceById(resId);
                     const baseCooldown = resInfo.cooldown || 3;
-                    const effectiveCooldown = this.player.getEffectiveCooldown(baseCooldown, stats.autoSell);
+
+                    const categoryId = resInfo.category.id;
+                    const playerStats = this.player.getStatsForCategory(categoryId);
+                    const cooldownMultiplier = 1 - playerStats.cooldownReduction;
+                    const realCooldown = Math.max(baseCooldown * cooldownMultiplier, 0.001); // to prevent infinity bug
+
+                    const effectiveCooldown = this.player.getEffectiveCooldown(realCooldown, skillStats.autoSell);
 
                     if (this.autoSellTimers[resId] === undefined) {
                         this.autoSellTimers[resId] = effectiveCooldown; 

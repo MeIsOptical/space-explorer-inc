@@ -149,7 +149,7 @@ export class Planet {
 
 
     // unified hit logic for both manual clicks and auto-damage
-    processHit(pResId, pTriggers, pIsManual) {
+    processHit(pResId, pTriggers, pIsManual, pIsRicochet = false) {
         const node = this.resourceNodes.find(n => n.id === pResId);
         if (!node) return;
 
@@ -217,6 +217,20 @@ export class Planet {
         if (node.ui && node.ui.barFill.offsetParent !== null) {
             this.updateNodeVisuals(node, resource, node.ui.barFill, node.ui.statusText, node.ui.collectBtn);
         }
+
+
+
+        // ricochet chance
+        if (!pIsRicochet && playerStats.ricochetChance > 0) {
+            if (Math.random() < playerStats.ricochetChance) {
+                const otherNodes = this.resourceNodes.filter(n => n.id !== pResId && Date.now() >= n.cooldownUntil);
+                
+                if (otherNodes.length > 0) {
+                    const randomNode = otherNodes[Math.floor(Math.random() * otherNodes.length)];
+                    this.processHit(randomNode.id, pTriggers, false, true);
+                }
+            }
+        }
     }
 
 
@@ -244,6 +258,7 @@ export class Planet {
         header.addEventListener("click", () => {
             content.classList.toggle("hidden");
             toggle.innerText = content.classList.contains("hidden") ? "▶" : "▼";
+            playSound(SOUND_IDS.defaultClick);
         });
 
         return panel;

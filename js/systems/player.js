@@ -52,7 +52,7 @@ export class Player {
 
 
     get maxXp() {
-        return BigInt(Math.round(((2.6 * this.level) ** 1.5) + 35));
+        return BigInt(Math.round(((2.6 * this.level) ** 1.6) + 50));
     }
 
 
@@ -172,6 +172,7 @@ export class Player {
         let resourceMultiplier = 1 + (skillBonuses.resourceBonus || 0);
         let xpMultiplier = 1 + (skillBonuses.xpBonus || 0);
         let cooldownReduction = Math.min(Math.max(skillBonuses.cooldownReduction || 0, 0), 1);
+        let ricochetChance = skillBonuses.ricochetChance || 0;
 
         // loop equipped gear
         const slots = this.gearManager.slots;
@@ -185,7 +186,7 @@ export class Player {
                 }
             }
         });
-        return { totalDamage, resourceMultiplier, xpMultiplier, cooldownReduction };
+        return { totalDamage, resourceMultiplier, xpMultiplier, cooldownReduction, ricochetChance };
     }
 
 

@@ -124,7 +124,7 @@ export class SkillTree {
 
         // save to class for live updater
         this.nodeCoords = {}; 
-        const radiusStep = 75; 
+        const radiusStep = 85; 
 
         const nodeIds = Object.keys(this.manifest);
         const roots = nodeIds.filter(id => !this.manifest[id].requires || this.manifest[id].requires.length === 0);
@@ -146,7 +146,7 @@ export class SkillTree {
 
             if (children.length > 0) {
                 const angleRange = pAngleEnd - pAngleStart;
-                const childRange = pDepth === 0 ? Math.PI * 2 : angleRange * 0.9; 
+                const childRange = pDepth === 0 ? Math.PI * 2 : angleRange * 0.93; 
                 const start = pDepth === 0 ? 0 : ((pAngleStart + pAngleEnd) / 2) - (childRange / 2);
                 const step = childRange / children.length;
 
