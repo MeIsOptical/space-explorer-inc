@@ -8,6 +8,9 @@
         "defaultClick": {
             "format": "wav"
         },
+        "fail": {
+            "format": "wav"
+        },
         "popupOpen": {
             "format": "wav"
         },

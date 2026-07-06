@@ -80,6 +80,17 @@
         "requires": ["muscleMemoryPlus"]
     },
 
+    "timeEfficient": {
+        "name": "Time Efficient",
+        "description": "Reduce all resource cooldowns by 10%.",
+        "icon": "timer",
+        "cost": 8,
+        "skills": [
+            { "type": "cooldownReduction", "value": 0.1 }
+        ],
+        "requires": ["wastelessCollectingPlus"]
+    },
+
 
 
 
@@ -125,7 +136,7 @@
         "name": "Military Training",
         "description": "Increase overall damage & XP multiplier by 1.",
         "icon": "military helmet",
-        "cost": 7,
+        "cost": 9,
         "skills": [
             { "type": "damageBonus", "value": 1 },
             { "type": "xpBonus", "value": 1 }
@@ -245,6 +256,17 @@
         "cost": 8,
         "skills": [
             { "type": "inventoryBonus", "value": 3 }
+        ],
+        "requires": ["evenBiggerPockets"]
+    },
+
+    "organized": {
+        "name": "Organized",
+        "description": "Reduce all resource cooldowns by 10%.",
+        "icon": "timer",
+        "cost": 10,
+        "skills": [
+            { "type": "cooldownReduction", "value": 0.1 }
         ],
         "requires": ["evenBiggerPockets"]
     }

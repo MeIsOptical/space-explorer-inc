@@ -171,6 +171,7 @@ export class Player {
         let totalDamage = 1 + (skillBonuses.damageBonus || 0);
         let resourceMultiplier = 1 + (skillBonuses.resourceBonus || 0);
         let xpMultiplier = 1 + (skillBonuses.xpBonus || 0);
+        let cooldownReduction = Math.min(Math.max(skillBonuses.cooldownReduction || 0, 0), 1);
 
         // loop equipped gear
         const slots = this.gearManager.slots;
@@ -184,7 +185,7 @@ export class Player {
                 }
             }
         });
-        return { totalDamage, resourceMultiplier, xpMultiplier };
+        return { totalDamage, resourceMultiplier, xpMultiplier, cooldownReduction };
     }
 
 

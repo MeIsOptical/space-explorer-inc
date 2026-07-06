@@ -8,7 +8,7 @@ import { isGameFocused } from "../main.js";
 
 export const SOUND_IDS = {
     defaultClick: "ui/defaultClick",
-    fail: "ui/defaultClick",
+    fail: "ui/fail",
     sectionChange: "ui/defaultClick",
     popupOpen: "ui/popupOpen",
     popupClose: "ui/defaultClick",

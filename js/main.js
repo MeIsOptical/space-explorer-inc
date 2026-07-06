@@ -330,7 +330,7 @@ if (!RUN_CONFIG.ignoreDB) {
 
 
     // start saving
-    const SAVE_FREQ = 4; // seconds
+    const SAVE_FREQ = 3; // seconds
 
     setInterval(async () => {
         

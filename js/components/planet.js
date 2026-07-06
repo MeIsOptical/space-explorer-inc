@@ -200,9 +200,13 @@ export class Planet {
                 showFloatingMessageAt(`+${xpGained}`, "var(--c-gear-xp)", spawnX, spawnY, 1000, 10);
             }
 
+            // calculate cooldown reduction
+            const cooldownMultiplier = 1 - playerStats.cooldownReduction;
+            const realCooldown = resource.cooldown * 1000 * cooldownMultiplier
+
             // reset hits and start recharge
             node.currentHits = 0;
-            node.cooldownUntil = now + (resource.cooldown * 1000); 
+            node.cooldownUntil = now + realCooldown; 
 
             // play break sound
             if (isFocused) playSound(SOUND_IDS.resourceBreak);
@@ -263,8 +267,11 @@ export class Planet {
             statusText.innerText = "Recharging...";
             barFill.style.opacity = 0.4;
             collectBtn.style.opacity = 0.4;
-            
-            const totalCooldown = resource.cooldown * 1000;
+
+            // calculate cooldown reduction
+            const playerStats = this.player.getStatsForCategory(resource.category.id);
+            const cooldownMultiplier = 1 - playerStats.cooldownReduction;
+            const realCooldown = resource.cooldown * 1000 * cooldownMultiplier
 
             const animateCooldown = () => {
 
@@ -273,7 +280,7 @@ export class Planet {
                 if (currentTime < node.cooldownUntil) {
                     // calculate how much of the cooldown is finished
                     const timeLeft = node.cooldownUntil - currentTime;
-                    const fillPercentage = ((totalCooldown - timeLeft) / totalCooldown) * 100;
+                    const fillPercentage = ((realCooldown - timeLeft) / realCooldown) * 100;
 
                     statusText.innerText = "Recharging... (" + Math.round(fillPercentage) + "%)";                    
                     barFill.style.width = `${100 - fillPercentage}%`;
