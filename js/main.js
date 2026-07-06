@@ -1,12 +1,26 @@
 
 
-// laoding screen
+// loading screen
 const loadingScreen = document.getElementById("loadingPage");
 const loadingStatus = document.getElementById("loadingStatus");
 
 const setLoadingStatus = (pText) => {
     loadingStatus.innerText = pText;
 };
+
+
+
+
+// track whether or not the game is on the screen
+export let isGameFocused = true;
+document.addEventListener("visibilitychange", () => {
+    isGameFocused = document.visibilityState === "visible";
+});
+
+
+
+
+
 
 setLoadingStatus("Fetching components...");
 
@@ -27,7 +41,7 @@ import { Currency } from "./systems/currency.js";
 import { Player } from "./systems/player.js";
 import { ResourcesManager } from "./systems/resources.js";
 import { Database } from "./systems/database.js";
-import { loadSounds } from "./systems/audio.js";
+import { loadSounds, playSound, SOUND_IDS } from "./systems/audio.js";
 
 // utils
 import { updateXpBarUI } from "./utils/ui.js";
@@ -218,6 +232,7 @@ const skillsSection = new Section("skills", () => {
 
 // route the header button to open the skills section
 document.getElementById("openSkillsBtn").addEventListener("click", () => {
+    playSound(SOUND_IDS.sectionChange);
     skillsSection.btnElement.click();
 });
 

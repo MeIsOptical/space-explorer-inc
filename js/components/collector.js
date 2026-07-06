@@ -1,7 +1,10 @@
 
 
 import { formatBigNumber } from "../utils/formatting.js";
+import { isVisible } from "../utils/ui.js";
 import { playSound, SOUND_IDS } from "../systems/audio.js";
+
+
 
 
 export class Collector {
@@ -126,7 +129,10 @@ export class Collector {
             this.player.resources[pId] -= actualAmount;
 
             // play sound
-            playSound(SOUND_IDS.collectorSell);
+            playSound(SOUND_IDS.sell);
+        }
+        else {
+            playSound(SOUND_IDS.fail);
         }
     }
 
@@ -186,6 +192,11 @@ export class Collector {
             });
 
             if (didSellAnything) {
+
+                // sound
+                const isFocused = isVisible(this.resourcesListElement);
+                if (isFocused) playSound(SOUND_IDS.sell);
+
                 this.player.credits.addCents(totalProfitCentsThisTick);
                 
                 // update ui

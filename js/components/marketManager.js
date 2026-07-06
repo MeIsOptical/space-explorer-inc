@@ -3,6 +3,7 @@
 import { populateItemPopup, setupPopupClose } from "../utils/ui.js";
 import { formatBigNumber } from "../utils/formatting.js";
 import { Market } from "./market.js";
+import { playSound, SOUND_IDS } from "../systems/audio.js";
 
 
 
@@ -38,6 +39,9 @@ export class MarketManager {
 
 
     showPopup(pMarket, pPlayer) {
+
+        playSound(SOUND_IDS.popupOpen);
+
         const overlay = document.getElementById("marketPopupOverlay");
         const name = document.getElementById("marketPopupName");
         const offersContainer = document.getElementById("marketPopupOffers");
@@ -82,6 +86,9 @@ export class MarketManager {
 
 
     showItemPopup(pItemId, pItemData, pPrice, pMarket, pPlayer) {
+
+        playSound(SOUND_IDS.popupOpen);
+        
         const overlay = document.getElementById("marketItemPopupOverlay");
         const actionBtn = document.getElementById("marketItemPopupActionBtn");
         const closeBtn = document.getElementById("marketItemPopupClose");
@@ -101,7 +108,12 @@ export class MarketManager {
 
         // buy button logic
         actionBtn.onclick = () => {
-            if (pMarket.buyItem(pItemId, pPlayer)) overlay.style.display = "none";
+            if (pMarket.buyItem(pItemId, pPlayer)) {
+                overlay.style.display = "none";
+            }
+            else {
+                playSound(SOUND_IDS.fail);
+            }
         };
 
         // close logic

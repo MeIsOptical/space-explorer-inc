@@ -1,4 +1,22 @@
 
+import { playSound, SOUND_IDS } from "../systems/audio.js";
+
+
+
+
+
+
+
+export function isVisible(pElement) {
+    if (!pElement) return false;
+    if (pElement.checkVisibility) {
+        return pElement.checkVisibility();
+    }
+    // fallback
+    return !!(pElement.offsetWidth || pElement.offsetHeight || pElement.getClientRects().length);
+}
+
+
 
 
 export function populateItemPopup(pPrefix, pItemId, pItemData) {
@@ -37,11 +55,13 @@ export function populateItemPopup(pPrefix, pItemId, pItemData) {
 export function setupPopupClose(pOverlay, pCloseBtn) {
     pCloseBtn.onclick = () => {
         pOverlay.style.display = "none";
+        playSound(SOUND_IDS.popupClose);
     };
 
     pOverlay.onclick = (event) => {
         if (event.target === pOverlay) {
             pOverlay.style.display = "none";
+            playSound(SOUND_IDS.popupClose);
         }
     };
 }

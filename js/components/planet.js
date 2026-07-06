@@ -1,7 +1,7 @@
 
 
 
-import { showFloatingMessageAt } from "../utils/ui.js";
+import { isVisible, showFloatingMessageAt } from "../utils/ui.js";
 import { playSound, SOUND_IDS } from "../systems/audio.js";
 
 
@@ -161,8 +161,10 @@ export class Planet {
         // only update muscle memory skill target if this was a physical click
         if (pIsManual) {
             this.player.setLastDamagedResource(node.id);
-            playSound(SOUND_IDS.resourceHit);
         }
+
+        const isFocused = isVisible(node.ui.collectBtn);
+        if (isFocused) playSound(SOUND_IDS.resourceHit);
 
         const resource = node.manifest;
         const playerStats = this.player.getStatsForCategory(resource.category.id);
@@ -179,7 +181,7 @@ export class Planet {
             this.player.addXp(xpGained);
 
             // only show floating text if visible on screen
-            if (node.ui && node.ui.collectBtn.offsetParent !== null) {
+            if (isFocused) {
                 const rect = node.ui.collectBtn.getBoundingClientRect();
                 const rndAmount = 20;
 
@@ -202,10 +204,9 @@ export class Planet {
             node.currentHits = 0;
             node.cooldownUntil = now + (resource.cooldown * 1000); 
 
-            // play break sound if manual
-            if (pIsManual) {
-                playSound(SOUND_IDS.resourceBreak);
-            }
+            // play break sound
+            if (isFocused) playSound(SOUND_IDS.resourceBreak);
+            
         }
 
         // visually update the bar

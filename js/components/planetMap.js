@@ -2,6 +2,7 @@ import { Planet } from "./planet.js";
 import { formatBigNumber } from "../utils/formatting.js";
 import { Camera } from "./camera.js";
 import { RUN_CONFIG } from "../main.js";
+import { playSound, SOUND_IDS } from "../systems/audio.js";
 
 
 const GRID_SIZE = 50;
@@ -180,6 +181,7 @@ export class PlanetMap {
 
                 // target planet
                 this.targetPlanet(pPlanet);
+                playSound(SOUND_IDS.selectPlanet);
             });
 
 
@@ -244,6 +246,7 @@ export class PlanetMap {
 
                 if (this.selectedPlanet === this.player.currentPlanet) { // already here
                     document.getElementById("sectionBtn-planet").click();
+                    playSound(SOUND_IDS.sectionChange);
                 }
 
                 else if (isUnlocked || RUN_CONFIG.dev) { // unlocked and can travel
@@ -251,6 +254,7 @@ export class PlanetMap {
                     // land
                     this.player.landOn(this.selectedPlanet);
                     document.getElementById("sectionBtn-planet").click();
+                    playSound(SOUND_IDS.landPlanet);
 
                 }
 
@@ -260,9 +264,11 @@ export class PlanetMap {
                         this.player.credits.add(-this.selectedPlanet.price);
                         this.player.unlockPlanet(this.selectedPlanet.id);
                         this.targetPlanet(this.selectedPlanet);
+                        playSound(SOUND_IDS.unlockPlanet);
                     }
                     else {
                         // not enough credits
+                        playSound(SOUND_IDS.fail);
                     }
 
                 }

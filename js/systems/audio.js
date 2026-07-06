@@ -1,8 +1,41 @@
 
 
 
+
+import { isGameFocused } from "../main.js";
+
+
+
+export const SOUND_IDS = {
+    defaultClick: "ui/defaultClick",
+    fail: "ui/defaultClick",
+    sectionChange: "ui/defaultClick",
+    popupOpen: "ui/popupOpen",
+    popupClose: "ui/defaultClick",
+    gearEquip: "ui/defaultClick",
+    gearUnequip: "ui/defaultClick",
+    gearDelete: "ui/gearDelete",
+    resourceHit: "ui/hit",
+    resourceBreak: "ui/break",
+    buyGear: "ui/credits",
+    sell: "ui/credits",
+    playerLevelup: "ui/levelup",
+    skillUnlock: "ui/defaultClick",
+    skillNodeOpen: "ui/defaultClick",
+
+    selectPlanet: "ui/defaultClick",
+    landPlanet: "ui/defaultClick",
+    unlockPlanet: "ui/credits"
+}
+
+
+
+
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const soundBuffers = {};
+
+
+
 
 
 export async function loadSounds(pLoadingStatus) {
@@ -45,19 +78,13 @@ export async function loadSounds(pLoadingStatus) {
 
 
 
-export const SOUND_IDS = {
-    sectionChange: "ui/defaultClick",
-    resourceHit: "ui/hit",
-    resourceBreak: "ui/break",
-    collectorSell: "ui/sell",
-    playerLevelup: "ui/levelup",
-    skillNodeOpen: "ui/defaultClick"
-}
 
 
 
+export function playSound(pName, pVolume = 2) {
 
-export function playSound(pName, pVolume = 1) {
+    if (!isGameFocused) return;
+
     if (audioCtx.state === "suspended") {
         audioCtx.resume();
     }
@@ -71,7 +98,7 @@ export function playSound(pName, pVolume = 1) {
     // gain node to control volume
     const gainNode = audioCtx.createGain();
     
-    // set the volume (0 is mute, 1 is full volume)
+    // set the volume
     gainNode.gain.value = pVolume; 
 
     source.connect(gainNode);

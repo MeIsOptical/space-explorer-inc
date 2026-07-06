@@ -1,4 +1,5 @@
 
+import { playSound, SOUND_IDS } from "../systems/audio.js";
 import { populateItemPopup, setupPopupClose } from "../utils/ui.js";
 
 
@@ -143,6 +144,9 @@ export class GearManager {
 
 
     showPopup(pItem, pPlayer, pIsEquipped) {
+
+        playSound(SOUND_IDS.popupOpen);
+
         const overlay = document.getElementById("gearPopupOverlay");
         const actionBtn = document.getElementById("gearPopupActionBtn");
         const closeBtn = document.getElementById("gearPopupClose");
@@ -159,6 +163,7 @@ export class GearManager {
         deleteBtn.style.display = "block";
         deleteBtn.onclick = () => {
             confirmOverlay.style.display = "flex";
+            playSound(SOUND_IDS.defaultClick);
         };
 
         // confirmation logic
@@ -167,6 +172,8 @@ export class GearManager {
             confirmOverlay.style.display = "none";
             overlay.style.display = "none";
             this.display(pPlayer);
+
+            playSound(SOUND_IDS.gearDelete);
         };
 
         setupPopupClose(confirmOverlay, cancelBtn);
@@ -178,6 +185,7 @@ export class GearManager {
                 pPlayer.unequipGear(pItem.slot);
                 overlay.style.display = "none";
                 this.display(pPlayer);
+                playSound(SOUND_IDS.gearUnequip);
             };
         } else {
             actionBtn.innerText = "EQUIP";
@@ -185,6 +193,7 @@ export class GearManager {
                 pPlayer.equipGear(pItem);
                 overlay.style.display = "none";
                 this.display(pPlayer);
+                playSound(SOUND_IDS.gearEquip);
             };
         }
 

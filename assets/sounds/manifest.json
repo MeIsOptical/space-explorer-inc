@@ -8,7 +8,13 @@
         "defaultClick": {
             "format": "wav"
         },
-        "sell": {
+        "popupOpen": {
+            "format": "wav"
+        },
+        "gearDelete": {
+            "format": "wav"
+        },
+        "credits": {
             "format": "wav"
         },
         "hit": {

@@ -235,15 +235,19 @@ export class SkillTree {
             btn.style.display = "flex";
             btn.innerText = "UNLOCKED";
             btn.style.opacity = 0.4;
-            btn.disabled = true;
+            btn.onclick = () => {
+                playSound(SOUND_IDS.fail);
+            };
         } else {
             btn.style.display = "flex";
             btn.innerText = `UNLOCK: ${node.cost} ${node.cost === 1 ? "Point" : "Points"}`;
             
             if (!this.canUnlock(pId) || this.nodePrice(pId) === false) {
-                btn.disabled = true;
                 btn.style.opacity = 0.4;
                 if (!this.canUnlock(pId)) btn.innerText += " (Locked)";
+                btn.onclick = () => {
+                    playSound(SOUND_IDS.fail);
+                };
             } else {
                 btn.disabled = false;
                 btn.style.opacity = 1;
@@ -253,6 +257,10 @@ export class SkillTree {
                         popup.classList.remove("show");
                         this.updateLiveUI();
                         updateXpBarUI(this.player);
+                        playSound(SOUND_IDS.skillUnlock);
+                    }
+                    else {
+                        playSound(SOUND_IDS.fail);
                     }
                 };
             }

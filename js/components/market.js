@@ -3,6 +3,7 @@
 import { Gear } from "./gear.js";
 import { showFloatingMessage } from "../utils/ui.js";
 import { RUN_CONFIG } from "../main.js";
+import { playSound, SOUND_IDS } from "../systems/audio.js";
 
 
 
@@ -41,6 +42,8 @@ export class Market {
 
             // show success message
             showFloatingMessage("PURCHASED!", "#52b752");
+
+            playSound(SOUND_IDS.buyGear);
 
             return true;
 

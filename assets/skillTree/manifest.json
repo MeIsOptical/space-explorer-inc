@@ -51,7 +51,7 @@
         "name": "Muscle Memory",
         "description": "Automatically damage the last hit resource every 1 second.",
         "icon": "pickaxe",
-        "cost": 6,
+        "cost": 7,
         "skills": [
             { "type": "autoDamage", "value": 1 }
         ],
@@ -62,11 +62,22 @@
         "name": "Muscle Memory+",
         "description": "Automatically damage the last hit resource every 1 second.",
         "icon": "pickaxe",
-        "cost": 10,
+        "cost": 12,
         "skills": [
             { "type": "autoDamage", "value": 1 }
         ],
         "requires": ["muscleMemory"]
+    },
+
+    "muscleMemoryPlusPlus": {
+        "name": "Muscle Memory++",
+        "description": "Automatically damage the last hit resource every 1 second.",
+        "icon": "pickaxe",
+        "cost": 24,
+        "skills": [
+            { "type": "autoDamage", "value": 1 }
+        ],
+        "requires": ["muscleMemoryPlus"]
     },
 
 
@@ -184,6 +195,17 @@
             { "type": "autoSell", "value": 1 }
         ],
         "requires": ["tradeKnowledge"]
+    },
+
+    "advancedTradeKnowledge": {
+        "name": "Advanced Trade Knowledge",
+        "description": "Automatically sell +2 of each resource based on their cooldown.",
+        "icon": "market",
+        "cost": 24,
+        "skills": [
+            { "type": "autoSell", "value": 2 }
+        ],
+        "requires": ["improvedTradeKnowledge"]
     },
 
 
