@@ -1,0 +1,9 @@
+{
+    "name": "Cave Operator",
+    "icon": "pickaxe",
+    "offers": {
+        "hard_hat": 1000,
+        "calibrated_pickaxe": 1200,
+        "premium_pickaxe": 7500
+    }
+}

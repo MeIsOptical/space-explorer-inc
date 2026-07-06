@@ -1,0 +1,10 @@
+{
+    "name": "Calypso",
+    "x": 4,
+    "y": 0,
+    "glow": 3,
+    "resources": ["dry_bushes", "cactus", "coal"],
+    "markets": ["calypso_market"],
+    "canUnlock": true,
+    "price": 0
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Clean Shirt",
+    "description": "A brand new shirt! What else could you possibly want?",
+    "tier": 3,
+    "slot": "chest",
+    "resourceCategory": "any",
+    "damageBonus": 3,
+    "resourceBonus": 0,
+    "xpBonus": 0
+}

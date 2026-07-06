@@ -1,0 +1,10 @@
+{
+    "name": "Leather Shirt",
+    "description": "Simple shirt made of leather.",
+    "tier": 3,
+    "slot": "chest",
+    "resourceCategory": "hunting",
+    "damageBonus": 2,
+    "resourceBonus": 2,
+    "xpBonus": 2
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Alcestis",
+    "x": -7,
+    "y": 5,
+    "glow": 4,
+    "resources": [],
+    "markets": ["toolsmith"],
+    "canUnlock": true,
+    "price": 15000
+}

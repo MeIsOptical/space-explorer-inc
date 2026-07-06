@@ -1,0 +1,10 @@
+{
+    "name": "Ripped Shirt",
+    "description": "An old, used shirt.",
+    "tier": 1,
+    "slot": "chest",
+    "resourceCategory": "any",
+    "damageBonus": 1,
+    "resourceBonus": 0,
+    "xpBonus": 0
+}

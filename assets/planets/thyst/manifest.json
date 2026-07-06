@@ -1,0 +1,10 @@
+{
+    "name": "Thyst",
+    "x": -9,
+    "y": -4,
+    "glow": 2,
+    "resources": ["diamonds"],
+    "markets": [],
+    "canUnlock": true,
+    "price": 50000
+}

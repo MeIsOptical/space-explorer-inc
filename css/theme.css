@@ -1,0 +1,28 @@
+
+:root {
+
+    --c-text-main: #ffffff;
+    --c-back-main: #181718;
+    --c-gray: #afafaf;
+
+    --c-square-btn-purple: #8b72de;
+
+    --c-back-section-div: #23262a;
+    --c-border-section-div: #313d63;
+
+    --section-btn-move: -8px;
+    --section-div-height: 50px;
+
+    --c-credits: #ffbe5c;
+
+    /* GEAR */
+    --c-gear-damage: #f44f4f;
+    --c-gear-resources: #e9de43;
+    --c-gear-xp: #54f1ff;
+
+    /* SKILL TREE */
+    --c-skill: #ac6dff;
+    --c-skill-unlockable: #a4aece;
+    --c-skill-locked-back: #23262a;
+    --c-skill-locked: #313d63;
+}

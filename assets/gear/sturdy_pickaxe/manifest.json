@@ -1,0 +1,10 @@
+{
+    "name": "Sturdy Pickaxe",
+    "description": "A durable and reliable pickaxe.",
+    "tier": 3,
+    "slot": "tool",
+    "resourceCategory": "mining",
+    "damageBonus": 16,
+    "resourceBonus": 2,
+    "xpBonus": 2
+}

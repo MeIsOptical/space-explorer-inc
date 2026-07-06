@@ -1,0 +1,10 @@
+{
+    "name": "Sun",
+    "x": 0,
+    "y": 0,
+    "glow": 10,
+    "resources": [],
+    "markets": [],
+    "canUnlock": false,
+    "price": -1
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Toolsmith",
+    "icon": "pickaxe",
+    "offers": {
+        "industrial_drill": 30000
+    }
+}

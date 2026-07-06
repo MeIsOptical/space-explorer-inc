@@ -1,0 +1,13 @@
+{
+    "name": "Lowtown Street Market",
+    "icon": "market",
+    "offers": {
+        "canvas_shoes": 2,
+        "ripped_shirt": 3,
+        "basic_pickaxe": 5,
+        "worn_shirt": 25,
+        "regular_pickaxe": 30,
+        "clean_shirt": 175,
+        "sturdy_pickaxe": 200
+    }
+}

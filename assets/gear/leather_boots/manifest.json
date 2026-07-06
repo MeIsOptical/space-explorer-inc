@@ -1,0 +1,10 @@
+{
+    "name": "Leather Boots",
+    "description": "Simple boots made of leather.",
+    "tier": 3,
+    "slot": "feet",
+    "resourceCategory": "hunting",
+    "damageBonus": 2,
+    "resourceBonus": 2,
+    "xpBonus": 2
+}

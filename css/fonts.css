@@ -1,0 +1,39 @@
+
+
+@font-face {
+    font-family: 'Minecraft';
+    src:
+        url('../assets/fonts/mac\'s\ Extended\ Minecraft.ttf') format('truetype'),
+        url('../assets/fonts/mac\'s\ Extended\ Minecraft.otf') format('opentype'),
+        url('../assets/fonts/mac\'s\ Extended\ Minecraft.woff2') format('woff2');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+@font-face {
+    font-family: 'Minecraft';
+    src:
+        url('../assets/fonts/mac\'s\ Extended\ Minecraft\ Bold.ttf') format('truetype'),
+        url('../assets/fonts/mac\'s\ Extended\ Minecraft\ Bold.otf') format('opentype'),
+        url('../assets/fonts/mac\'s\ Extended\ Minecraft\ Bold.woff2') format('woff2');
+
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Minecraft';
+    src:
+        url('../assets/fonts/mac\'s\ Extended\ Minecraft\ Italic.ttf') format('truetype'),
+        url('../assets/fonts/mac\'s\ Extended\ Minecraft\ Italic.otf') format('opentype'),
+        url('../assets/fonts/mac\'s\ Extended\ Minecraft\ Italic.woff2') format('woff2');
+
+    font-weight: normal;
+    font-style: italic;
+}

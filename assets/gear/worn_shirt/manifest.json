@@ -1,0 +1,10 @@
+{
+    "name": "Worn Shirt",
+    "description": "A worn shirt, enough for most people.",
+    "tier": 2,
+    "slot": "chest",
+    "resourceCategory": "any",
+    "damageBonus": 2,
+    "resourceBonus": 0,
+    "xpBonus": 0
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Calibrated Pickaxe",
+    "description": "An advanced pickaxe, made for easier mining.",
+    "tier": 4,
+    "slot": "tool",
+    "resourceCategory": "mining",
+    "damageBonus": 25,
+    "resourceBonus": 4,
+    "xpBonus": 3
+}

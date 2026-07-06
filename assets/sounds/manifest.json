@@ -1,0 +1,27 @@
+
+
+{
+    "music": {
+        
+    },
+    "ui": {
+        "defaultClick": {
+            "format": "wav"
+        },
+        "sell": {
+            "format": "wav"
+        },
+        "hit": {
+            "format": "wav"
+        },
+        "break": {
+            "format": "wav"
+        },
+        "levelup": {
+            "format": "wav"
+        },
+        "questComplete": {
+            "format": "wav"
+        }
+    }
+}

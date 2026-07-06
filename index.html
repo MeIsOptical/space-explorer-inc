@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>Space Explorer Inc.</title>
+
+    <!-- STYLESHEETS -->
+     <link rel='stylesheet' href='css/fonts.css'>
+    <link rel='stylesheet' href='css/theme.css'>
+    <link rel='stylesheet' href='css/main.css'>
+    <!-- -->
+</head>
+
+
+
+<body>
+
+    <div id="loadingPage">
+        <h1 id="loadingTitle">Loading...</h1>
+        <p id="loadingStatus"></p>
+    </div>
+
+
+    <!-- HEADER -->
+
+    <div id="headerDiv">
+
+        <div id="headerLeft">
+            <div>
+                <p id="playerLevelText">Level 1</p>
+                <div id="xpBarContainer">
+                    <div id="xpBar"></div>
+                </div>
+            </div>
+            
+            <button class="btn square" id="openSkillsBtn">
+                <img class="btnIcon" src="assets/ui/icons/skillTree.png" alt="Skills">
+            </button>
+        </div>
+
+        <div id="headerRight">
+            <div class="numDisplay"><span id="currency-credits"></span><img src="assets/ui/icons/credits.png" class="numImg"></div>
+        </div>
+
+    </div>
+
+    <!-- -->
+
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <div id="mainContentDiv">
+
+        <!-- COLLECTOR TAB -->
+
+        <div class="sectionDiv" id="dynContainer-collector" style="display: none">
+
+            <p class="sectionTitle">- COLLECTOR -</p>
+
+            <div id="resourcesList">
+            </div>
+
+        </div>
+
+        <!-- -->
+
+
+
+
+        <!-- GEAR TAB -->
+
+        <div class="sectionDiv" id="dynContainer-gear" style="display: none">
+
+            <p class="sectionTitle">- EQUIPPED -</p>
+            <div id="equippedGearContainer"></div>
+
+            <p class="sectionTitle">- INVENTORY -</p>
+            <div id="inventoryGearContainer"></div>
+
+        </div>
+
+        <!-- -->
+
+
+
+
+        <!-- PLANET TAB -->
+
+        <div class="sectionDiv" id="dynContainer-planet" style="display: none">
+            
+            <p class="sectionTitle" id="planetPageTitle"><!-- CODE-HANDLED --></p>
+            <div id="planetPanelsContainer"><!-- CODE-HANDLED --></div>
+
+        </div>
+
+        <!-- -->
+        
+
+
+        <!-- SPACE MAP -->
+
+        <div class="mapDiv" id="dynContainer-travel" style="display: none"><!-- CODE-HANDLED --></div>
+
+        <!-- -->
+
+
+
+
+
+        <!-- SKILL TREE -->
+
+        <div class="sectionDiv" id="dynContainer-skills" style="display: none; padding: 0;">
+            
+            <div id="skillsHeader">
+                <p class="sectionTitle">- SKILLS -</p>
+                <div id="skillPtsDisplay">Skill Points: <span id="skillPtsAmount">0</span></div>
+            </div>
+            
+            <div id="skillTreeArea">
+                <div id="skillTreePan">
+                    <svg id="skillTreeLines"></svg>
+                    <div id="skillTreeNodes"></div>
+                </div>
+            </div>
+
+            <div id="skillPopup">
+                <p id="skillPopupName"></p>
+                <p id="skillPopupDesc"></p>
+                <button class="btn purple" id="skillPopupBtn">UNLOCK</button>
+            </div>
+
+        </div>
+
+        <!-- -->
+
+    </div>
+
+    <!-- -->
+    
+
+
+
+    <!-- SECTIONS LIST -->
+
+    <div id="mainSectionsDiv">
+
+        <button class="btn section purple" id="sectionBtn-collector"><img class="btnIcon" src="assets/ui/icons/credits.png"></img></button>
+        <button class="btn section purple" id="sectionBtn-gear"><img class="btnIcon" src="assets/ui/icons/crate.png"></img></button>
+        <button class="btn section purple" id="sectionBtn-planet"><img class="btnIcon" src="assets/ui/icons/planet.png"></img></button>
+        <button class="btn section purple" id="sectionBtn-travel"><img class="btnIcon" src="assets/ui/icons/travel.png"></img></button>
+        <button class="btn section" id="sectionBtn-skills" style="display: none;"></button>
+
+    </div>
+
+    <!-- -->
+
+
+
+    <!-- GEAR POPUP -->
+
+    <div id="gearPopupOverlay" style="display: none;">
+        <div id="gearPopup">
+            <button class="btn square red" id="gearPopupDelete">
+                <img class="btnIcon" src="assets/ui/icons/trash.png">
+            </button>
+            <button id="gearPopupClose">X</button>
+            <div id="gearPopupHeader">
+                <img id="gearPopupImg" src="">
+                <h2 id="gearPopupName"></h2>
+                <p id="gearPopupTier"></p>
+            </div>
+            <div id="gearPopupStats"></div>
+            <p id="gearPopupDescription"></p>
+            <button class="btn purple" id="gearPopupActionBtn">EQUIP</button>
+        </div>
+    </div>
+
+    <div id="gearDeleteConfirmOverlay" style="display: none;">
+        <div id="gearPopup">
+            <h2 class="confirmTitle">Discard Gear?</h2>
+            <p class="confirmDesc">Are you sure you want to discard this item? This cannot be undone.</p>
+            <div class="confirmBtnGroup">
+                <button class="btn purple confirmYesBtn" id="gearDeleteConfirmBtn">YES</button>
+                <button class="btn purple confirmNoBtn" id="gearDeleteCancelBtn">NO</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- -->
+
+
+
+    <!-- MARKET POPUPS -->
+
+    <div id="marketPopupOverlay" style="display: none;">
+        <div id="marketPopup">
+            <button id="marketPopupClose">X</button>
+            <div id="marketPopupHeader">
+                <h2 id="marketPopupName"></h2>
+            </div>
+            <div id="marketPopupOffers"></div>
+        </div>
+    </div>
+
+    <div id="marketItemPopupOverlay" style="display: none;">
+        <div id="marketItemPopup">
+            <button id="marketItemPopupClose">X</button>
+            <div id="marketItemPopupHeader">
+                <img id="marketItemPopupImg" src="">
+                <h2 id="marketItemPopupName"></h2>
+                <p id="marketItemPopupTier"></p>
+            </div>
+            <div id="marketItemPopupStats"></div>
+            <p id="marketItemPopupDescription"></p>
+            <button class="btn purple" id="marketItemPopupActionBtn">Buy</button>
+        </div>
+    </div>
+    <!-- -->
+
+
+
+    <!-- MAIN SCRIPT -->
+
+    <script type="module" src="js/main.js"></script>
+
+    <!-- -->
+
+</body>
+
+
+</html>

@@ -1,0 +1,10 @@
+{
+    "name": "Regular Pickaxe",
+    "description": "A simple but efficient pickaxe.",
+    "tier": 2,
+    "slot": "tool",
+    "resourceCategory": "mining",
+    "damageBonus": 8,
+    "resourceBonus": 1,
+    "xpBonus": 1
+}

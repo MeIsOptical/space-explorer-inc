@@ -1,0 +1,10 @@
+{
+    "name": "Hard Hat",
+    "description": "This is a must if you're going caving!",
+    "tier": 4,
+    "slot": "head",
+    "resourceCategory": "mining",
+    "damageBonus": 3,
+    "resourceBonus": 1,
+    "xpBonus": 4
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Natural Garments",
+    "icon": "plant",
+    "offers": {
+        "leather_shirt": 250,
+        "leather_pants": 250,
+        "leather_boots": 250
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Wooden Fishing Rod",
+    "description": "A simple fishing rod, made out of wood.",
+    "tier": 2,
+    "slot": "tool",
+    "resourceCategory": "fishing",
+    "damageBonus": 2,
+    "resourceBonus": 2,
+    "xpBonus": 3
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Canvas Shoes",
+    "description": "Better than nothing...",
+    "tier": 1,
+    "slot": "feet",
+    "resourceCategory": "any",
+    "damageBonus": 1,
+    "resourceBonus": 0,
+    "xpBonus": 0
+}

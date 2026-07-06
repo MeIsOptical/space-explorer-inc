@@ -1,0 +1,10 @@
+{
+    "name": "Basic Pickaxe",
+    "description": "The simplest tool for mining.",
+    "tier": 1,
+    "slot": "tool",
+    "resourceCategory": "mining",
+    "damageBonus": 4,
+    "resourceBonus": 0,
+    "xpBonus": 0
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Leather Pants",
+    "description": "Simple pants made of leather.",
+    "tier": 3,
+    "slot": "legs",
+    "resourceCategory": "hunting",
+    "damageBonus": 2,
+    "resourceBonus": 2,
+    "xpBonus": 2
+}

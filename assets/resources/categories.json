@@ -1,0 +1,26 @@
+{
+    "any": {
+        "name": "All",
+        "icon": "crate"
+    },
+    "plants": {
+        "name": "Plants",
+        "icon": "plant"
+    },
+    "digging": {
+        "name": "Digging",
+        "icon": "shovel"
+    },
+    "mining": {
+        "name": "Mining",
+        "icon": "rocks"
+    },
+    "hunting": {
+        "name": "Hunting",
+        "icon": "sword"
+    },
+    "fishing": {
+        "name": "Fishing",
+        "icon": "fish"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Industrial Drill",
+    "description": "A mining tool far more efficient than your usual pickaxe.",
+    "tier": 6,
+    "slot": "tool",
+    "resourceCategory": "mining",
+    "damageBonus": 100,
+    "resourceBonus": 7,
+    "xpBonus": 6
+}
