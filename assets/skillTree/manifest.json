@@ -13,7 +13,7 @@
 
     "physicalTraining": {
         "name": "Physical Training",
-        "description": "Increase overall damage by 1.",
+        "description": "Increase damage by 1.",
         "icon": "fist plus",
         "cost": 2,
         "skills": [
@@ -25,7 +25,7 @@
 
     "wastelessCollecting": {
         "name": "Wasteless Collecting",
-        "description": "Increase overall resources collected by 1x.",
+        "description": "Increase resources collected by 1x.",
         "icon": "rocks plus",
         "cost": 3,
         "skills": [
@@ -36,7 +36,7 @@
 
     "wastelessCollectingPlus": {
         "name": "Wasteless Collecting+",
-        "description": "Increase overall resources collected by 1x.",
+        "description": "Increase resources collected by 1x.",
         "icon": "rocks plus",
         "cost": 5,
         "skills": [
@@ -69,10 +69,10 @@
     },
 
 
-    "cascadingHits": {
-        "name": "Cascading Hits",
+    "ricochets": {
+        "name": "Ricochets",
         "description": "Hitting a resource has a 5% chance of hitting a second one.",
-        "icon": "travel",
+        "icon": "ricochet",
         "cost": 10,
         "skills": [
             { "type": "ricochetChance", "value": 0.05 }
@@ -81,15 +81,15 @@
     },
 
 
-    "cascadingHitsPlus": {
-        "name": "Cascading Hits+",
+    "ricochetsPlus": {
+        "name": "Ricochets+",
         "description": "Hitting a resource has a 5% chance of hitting a second one.",
-        "icon": "travel",
+        "icon": "ricochet",
         "cost": 20,
         "skills": [
             { "type": "ricochetChance", "value": 0.05 }
         ],
-        "requires": ["cascadingHits"]
+        "requires": ["ricochets"]
     },
 
 
@@ -136,7 +136,7 @@
 
     "fastLearner": {
         "name": "Fast Learner",
-        "description": "Increase overall XP multiplier by 1x.",
+        "description": "Increase XP multiplier by 1x.",
         "icon": "book plus",
         "cost": 3,
         "skills": [
@@ -148,7 +148,7 @@
 
     "fasterLearner": {
         "name": "Faster Learner",
-        "description": "Increase overall XP multiplier by 1x.",
+        "description": "Increase XP multiplier by 1x.",
         "icon": "book plus",
         "cost": 5,
         "skills": [
@@ -160,7 +160,7 @@
 
     "militaryTraining": {
         "name": "Military Training",
-        "description": "Increase overall damage by 2 & XP multiplier by 1x.",
+        "description": "Increase damage by 2 & XP multiplier by 1x.",
         "icon": "military helmet",
         "cost": 9,
         "skills": [
@@ -185,7 +185,7 @@
 
     "wise": {
         "name": "Wise",
-        "description": "Increase overall resources collected by 1x & XP multiplier by 2x.",
+        "description": "Increase resources collected by 1x & XP multiplier by 2x.",
         "icon": "beard",
         "cost": 12,
         "skills": [
