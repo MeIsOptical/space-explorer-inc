@@ -46,7 +46,7 @@ export class Player {
     get maxGearCapacity() {
         const stats = this.skillTree.getStatBonuses();
         const bonus = stats.inventoryBonus || 0;
-        return 9 + bonus;
+        return 8 + bonus;
     }
 
 
