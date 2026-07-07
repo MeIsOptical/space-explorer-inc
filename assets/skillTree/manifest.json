@@ -73,7 +73,7 @@
         "name": "Ricochets",
         "description": "Hitting a resource has a 5% chance of hitting a second one.",
         "icon": "ricochet",
-        "cost": 10,
+        "cost": 7,
         "skills": [
             { "type": "ricochetChance", "value": 0.05 }
         ],
@@ -85,7 +85,7 @@
         "name": "Ricochets+",
         "description": "Hitting a resource has a 5% chance of hitting a second one.",
         "icon": "ricochet",
-        "cost": 20,
+        "cost": 12,
         "skills": [
             { "type": "ricochetChance", "value": 0.05 }
         ],
@@ -281,37 +281,37 @@
 
 
 
-    "biggerPockets": {
-        "name": "Bigger Pockets",
-        "description": "Increase inventory capacity by 3.",
+    "bigPockets": {
+        "name": "Big Pockets",
+        "description": "Increase inventory capacity by 2.",
         "icon": "crate plus",
         "cost": 3,
         "skills": [
-            { "type": "inventoryBonus", "value": 3 }
+            { "type": "inventoryBonus", "value": 2 }
         ],
         "requires": ["skillTree"]
     },
 
-    "evenBiggerPockets": {
-        "name": "Even Bigger Pockets",
-        "description": "Increase inventory capacity by 3.",
+    "biggerPockets": {
+        "name": "Bigger Pockets",
+        "description": "Increase inventory capacity by 2.",
         "icon": "crate plus",
         "cost": 5,
         "skills": [
-            { "type": "inventoryBonus", "value": 3 }
+            { "type": "inventoryBonus", "value": 2 }
         ],
-        "requires": ["biggerPockets"]
+        "requires": ["bigPockets"]
     },
 
     "massivePockets": {
         "name": "Massive Pockets",
-        "description": "Increase inventory capacity by 3.",
+        "description": "Increase inventory capacity by 2.",
         "icon": "crate plus",
         "cost": 8,
         "skills": [
-            { "type": "inventoryBonus", "value": 3 }
+            { "type": "inventoryBonus", "value": 2 }
         ],
-        "requires": ["evenBiggerPockets"]
+        "requires": ["biggerPockets"]
     },
 
     "organized": {
@@ -322,6 +322,6 @@
         "skills": [
             { "type": "cooldownReduction", "value": 0.1 }
         ],
-        "requires": ["evenBiggerPockets"]
+        "requires": ["massivePockets"]
     }
 }
