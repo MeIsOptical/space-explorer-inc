@@ -57,7 +57,15 @@ import { updateXpBarUI } from "./utils/ui.js";
 //#region LOAD CONFIG
 
 const configResponse = await fetch("runConfig.json");
-export const RUN_CONFIG = await configResponse.json();
+export let RUN_CONFIG = {};
+try {
+    RUN_CONFIG = await configResponse.json();
+
+    if (RUN_CONFIG.dev) console.log("%cRunning the game in development mode.", "color: orange");
+}
+catch {
+    console.log("No run configuration found, using defaults.");
+}
 
 //#endregion
 
