@@ -1,0 +1,10 @@
+{
+    "name": "Iron Fishing Rod",
+    "description": "A stronger fishing rod, capable of catching bigger fish.",
+    "tier": 3,
+    "slot": "tool",
+    "resourceCategory": "fishing",
+    "damageBonus": 4,
+    "resourceBonus": 2,
+    "xpBonus": 3
+}

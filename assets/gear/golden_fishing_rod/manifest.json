@@ -1,0 +1,10 @@
+{
+    "name": "Golden Fishing Rod",
+    "description": "A fishing rod made out of... gold?",
+    "tier": 6,
+    "slot": "tool",
+    "resourceCategory": "fishing",
+    "damageBonus": 12,
+    "resourceBonus": 5,
+    "xpBonus": 9
+}

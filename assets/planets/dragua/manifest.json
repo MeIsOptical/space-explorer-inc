@@ -1,8 +1,8 @@
 {
     "name": "Dragua",
-    "x": -6,
+    "x": -5,
     "y": 2,
-    "glow": 1,
+    "glow": 2,
     "resources": ["coal", "iron", "gold"],
     "markets": ["dragua_cave_operator"],
     "canUnlock": true,

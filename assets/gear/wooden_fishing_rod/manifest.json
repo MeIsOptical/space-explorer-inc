@@ -5,6 +5,6 @@
     "slot": "tool",
     "resourceCategory": "fishing",
     "damageBonus": 2,
-    "resourceBonus": 2,
+    "resourceBonus": 1,
     "xpBonus": 3
 }

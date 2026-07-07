@@ -1,0 +1,10 @@
+{
+    "name": "Reinforced Fishing Rod",
+    "description": "An even stronger fishing rod.",
+    "tier": 4,
+    "slot": "tool",
+    "resourceCategory": "fishing",
+    "damageBonus": 6,
+    "resourceBonus": 3,
+    "xpBonus": 4
+}

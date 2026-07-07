@@ -83,7 +83,7 @@ export class PlanetMap {
         const planetCenterX = (pPlanet.x * GRID_SIZE) + (pPlanet.element.offsetWidth / 2);
         const planetCenterY = (pPlanet.y * GRID_SIZE) + (pPlanet.element.offsetHeight / 2);
 
-        const targetScale = 1.5;
+        const targetScale = 1.4;
         const targetTranslateX = centerX - (planetCenterX * targetScale);
         const targetTranslateY = centerY - (planetCenterY * targetScale) - 140;
 

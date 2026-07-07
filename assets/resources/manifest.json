@@ -57,27 +57,36 @@
         "name": "Iron",
         "color": "#ded8c3",
         "category": "mining",
-        "hits": 200,
+        "hits": 220,
         "cooldown": 2,
-        "worth": 7,
+        "worth": 8,
         "xp": 16
     },
     "gold": {
         "name": "Gold",
         "color": "#ffc730",
         "category": "mining",
-        "hits": 120,
+        "hits": 140,
         "cooldown": 7,
-        "worth": 20,
-        "xp": 25
+        "worth": 21,
+        "xp": 26
+    },
+    "cosmic_stone": {
+        "name": "Cosmic Stone",
+        "color": "#f5e084",
+        "category": "mining",
+        "hits": 600,
+        "cooldown": 4,
+        "worth": 36,
+        "xp": 24
     },
     "diamonds": {
         "name": "Diamonds",
         "color": "#1cd2ff",
         "category": "mining",
-        "hits": 700,
+        "hits": 1400,
         "cooldown": 5,
-        "worth": 50,
+        "worth": 60,
         "xp": 40
     }
 }

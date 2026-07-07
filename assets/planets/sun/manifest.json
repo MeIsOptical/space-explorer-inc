@@ -2,7 +2,7 @@
     "name": "Sun",
     "x": 0,
     "y": 0,
-    "glow": 10,
+    "glow": 15,
     "resources": [],
     "markets": [],
     "canUnlock": false,

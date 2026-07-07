@@ -2,6 +2,8 @@
     "name": "Fisherman",
     "icon": "fish",
     "offers": {
-        "wooden_fishing_rod": 60
+        "wooden_fishing_rod": 60,
+        "iron_fishing_rod": 275,
+        "reinforced_fishing_rod": 1100
     }
 }

@@ -1,0 +1,10 @@
+{
+    "name": "Asteroid Field",
+    "x": -3,
+    "y": 8,
+    "glow": 2,
+    "resources": ["iron", "cosmic_stone"],
+    "markets": [],
+    "canUnlock": true,
+    "price": 25000
+}
