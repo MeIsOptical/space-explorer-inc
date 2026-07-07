@@ -322,6 +322,6 @@
         "skills": [
             { "type": "cooldownReduction", "value": 0.1 }
         ],
-        "requires": ["massivePockets"]
+        "requires": ["biggerPockets"]
     }
 }
