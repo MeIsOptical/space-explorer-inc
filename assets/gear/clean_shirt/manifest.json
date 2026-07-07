@@ -5,6 +5,6 @@
     "slot": "chest",
     "resourceCategory": "any",
     "damageBonus": 3,
-    "resourceBonus": 0,
+    "resourceBonus": 1,
     "xpBonus": 0
 }

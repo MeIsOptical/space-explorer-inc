@@ -4,7 +4,7 @@
     "tier": 5,
     "slot": "tool",
     "resourceCategory": "mining",
-    "damageBonus": 32,
-    "resourceBonus": 3,
-    "xpBonus": 9
+    "damageBonus": 24,
+    "resourceBonus": 2,
+    "xpBonus": 10
 }

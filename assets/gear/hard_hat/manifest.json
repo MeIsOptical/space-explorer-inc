@@ -4,7 +4,7 @@
     "tier": 4,
     "slot": "head",
     "resourceCategory": "mining",
-    "damageBonus": 3,
+    "damageBonus": 0,
     "resourceBonus": 4,
-    "xpBonus": 4
+    "xpBonus": 2
 }

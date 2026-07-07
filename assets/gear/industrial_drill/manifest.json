@@ -5,6 +5,6 @@
     "slot": "tool",
     "resourceCategory": "mining",
     "damageBonus": 100,
-    "resourceBonus": 7,
+    "resourceBonus": 8,
     "xpBonus": 6
 }
