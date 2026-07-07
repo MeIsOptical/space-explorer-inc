@@ -1,0 +1,10 @@
+{
+    "name": "Metal-Plated Boots",
+    "description": "Keep your toes protected with these heavy boots.",
+    "tier": 4,
+    "slot": "feet",
+    "resourceCategory": "mining",
+    "damageBonus": 4,
+    "resourceBonus": 5,
+    "xpBonus": 0
+}
