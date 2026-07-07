@@ -2,10 +2,10 @@
     "name": "Cave Operator",
     "icon": "pickaxe",
     "offers": {
-        "hard_hat": 1000,
-        "metal_plated_boots": 1000,
-        "calibrated_pickaxe": 1200,
-        "premium_pickaxe": 7500,
-        "precision_pickaxe": 8000
+        "hard_hat": 1200,
+        "metal_plated_boots": 1200,
+        "calibrated_pickaxe": 1500,
+        "premium_pickaxe": 8000,
+        "precision_pickaxe": 9000
     }
 }

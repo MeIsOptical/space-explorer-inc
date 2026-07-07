@@ -1,0 +1,10 @@
+{
+    "name": "Dull Knife",
+    "description": "Small, and barely deadly.",
+    "tier": 2,
+    "slot": "tool",
+    "resourceCategory": "hunting",
+    "damageBonus": 6,
+    "resourceBonus": 1,
+    "xpBonus": 0
+}

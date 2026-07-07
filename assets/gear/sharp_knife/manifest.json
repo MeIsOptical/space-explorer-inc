@@ -1,0 +1,10 @@
+{
+    "name": "Sharp Knife",
+    "description": "Small, but deadly.",
+    "tier": 3,
+    "slot": "tool",
+    "resourceCategory": "hunting",
+    "damageBonus": 10,
+    "resourceBonus": 3,
+    "xpBonus": 0
+}

@@ -35,16 +35,16 @@
         "worth": 1.5,
         "xp": 8
     },
-        "leather": {
+    "leather": {
         "name": "Leather",
         "color": "#cc793d",
         "category": "hunting",
-        "hits": 26,
-        "cooldown": 6,
+        "hits": 30,
+        "cooldown": 4,
         "worth": 3.5,
         "xp": 20
     },
-        "fish": {
+    "fish": {
         "name": "Fish",
         "color": "#528bff",
         "category": "fishing",

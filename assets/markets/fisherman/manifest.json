@@ -4,6 +4,7 @@
     "offers": {
         "wooden_fishing_rod": 60,
         "iron_fishing_rod": 275,
-        "reinforced_fishing_rod": 1100
+        "fishing_vest": 1000,
+        "reinforced_fishing_rod": 1200
     }
 }

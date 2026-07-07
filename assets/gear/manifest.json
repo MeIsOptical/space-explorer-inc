@@ -23,10 +23,15 @@
     "leather_pants",
     "leather_boots",
 
+    "dull_knife",
+    "sharp_knife",
+
     "wooden_fishing_rod",
     "iron_fishing_rod",
     "reinforced_fishing_rod",
     "golden_fishing_rod",
+
+    "fishing_vest",
 
     "hard_hat",
     "metal_plated_boots"

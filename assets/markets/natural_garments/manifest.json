@@ -2,10 +2,12 @@
     "name": "Natural Garments",
     "icon": "plant",
     "offers": {
+        "dull_knife": 50,
         "dusty_goggles": 65,
         "leather_shirt": 250,
         "leather_pants": 250,
         "leather_boots": 250,
+        "sharp_knife": 300,
         "clean_goggles": 400
     }
 }

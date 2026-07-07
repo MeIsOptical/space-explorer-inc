@@ -1,0 +1,10 @@
+{
+    "name": "Fishing Vest",
+    "description": "Can't be a professional without looking like one!",
+    "tier": 4,
+    "slot": "chest",
+    "resourceCategory": "fishing",
+    "damageBonus": 0,
+    "resourceBonus": 2,
+    "xpBonus": 5
+}
