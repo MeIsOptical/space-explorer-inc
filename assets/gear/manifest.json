@@ -4,6 +4,7 @@
     "sturdy_pickaxe",
     "calibrated_pickaxe",
     "premium_pickaxe",
+    "precision_pickaxe",
     "industrial_drill",
 
     "ripped_shirt",
@@ -15,6 +16,9 @@
 
     "canvas_shoes",
 
+    "dusty_goggles",
+    "clean_goggles",
+    
     "leather_shirt",
     "leather_pants",
     "leather_boots",

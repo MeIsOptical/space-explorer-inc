@@ -1,0 +1,10 @@
+{
+    "name": "Precision Pickaxe",
+    "description": "A pickaxe for meticulous extraction, prioritizing quality.",
+    "tier": 5,
+    "slot": "tool",
+    "resourceCategory": "mining",
+    "damageBonus": 32,
+    "resourceBonus": 3,
+    "xpBonus": 9
+}

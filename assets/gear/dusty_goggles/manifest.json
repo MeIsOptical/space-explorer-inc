@@ -1,0 +1,10 @@
+{
+    "name": "Dusty Goggles",
+    "description": "Keeps the dust out of your eyes while working.",
+    "tier": 2,
+    "slot": "head",
+    "resourceCategory": "any",
+    "damageBonus": 0,
+    "resourceBonus": 1,
+    "xpBonus": 2
+}

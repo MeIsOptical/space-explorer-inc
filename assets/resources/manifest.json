@@ -12,9 +12,9 @@
         "name": "Flowers",
         "color": "#ff82ee",
         "category": "plants",
-        "hits": 2,
+        "hits": 3,
         "cooldown": 1.3,
-        "worth": 0.35,
+        "worth": 0.4,
         "xp": 2
     },
     "cactus": {
@@ -26,20 +26,11 @@
         "worth": 0.6,
         "xp": 6
     },
-    "gravel": {
-        "name": "Gravel",
-        "color": "#aba191",
-        "category": "digging",
-        "hits": 5,
-        "cooldown": 2,
-        "worth": 0.7,
-        "xp": 2
-    },
     "coal": {
         "name": "Coal",
         "color": "#827f7c",
         "category": "mining",
-        "hits": 45,
+        "hits": 50,
         "cooldown": 2.5,
         "worth": 1.5,
         "xp": 8
@@ -48,7 +39,7 @@
         "name": "Leather",
         "color": "#cc793d",
         "category": "hunting",
-        "hits": 20,
+        "hits": 26,
         "cooldown": 6,
         "worth": 3.5,
         "xp": 20
@@ -66,7 +57,7 @@
         "name": "Iron",
         "color": "#ded8c3",
         "category": "mining",
-        "hits": 160,
+        "hits": 200,
         "cooldown": 2,
         "worth": 7,
         "xp": 16
@@ -75,7 +66,7 @@
         "name": "Gold",
         "color": "#ffc730",
         "category": "mining",
-        "hits": 80,
+        "hits": 120,
         "cooldown": 7,
         "worth": 20,
         "xp": 25
@@ -84,7 +75,7 @@
         "name": "Diamonds",
         "color": "#1cd2ff",
         "category": "mining",
-        "hits": 600,
+        "hits": 700,
         "cooldown": 5,
         "worth": 50,
         "xp": 40

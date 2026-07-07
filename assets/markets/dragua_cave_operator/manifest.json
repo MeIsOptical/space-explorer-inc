@@ -4,6 +4,7 @@
     "offers": {
         "hard_hat": 1000,
         "calibrated_pickaxe": 1200,
-        "premium_pickaxe": 7500
+        "premium_pickaxe": 7500,
+        "precision_pickaxe": 8000
     }
 }

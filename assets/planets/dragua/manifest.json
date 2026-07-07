@@ -3,7 +3,7 @@
     "x": -6,
     "y": 2,
     "glow": 1,
-    "resources": ["gravel", "coal", "iron", "gold"],
+    "resources": ["coal", "iron", "gold"],
     "markets": ["dragua_cave_operator"],
     "canUnlock": true,
     "price": 2000

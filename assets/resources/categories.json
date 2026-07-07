@@ -7,10 +7,6 @@
         "name": "Plants",
         "icon": "plant"
     },
-    "digging": {
-        "name": "Digging",
-        "icon": "shovel"
-    },
     "mining": {
         "name": "Mining",
         "icon": "rocks"

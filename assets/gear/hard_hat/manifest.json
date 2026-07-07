@@ -5,6 +5,6 @@
     "slot": "head",
     "resourceCategory": "mining",
     "damageBonus": 3,
-    "resourceBonus": 1,
+    "resourceBonus": 4,
     "xpBonus": 4
 }

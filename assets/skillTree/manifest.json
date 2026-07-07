@@ -120,7 +120,7 @@
         "name": "Muscle Memory++",
         "description": "Automatically damage the last hit resource every 1 second.",
         "icon": "pickaxe",
-        "cost": 24,
+        "cost": 20,
         "skills": [
             { "type": "autoDamage", "value": 1 }
         ],
@@ -158,6 +158,19 @@
     },
 
 
+    "militaryTraining": {
+        "name": "Military Training",
+        "description": "Increase overall damage by 2 & XP multiplier by 1x.",
+        "icon": "military helmet",
+        "cost": 9,
+        "skills": [
+            { "type": "damageBonus", "value": 2 },
+            { "type": "xpBonus", "value": 1 }
+        ],
+        "requires": ["fasterLearner"]
+    },
+
+
     "engineerPower": {
         "name": "Engineer Power",
         "description": "Automatically sell +1 of each resource based on their cooldown.",
@@ -170,17 +183,20 @@
     },
 
 
-    "militaryTraining": {
-        "name": "Military Training",
-        "description": "Increase overall damage & XP multiplier by 1.",
-        "icon": "military helmet",
-        "cost": 9,
+    "wise": {
+        "name": "Wise",
+        "description": "Increase overall resources collected by 1x & XP multiplier by 2x.",
+        "icon": "beard",
+        "cost": 12,
         "skills": [
-            { "type": "damageBonus", "value": 1 },
-            { "type": "xpBonus", "value": 1 }
+            { "type": "resourceBonus", "value": 1 },
+            { "type": "xpBonus", "value": 2 }
         ],
-        "requires": ["fasterLearner"]
+        "requires": ["engineerPower"]
     },
+
+
+    
 
 
 
@@ -202,11 +218,11 @@
 
     "bulkProcessingPlus": {
         "name": "Bulk Processing+",
-        "description": "Sell +1 resource per click to the Collector.",
+        "description": "Sell +2 resource per click to the Collector.",
         "icon": "credits",
         "cost": 5,
         "skills": [
-            { "type": "sellAmountBonus", "value": 1 }
+            { "type": "sellAmountBonus", "value": 2 }
         ],
         "requires": ["bulkProcessing"]
     },
@@ -214,11 +230,11 @@
 
     "bulkProcessingPlusPlus": {
         "name": "Bulk Processing++",
-        "description": "Sell +2 resource per click to the Collector.",
+        "description": "Sell +3 resource per click to the Collector.",
         "icon": "credits",
         "cost": 10,
         "skills": [
-            { "type": "sellAmountBonus", "value": 2 }
+            { "type": "sellAmountBonus", "value": 3 }
         ],
         "requires": ["bulkProcessingPlus"]
     },
@@ -237,22 +253,22 @@
 
     "improvedTradeKnowledge": {
         "name": "Improved Trade Knowledge",
-        "description": "Automatically sell +1 of each resource based on their cooldown.",
+        "description": "Automatically sell +2 of each resource based on their cooldown.",
         "icon": "market",
-        "cost": 16,
+        "cost": 14,
         "skills": [
-            { "type": "autoSell", "value": 1 }
+            { "type": "autoSell", "value": 2 }
         ],
         "requires": ["tradeKnowledge"]
     },
 
     "advancedTradeKnowledge": {
         "name": "Advanced Trade Knowledge",
-        "description": "Automatically sell +2 of each resource based on their cooldown.",
+        "description": "Automatically sell +3 of each resource based on their cooldown.",
         "icon": "market",
-        "cost": 24,
+        "cost": 18,
         "skills": [
-            { "type": "autoSell", "value": 2 }
+            { "type": "autoSell", "value": 3 }
         ],
         "requires": ["improvedTradeKnowledge"]
     },
