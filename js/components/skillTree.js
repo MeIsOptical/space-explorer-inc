@@ -124,7 +124,7 @@ export class SkillTree {
 
         // save to class for live updater
         this.nodeCoords = {}; 
-        const radiusStep = 85; 
+        const radiusStep = 90; 
 
         const nodeIds = Object.keys(this.manifest);
         const roots = nodeIds.filter(id => !this.manifest[id].requires || this.manifest[id].requires.length === 0);

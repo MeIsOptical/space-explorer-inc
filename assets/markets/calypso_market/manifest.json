@@ -7,7 +7,9 @@
         "basic_pickaxe": 5,
         "worn_shirt": 25,
         "regular_pickaxe": 30,
+        "beige_turban": 50,
         "clean_shirt": 175,
-        "sturdy_pickaxe": 200
+        "sturdy_pickaxe": 200,
+        "red_turban": 220
     }
 }

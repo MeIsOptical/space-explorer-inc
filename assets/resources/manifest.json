@@ -30,8 +30,8 @@
         "name": "Gravel",
         "color": "#aba191",
         "category": "digging",
-        "hits": 4,
-        "cooldown": 2.4,
+        "hits": 5,
+        "cooldown": 2,
         "worth": 0.7,
         "xp": 2
     },
@@ -57,8 +57,8 @@
         "name": "Fish",
         "color": "#528bff",
         "category": "fishing",
-        "hits": 7,
-        "cooldown": 20,
+        "hits": 10,
+        "cooldown": 16,
         "worth": 12,
         "xp": 60
     },

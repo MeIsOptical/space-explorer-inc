@@ -1,0 +1,10 @@
+{
+    "name": "Red Turban",
+    "description": "A light headwrap that provides excellent sun protection.",
+    "tier": 3,
+    "slot": "head",
+    "resourceCategory": "plants",
+    "damageBonus": 5,
+    "resourceBonus": 2,
+    "xpBonus": 3
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Beige Turban",
+    "description": "A light headwrap that provides excellent sun protection.",
+    "tier": 2,
+    "slot": "head",
+    "resourceCategory": "plants",
+    "damageBonus": 3,
+    "resourceBonus": 2,
+    "xpBonus": 0
+}
