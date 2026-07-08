@@ -80,6 +80,15 @@
         "worth": 36,
         "xp": 24
     },
+    "frozen_fish": {
+        "name": "Frozen Fish",
+        "color": "#99fff3",
+        "category": "fishing",
+        "hits": 35,
+        "cooldown": 15,
+        "worth": 45,
+        "xp": 230
+    },
     "diamonds": {
         "name": "Diamonds",
         "color": "#1cd2ff",
@@ -88,5 +97,41 @@
         "cooldown": 5,
         "worth": 60,
         "xp": 40
+    },
+    "basalt": {
+        "name": "Basalt",
+        "color": "#7d5a4c",
+        "category": "mining",
+        "hits": 1800,
+        "cooldown": 2,
+        "worth": 75,
+        "xp": 60
+    },
+    "lava_fish": {
+        "name": "Lava Fish",
+        "color": "#ff6f1c",
+        "category": "fishing",
+        "hits": 50,
+        "cooldown": 14,
+        "worth": 90,
+        "xp": 400
+    },
+    "magma_cream": {
+        "name": "Magma Cream",
+        "color": "#ff5921",
+        "category": "hunting",
+        "hits": 500,
+        "cooldown": 3,
+        "worth": 200,
+        "xp": 130
+    },
+    "obsidian": {
+        "name": "Obsidian",
+        "color": "#6b5a8a",
+        "category": "mining",
+        "hits": 5000,
+        "cooldown": 6,
+        "worth": 240,
+        "xp": 90
     }
 }

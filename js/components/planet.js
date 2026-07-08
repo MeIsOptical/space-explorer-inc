@@ -1,6 +1,6 @@
 
 
-
+import { formatBigNumber } from "../utils/formatting.js";
 import { isVisible, showFloatingMessageAt } from "../utils/ui.js";
 import { playSound, SOUND_IDS } from "../systems/audio.js";
 
@@ -190,14 +190,14 @@ export class Planet {
                 let rndY = Math.random() * rndAmount*2 - rndAmount;
                 let spawnX = rect.left + (rect.width / 2) - 10 + rndX;
                 let spawnY = rect.top + (rect.height / 2) - 10 + rndY;
-                showFloatingMessageAt(`+${playerStats.resourceMultiplier}`, "var(--c-gear-resources)", spawnX, spawnY, 1000, 10);
+                showFloatingMessageAt(`+${formatBigNumber(playerStats.resourceMultiplier)}`, "var(--c-gear-resources)", spawnX, spawnY, 1000, 10);
 
                 // display xp gained
                 rndX = Math.random() * rndAmount*2 - rndAmount;
                 rndY = Math.random() * rndAmount*2 - rndAmount;
                 spawnX = rect.left + (rect.width / 2) - 10 + rndX;
                 spawnY = rect.top + (rect.height / 2) - 10 + rndY;
-                showFloatingMessageAt(`+${xpGained}`, "var(--c-gear-xp)", spawnX, spawnY, 1000, 10);
+                showFloatingMessageAt(`+${formatBigNumber(xpGained)}`, "var(--c-gear-xp)", spawnX, spawnY, 1000, 10);
             }
 
             // calculate cooldown reduction

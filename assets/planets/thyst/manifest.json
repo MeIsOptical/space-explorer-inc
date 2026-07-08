@@ -3,7 +3,7 @@
     "x": -9,
     "y": -4,
     "glow": 4,
-    "resources": ["diamonds"],
+    "resources": ["frozen_fish", "diamonds"],
     "markets": [],
     "canUnlock": true,
     "inDev": true,

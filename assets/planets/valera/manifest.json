@@ -1,11 +1,11 @@
 {
     "name": "Valera",
-    "x": 2,
+    "x": 3,
     "y": 5,
     "glow": 3,
     "resources": ["flowers", "leather", "fish"],
     "markets": ["fisherman", "natural_garments"],
     "canUnlock": true,
-    "inDev": true,
+    "inDev": false,
     "price": 300
 }

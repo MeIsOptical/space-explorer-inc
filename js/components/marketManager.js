@@ -17,20 +17,41 @@ export class MarketManager {
 
         pLoadingStatus("Loading markets...");
 
-        const response = await fetch("assets/markets/manifest.json");
-        const marketIds = await response.json();
+        let marketIds;
+        try {
+            const response = await fetch("assets/markets/manifest.json");
+            marketIds = await response.json();
+        }
+        catch {
+            return { success: false, error: "Failed to fetch markets manifest." };
+        }
+        
 
         const marketLength = marketIds.length;
         let currentMarketLength = 1;
+
+        // error handling
+        const missingIds = [];
 
         for (const id of marketIds) {
 
             pLoadingStatus(`Loading markets... ${currentMarketLength}/${marketLength}`);
             currentMarketLength++;
 
-            const newMarket = new Market(id);
-            await newMarket.build();
-            this.markets.push(newMarket);
+            try {
+                const newMarket = new Market(id);
+                await newMarket.build();
+                this.markets.push(newMarket);
+            }
+            catch {
+                missingIds.push(id);
+            }
+        }
+
+        if (missingIds.length === 0) return { success: true };
+        else {
+            const formattedIds = missingIds.map(id => `"${id}"`).join(", ");
+            return { success: false, error: `Error loading market${missingIds.length === 1 ? "" : "s"} with ID${missingIds.length === 1 ? "" : "s"} ${formattedIds}`};
         }
     }
 

@@ -30,31 +30,51 @@ export class PlanetMap {
 
         pLoadingStatus("Loading planets...");
 
-        const planetManifestResponse = await fetch("assets/planets/manifest.json");
-        const planetIds = await planetManifestResponse.json();
+        let planetIds;
+        try {
+            const planetManifestResponse = await fetch("assets/planets/manifest.json");
+            planetIds = await planetManifestResponse.json();
+        }
+        catch {
+            return { success: false, error: "Failed to fetch planets manifest." };
+        }
 
         const planetLength = planetIds.length;
         let currentPlanetLength = 1;
+
+        // error handling
+        const missingIds = [];
 
         for (const id of planetIds) {
 
             pLoadingStatus(`Loading planets... ${currentPlanetLength}/${planetLength}`);
             currentPlanetLength++;
 
-            const newPlanet = new Planet(id);
-            await newPlanet.build(this.resourceManager, this.player);
-            
-            // map markets
-            if (newPlanet.markets) {
-                newPlanet.markets = newPlanet.markets.map(marketId => 
-                    this.marketManager.markets.find(m => m.id === marketId)
-                ).filter(Boolean);
-            } else {
-                newPlanet.markets = [];
-            }
+            try {
+                const newPlanet = new Planet(id);
+                await newPlanet.build(this.resourceManager, this.player);
+                
+                // map markets
+                if (newPlanet.markets) {
+                    newPlanet.markets = newPlanet.markets.map(marketId => 
+                        this.marketManager.markets.find(m => m.id === marketId)
+                    ).filter(Boolean);
+                } else {
+                    newPlanet.markets = [];
+                }
 
-            newPlanet.marketManager = this.marketManager; 
-            this.planets.push(newPlanet);
+                newPlanet.marketManager = this.marketManager; 
+                this.planets.push(newPlanet);
+            }
+            catch {
+                missingIds.push(id);
+            }
+        }
+
+        if (missingIds.length === 0) return { success: true };
+        else {
+            const formattedIds = missingIds.map(id => `"${id}"`).join(", ");
+            return { success: false, error: `Error loading planet${missingIds.length === 1 ? "" : "s"} with ID${missingIds.length === 1 ? "" : "s"} ${formattedIds}`};
         }
     }
 

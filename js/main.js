@@ -3,9 +3,14 @@
 // loading screen
 const loadingScreen = document.getElementById("loadingPage");
 const loadingStatus = document.getElementById("loadingStatus");
+const loadingError = document.getElementById("loadingError");
 
 const setLoadingStatus = (pText) => {
     loadingStatus.innerText = pText;
+};
+
+const setLoadingError = (pText) => {
+    loadingError.innerText = pText;
 };
 
 
@@ -105,7 +110,12 @@ await resourceManager.loadResources();
 //#region DEFINE GEAR
 
 const gearManager = new GearManager();
-await gearManager.build(setLoadingStatus);
+
+const gearResponse = await gearManager.build(setLoadingStatus);
+if (!gearResponse.success) {
+    setLoadingError(gearResponse.error);
+    throw new Error(gearResponse.error);
+}
 
 //#endregion
 
@@ -116,7 +126,11 @@ await gearManager.build(setLoadingStatus);
 //#region DEFINE MARKETS
 
 const marketManager = new MarketManager();
-await marketManager.build(setLoadingStatus);
+const marketResponse = await marketManager.build(setLoadingStatus);
+if (!marketResponse.success) {
+    setLoadingError(marketResponse.error);
+    throw new Error(marketResponse.error);
+}
 
 //#endregion
 
@@ -182,7 +196,11 @@ setInterval(() => {
 //#region DEFINE MAP
 
 const planetMap = new PlanetMap(resourceManager, player, marketManager);
-await planetMap.loadPlanets(setLoadingStatus);
+const planetResponse = await planetMap.loadPlanets(setLoadingStatus);
+if (!planetResponse.success) {
+    setLoadingError(planetResponse.error);
+    throw new Error(planetResponse.error);
+}
 
 // land player
 player.landOn(planetMap.getPlanetById("calypso"));

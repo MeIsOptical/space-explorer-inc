@@ -1,4 +1,5 @@
 
+/* #region GENERAL */
 
 * {
     image-rendering: pixelated;
@@ -125,11 +126,18 @@ body {
     margin: 20px 0; padding: 0;
 }
 
+/* #endregion */
 
 
 
 
-/* LOADING PAGE */
+
+
+
+
+
+/* #region LOADING PAGE */
+
 #loadingPage {
     display: flex;
     flex-direction: column;
@@ -137,16 +145,42 @@ body {
     align-items: center;
     position: fixed;
     left: 0; top: 0;
+    gap: 15px;
     width: 100vw;
     height: 100vh;
     background-color: var(--c-back-main);
     z-index: 9999999;
 }
 
+#loadingTitle, #loadingStatus, #loadingError {
+    margin: 0;
+}
+
+#loadingTitle {
+    font-size: 1.1rem;
+}
+
+#loadingStatus, #loadingError {
+    font-size: 0.7rem;
+}
+
+#loadingError {
+    margin-top: 20px;
+    color: #ff2323;
+}
+
+/* #endregion */
 
 
 
-/* BUTTONS */
+
+
+
+
+
+
+
+/* #region BUTTONS */
 .btn {
     display: flex;
     align-items: center;
@@ -207,13 +241,16 @@ body {
     width: 53%;
 }
 
+/* #endregion */
 
 
 
 
 
 
-/* SPACE MAP */
+
+
+/* #region SPACE MAP */
 
 .mapDiv {
     display: flex;
@@ -289,6 +326,7 @@ body {
     transform: scale(2.95);
 }
 
+/* #endregion */
 
 
 
@@ -297,7 +335,8 @@ body {
 
 
 
-/* PLANET POPUP */
+
+/* #region PLANET POPUP */
 
 #planetPopup {
     position: absolute;
@@ -355,6 +394,7 @@ body {
     font-size: 0.55rem;
 }
 
+/* #endregion */
 
 
 
@@ -362,7 +402,9 @@ body {
 
 
 
-/* PANELS */
+
+
+/* #region PANELS */
 
 
 #planetPanelsContainer {
@@ -420,12 +462,16 @@ body {
     display: none;
 }
 
+/* #endregion */
 
 
 
 
 
-/* PLANET PAGE */
+
+
+
+/* #region PLANET PAGE */
 
 
 
@@ -505,6 +551,7 @@ body {
     flex-shrink: 0;
 }
 
+/* #endregion */
 
 
 
@@ -514,7 +561,8 @@ body {
 
 
 
-/* COLLECTOR */
+
+/* #region COLLECTOR */
 
 #resourcesList {
     display: flex;
@@ -567,6 +615,7 @@ body {
     margin-left: auto;
 }
 
+/* #endregion */
 
 
 
@@ -576,7 +625,9 @@ body {
 
 
 
-/* GEAR UI */
+
+
+/* #region GEAR UI */
 #equippedGearContainer {
     display: flex;
     justify-content: center;
@@ -731,6 +782,7 @@ body {
     padding: 12px;
 }
 
+/* #endregion */
 
 
 
@@ -744,7 +796,7 @@ body {
 
 
 
-/* MARKETS PANEL */
+/* #region MARKETS PANEL */
 
 .planetMarketContainer {
     display: flex;
@@ -785,6 +837,7 @@ body {
     padding: 7px 12px;
 }
 
+/* #endregion */
 
 
 
@@ -796,7 +849,7 @@ body {
 
 
 
-/* MARKET OFFERS */
+/* #region MARKET OFFERS */
 
 #marketPopupOffers {
     display: flex;
@@ -828,6 +881,7 @@ body {
     height: 10px;
 }
 
+/* #endregion */
 
 
 
@@ -837,7 +891,7 @@ body {
 
 
 
-/* FLOATING MESSAGES */
+/* #region FLOATING MESSAGES */
 
 .floatingMessage {
     --animDuration: 3000ms;
@@ -869,6 +923,7 @@ body {
     }
 }
 
+/* #endregion */
 
 
 
@@ -883,8 +938,7 @@ body {
 
 
 
-
-/* POPUP STYLES */
+/* #region POPUP STYLES */
 
 /* OVERLAYS */
 #gearPopupOverlay, #marketPopupOverlay, #marketItemPopupOverlay {
@@ -911,6 +965,7 @@ body {
     max-width: 400px;
     gap: 15px;
 }
+
 /* Market popup override */
 #marketPopup {
     width: 90%;
@@ -992,6 +1047,7 @@ body {
     height: 15px;
 }
 
+/* #endregion */
 
 
 
@@ -1003,7 +1059,8 @@ body {
 
 
 
-/* LEVELING */
+
+/* #region LEVELING */
 
 #xpBarContainer {
     width: 140px; 
@@ -1036,7 +1093,7 @@ body {
 }
 
 #playerXpText {
-    font-size: 0.45rem;
+    font-size: 0.5rem;
     font-weight: normal;
 }
 
@@ -1045,6 +1102,7 @@ body {
     height: 110%;
 }
 
+/* #endregion */
 
 
 
@@ -1056,7 +1114,7 @@ body {
 
 
 
-/* SKILL TREE */
+/* #region SKILL TREE */
 
 #skillTreeArea {
     position: relative;
@@ -1136,13 +1194,15 @@ body {
     transform: translateZ(0);
 }
 
+/* #endregion */
 
 
 
 
 
 
-/* SKILLS HEADER */
+
+/* #region SKILLS HEADER */
 
 #skillsHeader {
     display: flex;
@@ -1168,10 +1228,12 @@ body {
     color: var(--c-skill);
 }
 
+/* #endregion */
 
 
 
-/* SKILL POPUP (Bottom Attached) */
+
+/* #region SKILL POPUP (Bottom Attached) */
 
 #skillPopup {
     position: absolute;
@@ -1222,3 +1284,5 @@ body {
     max-width: 700px;
     height: 45px;
 }
+
+/* #endregion */

@@ -13,17 +13,29 @@ export class GearManager {
 
         pLoadingStatus("Loading gear...");
 
-        // load gear teirs
-        const tierResponse = await fetch("assets/gear/tiers.json");
-        const tierData = await tierResponse.json();
+        let tierData;
+        let categoriesData;
+        let gearData;
+        try {
+            // load gear teirs
+            const tierResponse = await fetch("assets/gear/tiers.json");
+            tierData = await tierResponse.json();
 
-        // load categories
-        const catResponse = await fetch("assets/resources/categories.json");
-        const categoriesData = await catResponse.json();
+            // load categories
+            const catResponse = await fetch("assets/resources/categories.json");
+            categoriesData = await catResponse.json();
 
-        // load gear items
-        const gearResponse = await fetch("assets/gear/manifest.json");
-        const gearData = await gearResponse.json();
+            // load gear items
+            const gearResponse = await fetch("assets/gear/manifest.json");
+            gearData = await gearResponse.json();
+        }
+        catch {
+            return { success: false, error: "Failed to fetch gear manifest files." };
+        }
+        
+
+        // error handling
+        const missingIds = [];
 
         this.gearTypes = {};
 
@@ -34,21 +46,33 @@ export class GearManager {
             pLoadingStatus(`Loading gear... (${currentGearLength}/${gearLength})`);
             currentGearLength++;
 
-            const loopGearResponse = await fetch(`assets/gear/${gearId}/manifest.json`);
-            const loopGearData = await loopGearResponse.json();
-            
-            // tier
-            const tierId = loopGearData.tier;
-            loopGearData.tier = tierData[loopGearData.tier - 1];
-            loopGearData.tier.id = tierId;
+            try {
 
-            // category
-            const categoryId = loopGearData.resourceCategory;
-            loopGearData.resourceCategory = categoriesData[categoryId];
-            loopGearData.resourceCategory.id = categoryId;
-            
+                const loopGearResponse = await fetch(`assets/gear/${gearId}/manifest.json`);
+                const loopGearData = await loopGearResponse.json();
+                
+                // tier
+                const tierId = loopGearData.tier;
+                loopGearData.tier = tierData[loopGearData.tier - 1];
+                loopGearData.tier.id = tierId;
 
-            this.gearTypes[gearId] = loopGearData;
+                // category
+                const categoryId = loopGearData.resourceCategory;
+                loopGearData.resourceCategory = categoriesData[categoryId];
+                loopGearData.resourceCategory.id = categoryId;
+                
+
+                this.gearTypes[gearId] = loopGearData;
+            }
+            catch {
+                missingIds.push(gearId);
+            }            
+        }
+
+        if (missingIds.length === 0) return { success: true };
+        else {
+            const formattedIds = missingIds.map(id => `"${id}"`).join(", ");
+            return { success: false, error: `Error loading gear${missingIds.length === 1 ? "" : "s"} with ID${missingIds.length === 1 ? "" : "s"} ${formattedIds}`};
         }
     }
 
