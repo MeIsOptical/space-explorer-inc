@@ -6,5 +6,6 @@
     "resourceCategory": "hunting",
     "damageBonus": 6,
     "resourceBonus": 1,
-    "xpBonus": 0
+    "xpBonus": 0,
+    "ricochetChance": 0
 }

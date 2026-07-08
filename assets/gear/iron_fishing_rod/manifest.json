@@ -6,5 +6,6 @@
     "resourceCategory": "fishing",
     "damageBonus": 4,
     "resourceBonus": 2,
-    "xpBonus": 3
+    "xpBonus": 3,
+    "ricochetChance": 0
 }

@@ -6,5 +6,6 @@
     "resourceCategory": "plants",
     "damageBonus": 3,
     "resourceBonus": 2,
-    "xpBonus": 0
+    "xpBonus": 0,
+    "ricochetChance": 0
 }

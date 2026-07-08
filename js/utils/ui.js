@@ -46,6 +46,7 @@ export function populateItemPopup(pPrefix, pItemId, pItemData) {
     if (pItemData.damageBonus > 0) statsContainer.innerHTML += `<div>⏵ Damage: <span style="color: var(--c-gear-damage)">+${pItemData.damageBonus}</span></div>`;
     if (pItemData.resourceBonus > 0) statsContainer.innerHTML += `<div>⏵ Resources: <span style="color: var(--c-gear-resources)">+${pItemData.resourceBonus}x</span></div>`;
     if (pItemData.xpBonus > 0) statsContainer.innerHTML += `<div>⏵ XP: <span style="color: var(--c-gear-xp)">+${pItemData.xpBonus}x</span></div>`;
+    if (pItemData.ricochetChance > 0) statsContainer.innerHTML += `<div>⏵ Ricochet Chance: <span style="color: var(--c-gear-ricochet)">+${pItemData.ricochetChance * 100}%</span></div>`;
 }
 
 

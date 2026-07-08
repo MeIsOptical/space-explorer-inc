@@ -183,9 +183,11 @@ export class Player {
                     totalDamage += equippedItem.damageBonus;
                     resourceMultiplier += equippedItem.resourceBonus;
                     xpMultiplier += equippedItem.xpBonus;
+                    ricochetChance += equippedItem.ricochetChance;
                 }
             }
         });
+
         return { totalDamage, resourceMultiplier, xpMultiplier, cooldownReduction, ricochetChance };
     }
 

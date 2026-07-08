@@ -2,6 +2,7 @@
     "name": "Toolsmith",
     "icon": "pickaxe",
     "offers": {
-        "industrial_drill": 48000
+        "industrial_drill": 48000,
+        "cluster_pickaxe": 300000
     }
 }

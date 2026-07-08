@@ -6,5 +6,6 @@
     "resourceCategory": "mining",
     "damageBonus": 40,
     "resourceBonus": 5,
-    "xpBonus": 5
+    "xpBonus": 5,
+    "ricochetChance": 0
 }

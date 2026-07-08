@@ -6,5 +6,6 @@
     "resourceCategory": "any",
     "damageBonus": 1,
     "resourceBonus": 0,
-    "xpBonus": 0
+    "xpBonus": 0,
+    "ricochetChance": 0
 }
