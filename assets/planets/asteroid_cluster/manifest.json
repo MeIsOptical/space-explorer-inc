@@ -6,5 +6,6 @@
     "resources": ["iron", "cosmic_stone"],
     "markets": [],
     "canUnlock": true,
+    "inDev": false,
     "price": 35000
 }

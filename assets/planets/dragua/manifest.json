@@ -6,5 +6,6 @@
     "resources": ["coal", "iron", "gold"],
     "markets": ["dragua_cave_operator"],
     "canUnlock": true,
+    "inDev": true,
     "price": 3000
 }

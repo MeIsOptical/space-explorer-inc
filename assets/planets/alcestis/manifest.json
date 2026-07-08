@@ -6,5 +6,6 @@
     "resources": [],
     "markets": ["toolsmith"],
     "canUnlock": true,
+    "inDev": true,
     "price": 20000
 }

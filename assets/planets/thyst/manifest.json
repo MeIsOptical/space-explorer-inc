@@ -6,5 +6,6 @@
     "resources": ["diamonds"],
     "markets": [],
     "canUnlock": true,
+    "inDev": true,
     "price": 75000
 }

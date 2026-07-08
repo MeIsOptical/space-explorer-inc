@@ -95,28 +95,49 @@ export class PlanetMap {
             const titleElement = this.popupElement.querySelector("#popupTravelTitle");
             const resourcesElement = this.popupElement.querySelector("#popupTravelResources");
             const travelBtn = document.getElementById("popupTravelBtn");
+            const inDevBadge = document.getElementById("popupTravelInDev");
 
             // check if planet can be unlocked
             const canUnlock = pPlanet.canUnlock;
 
             titleElement.innerText = pPlanet.name.toUpperCase();
             
-            if (canUnlock) {
-                // display resources
-                const resourceNames = pPlanet.resourceNodes.map(node => `<span style="color: ${node.manifest.color}; text-decoration: underline;">${node.manifest.name}</span>`);
-                if (resourceNames.length === 0) resourcesElement.innerHTML = `⏵ Resources: None`;
-                else resourcesElement.innerHTML = `⏵ Resources: ${resourceNames.join(", ")}`;
 
-                // display markets
-                const marketNames = pPlanet.markets.map(market => `<span style="color: ${market.color || 'var(--c-credits)'}; text-decoration: underline;">${market.name}</span>`);
-                if (marketNames.length === 0) {
-                    resourcesElement.innerHTML += `<br>⏵ Markets: None`;
-                } else {
-                    resourcesElement.innerHTML += `<br>⏵ Markets: ${marketNames.join(", ")}`;
+            // inDev badge
+            if (pPlanet.inDev) {
+                if (canUnlock) {
+                    inDevBadge.innerText = "⚠ In Development ⚠";
                 }
+                else {
+                    inDevBadge.innerText = "⚠ Coming soon! ⚠";
+                }
+                inDevBadge.style.display = "initial";
             }
             else {
+                inDevBadge.style.display = "none";
+            }
+
+            let displayCount = 0;
+            resourcesElement.innerHTML = "";
+
+            // display resources
+            const resourceNames = pPlanet.resourceNodes.map(node => `<span style="color: ${node.manifest.color}; text-decoration: underline;">${node.manifest.name}</span>`);
+            if (resourceNames.length > 0) {
+                   resourcesElement.innerHTML += `⏵ Resources: ${resourceNames.join(", ")}<br>`;
+                   displayCount++;
+               }
+
+            // display markets
+            const marketNames = pPlanet.markets.map(market => `<span style="color: ${market.color || 'var(--c-credits)'}; text-decoration: underline;">${market.name}</span>`);
+            if (marketNames.length > 0) {
+                resourcesElement.innerHTML += `⏵ Markets: ${marketNames.join(", ")}<br>`;
+                displayCount++;
+            }
+
+
+            if (displayCount === 0) {
                 resourcesElement.innerHTML = "Nothing to do here...";
+                if (pPlanet.inDev) resourcesElement.innerHTML += " for now.";
             }
             
 
@@ -223,7 +244,8 @@ export class PlanetMap {
         popupElement.id = "planetPopup";
         popupElement.innerHTML =
             `<p id="popupTravelTitle">PLANET</p>
-            <p id="popupTravelResources">Resources: ???</p>
+            <p id="popupTravelResources"></p>
+            <p id=popupTravelInDev></p>
             <button class="btn purple" id="popupTravelBtn">Travel</button>`;
         
         this.container.appendChild(popupElement);

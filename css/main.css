@@ -330,7 +330,7 @@ body {
 
 #popupTravelTitle {
     margin: 0; padding: 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
     text-decoration: underline;
 }
@@ -347,6 +347,12 @@ body {
     max-width: 700px;
     height: 45px;
     transition: opacity 0s;
+}
+
+#popupTravelInDev {
+    color: rgb(255, 218, 98);
+    margin: 0 0 7px 0; padding: 0;
+    font-size: 0.55rem;
 }
 
 

@@ -6,5 +6,6 @@
     "resources": ["dry_bushes", "cactus", "coal"],
     "markets": ["calypso_market"],
     "canUnlock": true,
+    "inDev": false,
     "price": 0
 }

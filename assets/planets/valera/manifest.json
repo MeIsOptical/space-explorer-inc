@@ -6,5 +6,6 @@
     "resources": ["flowers", "leather", "fish"],
     "markets": ["fisherman", "natural_garments"],
     "canUnlock": true,
+    "inDev": true,
     "price": 300
 }
