@@ -6,6 +6,6 @@
     "resources": [],
     "markets": [],
     "canUnlock": false,
-    "inDev": true,
+    "inDev": false,
     "price": -1
 }
