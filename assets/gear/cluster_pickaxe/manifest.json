@@ -1,11 +1,11 @@
 {
     "name": "Cluster Pickaxe",
-    "description": "A great tool for quickly mining big chunks of resources.",
+    "description": "A great tool for mining big chunks of resources.",
     "tier": 7,
     "slot": "tool",
     "resourceCategory": "mining",
     "damageBonus": 120,
     "resourceBonus": 10,
     "xpBonus": 7,
-    "ricochetChance": 0.1
+    "ricochetChance": 0.12
 }

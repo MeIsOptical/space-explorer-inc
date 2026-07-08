@@ -1,5 +1,6 @@
 
 import { playSound, SOUND_IDS } from "../systems/audio.js";
+import { formatBigNumber } from "./formatting.js";
 
 
 
@@ -149,7 +150,7 @@ export function updateXpBarUI(pPlayer) {
         const fillPercentage = (currentXp / maxXp) * 100;
         
         bar.style.width = `${fillPercentage}%`;
-        levelText.innerText = `Level ${pPlayer.level}`;
+        levelText.innerHTML = `Level ${pPlayer.level} <span id="playerXpText">(${formatBigNumber(currentXp)}/${formatBigNumber(maxXp)})</span>`;
 
 
         // check for affordable skills
