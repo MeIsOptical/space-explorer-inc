@@ -45,11 +45,14 @@ import { loadSounds, playSound, SOUND_IDS } from "./systems/audio.js";
 
 // utils
 import { updateXpBarUI } from "./utils/ui.js";
+import { initWakeLock } from "./utils/wakeLock.js";
 
 //#endregion
 
 
 
+// activate wake lock
+initWakeLock();
 
 
 

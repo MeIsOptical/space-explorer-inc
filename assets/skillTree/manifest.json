@@ -48,11 +48,11 @@
 
     "timeEfficient": {
         "name": "Time Efficient",
-        "description": "Reduce all resource cooldowns by 10%.",
+        "description": "Reduce all resource cooldowns by 5%.",
         "icon": "timer",
-        "cost": 8,
+        "cost": 7,
         "skills": [
-            { "type": "cooldownReduction", "value": 0.1 }
+            { "type": "cooldownReduction", "value": 0.05 }
         ],
         "requires": ["wastelessCollectingPlus"]
     },
@@ -61,7 +61,7 @@
         "name": "Time Efficient+",
         "description": "Reduce all resource cooldowns by 10%.",
         "icon": "timer",
-        "cost": 14,
+        "cost": 10,
         "skills": [
             { "type": "cooldownReduction", "value": 0.1 }
         ],
@@ -73,7 +73,7 @@
         "name": "Ricochets",
         "description": "Hitting a resource has a 5% chance of hitting a second one.",
         "icon": "ricochet",
-        "cost": 7,
+        "cost": 6,
         "skills": [
             { "type": "ricochetChance", "value": 0.05 }
         ],
@@ -85,7 +85,7 @@
         "name": "Ricochets+",
         "description": "Hitting a resource has a 5% chance of hitting a second one.",
         "icon": "ricochet",
-        "cost": 12,
+        "cost": 8,
         "skills": [
             { "type": "ricochetChance", "value": 0.05 }
         ],
@@ -109,7 +109,7 @@
         "name": "Muscle Memory+",
         "description": "Automatically damage the last hit resource every 1 second.",
         "icon": "pickaxe",
-        "cost": 12,
+        "cost": 10,
         "skills": [
             { "type": "autoDamage", "value": 1 }
         ],
@@ -120,7 +120,7 @@
         "name": "Muscle Memory++",
         "description": "Automatically damage the last hit resource every 1 second.",
         "icon": "pickaxe",
-        "cost": 20,
+        "cost": 14,
         "skills": [
             { "type": "autoDamage", "value": 1 }
         ],
@@ -158,6 +158,18 @@
     },
 
 
+    "multitasker": {
+        "name": "Multitasker",
+        "description": "Reduce all resource cooldowns by 5%.",
+        "icon": "timer",
+        "cost": 7,
+        "skills": [
+            { "type": "cooldownReduction", "value": 0.05 }
+        ],
+        "requires": ["fasterLearner"]
+    },
+
+
     "militaryTraining": {
         "name": "Military Training",
         "description": "Increase damage by 2 & XP multiplier by 1x.",
@@ -167,17 +179,17 @@
             { "type": "damageBonus", "value": 2 },
             { "type": "xpBonus", "value": 1 }
         ],
-        "requires": ["fasterLearner"]
+        "requires": ["multitasker"]
     },
 
 
     "engineerPower": {
         "name": "Engineer Power",
-        "description": "Automatically sell +1 of each resource based on their cooldown.",
+        "description": "Automatically sell +2 of each resource based on their cooldown.",
         "icon": "market",
         "cost": 8,
         "skills": [
-            { "type": "autoSell", "value": 1 }
+            { "type": "autoSell", "value": 2 }
         ],
         "requires": ["fasterLearner"]
     },
@@ -187,7 +199,7 @@
         "name": "Wise",
         "description": "Increase resources collected by 1x & XP multiplier by 2x.",
         "icon": "beard",
-        "cost": 12,
+        "cost": 10,
         "skills": [
             { "type": "resourceBonus", "value": 1 },
             { "type": "xpBonus", "value": 2 }
@@ -208,7 +220,7 @@
         "name": "Bulk Processing",
         "description": "Sell +1 resource per click to the Collector.",
         "icon": "credits",
-        "cost": 3,
+        "cost": 2,
         "skills": [
             { "type": "sellAmountBonus", "value": 1 }
         ],
@@ -220,7 +232,7 @@
         "name": "Bulk Processing+",
         "description": "Sell +2 resource per click to the Collector.",
         "icon": "credits",
-        "cost": 5,
+        "cost": 4,
         "skills": [
             { "type": "sellAmountBonus", "value": 2 }
         ],
@@ -232,11 +244,23 @@
         "name": "Bulk Processing++",
         "description": "Sell +3 resource per click to the Collector.",
         "icon": "credits",
-        "cost": 10,
+        "cost": 8,
         "skills": [
             { "type": "sellAmountBonus", "value": 3 }
         ],
         "requires": ["bulkProcessingPlus"]
+    },
+
+
+    "bulkProcessingPlusPlusPlus": {
+        "name": "Bulk Processing+++",
+        "description": "Sell +4 resource per click to the Collector.",
+        "icon": "credits",
+        "cost": 12,
+        "skills": [
+            { "type": "sellAmountBonus", "value": 4 }
+        ],
+        "requires": ["bulkProcessingPlusPlus"]
     },
 
 
@@ -316,11 +340,11 @@
 
     "organized": {
         "name": "Organized",
-        "description": "Reduce all resource cooldowns by 10%.",
+        "description": "Reduce all resource cooldowns by 5%.",
         "icon": "timer",
-        "cost": 10,
+        "cost": 7,
         "skills": [
-            { "type": "cooldownReduction", "value": 0.1 }
+            { "type": "cooldownReduction", "value": 0.05 }
         ],
         "requires": ["biggerPockets"]
     }
