@@ -172,11 +172,11 @@
 
     "militaryTraining": {
         "name": "Military Training",
-        "description": "Increase damage by 2 & XP multiplier by 1x.",
+        "description": "Increase damage by 5 & XP multiplier by 1x.",
         "icon": "military helmet",
         "cost": 9,
         "skills": [
-            { "type": "damageBonus", "value": 2 },
+            { "type": "damageBonus", "value": 5 },
             { "type": "xpBonus", "value": 1 }
         ],
         "requires": ["multitasker"]
