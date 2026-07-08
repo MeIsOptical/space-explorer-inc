@@ -1,0 +1,10 @@
+{
+    "name": "Padded Pants",
+    "description": "Insulated for higher confort underground.",
+    "tier": 5,
+    "slot": "legs",
+    "resourceCategory": "mining",
+    "damageBonus": 4,
+    "resourceBonus": 6,
+    "xpBonus": 2
+}
