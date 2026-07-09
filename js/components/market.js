@@ -37,6 +37,7 @@ export class Market {
                 if (pPlayer.startResearch(pItemId, this.id, listingData.duration * 60)) {
                     // show success message
                     showFloatingMessage("RESEARCH STARTED!", "#52b752");
+                    playSound(SOUND_IDS.startResearch);
                 }
                 else {
                     showFloatingMessage("LAB FULL!", "#ff4848");
@@ -59,12 +60,12 @@ export class Market {
 
                 // show success message
                 showFloatingMessage("PURCHASED!", "#52b752");
+                playSound(SOUND_IDS.buyGear);
             }
 
 
 
             if (priceDue > 0) pPlayer.credits.addCents(-priceCents);
-            playSound(SOUND_IDS.buyGear);
             return true;
             
 

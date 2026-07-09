@@ -29,6 +29,9 @@
         "levelup": {
             "format": "wav"
         },
+        "bubbles": {
+            "format": "wav"
+        },
         "questComplete": {
             "format": "wav"
         }

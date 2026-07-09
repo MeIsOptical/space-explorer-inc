@@ -25,7 +25,9 @@ export const SOUND_IDS = {
 
     selectPlanet: "ui/defaultClick",
     landPlanet: "ui/defaultClick",
-    unlockPlanet: "ui/credits"
+    unlockPlanet: "ui/credits",
+
+    startResearch: "ui/bubbles"
 }
 
 
