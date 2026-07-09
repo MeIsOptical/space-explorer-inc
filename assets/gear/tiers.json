@@ -2,49 +2,51 @@
     {
         "name": "Abundant",
         "color": "#ffffff",
-        "minRoll": 0,
         "maxRoll": 20
     },
     {
         "name": "Common",
         "color": "#dbceaf",
-        "minRoll": 20,
         "maxRoll": 80
     },
     {
         "name": "Uncommon",
         "color": "#47bf4c",
-        "minRoll": 80,
         "maxRoll": 240
     },
     {
         "name": "Rare",
-        "color": "#4eaeed",
-        "minRoll": 240,
+        "color": "#3bb1ff",
         "maxRoll": 600
     },
     {
         "name": "Epic",
-        "color": "#af74f2",
-        "minRoll": 600,
-        "maxRoll": 1320
+        "color": "#b766ff",
+        "maxRoll": 1400
     },
     {
         "name": "Legendary",
         "color": "#f0a84f",
-        "minRoll": 1320,
-        "maxRoll": 2640
+        "maxRoll": 2800
     },
     {
         "name": "Mythical",
         "color": "#fa5d48",
-        "minRoll": 2640,
-        "maxRoll": 4752
+        "maxRoll": 4800
     },
     {
         "name": "Exotic",
-        "color": "#7dba92",
-        "minRoll": 4752,
-        "maxRoll": 7603
+        "color": "#63d4a9",
+        "maxRoll": 7600
+    },
+    {
+        "name": "Spectral",
+        "color": "#d2fcf8",
+        "maxRoll": 13500
+    },
+    {
+        "name": "Astral",
+        "color": "#a292fc",
+        "maxRoll": 30000
     }
 ]

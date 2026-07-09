@@ -414,7 +414,7 @@ if (!RUN_CONFIG.ignoreDB) {
 
 
 // open section
-collectorSection.btnElement.click();
+planetSection.btnElement.click();
 
 
 

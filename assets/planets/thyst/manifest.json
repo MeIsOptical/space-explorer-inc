@@ -6,6 +6,6 @@
     "resources": ["frozen_fish", "diamonds"],
     "markets": [],
     "canUnlock": true,
-    "inDev": true,
-    "price": 75000
+    "inDev": false,
+    "price": 120000
 }

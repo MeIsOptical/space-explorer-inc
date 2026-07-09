@@ -5,7 +5,7 @@ import { RUN_CONFIG } from "../main.js";
 import { playSound, SOUND_IDS } from "../systems/audio.js";
 
 
-const GRID_SIZE = 50;
+const GRID_SIZE = 70;
 
 
 export class PlanetMap {
