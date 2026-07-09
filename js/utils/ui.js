@@ -135,10 +135,13 @@ export function showFloatingMessageAt(pText, pColor, pX, pY, pDurationMs = 4000,
 
 
 
+
+
 export function updateXpBarUI(pPlayer) {
 
     const bar = document.getElementById("xpBar");
     const levelText = document.getElementById("playerLevelText");
+    const xpText = document.getElementById("playerXpText");
     const skillTreeBtn = document.getElementById("openSkillsBtn");
 
     if (bar && levelText && skillTreeBtn) {
@@ -150,7 +153,8 @@ export function updateXpBarUI(pPlayer) {
         const fillPercentage = (currentXp / maxXp) * 100;
         
         bar.style.width = `${fillPercentage}%`;
-        levelText.innerHTML = `Level ${pPlayer.level} <span id="playerXpText">(${formatBigNumber(currentXp)}/${formatBigNumber(maxXp)})</span>`;
+        levelText.innerText = `Level ${pPlayer.level}`;
+        xpText.innerText = `(${formatBigNumber(currentXp)}/${formatBigNumber(maxXp)})`;
 
 
         // check for affordable skills

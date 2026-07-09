@@ -101,23 +101,35 @@ export class MarketManager {
             const priceTag = document.createElement("div");
             priceTag.className = "priceTag";
 
+            let gearOverlay = "";
+
             // prepare display
             if (pMarket.type === "research") {
                 const activeResearch = pPlayer.activeResearch.find(r => r.itemId === itemId && r.marketId === pMarket.id);
 
                 if (activeResearch){
-                    priceTag.innerHTML = `<span></span><img src="assets/ui/icons/timer.png">`;
-                    const timeSpan = priceTag.querySelector("span");
+                    priceTag.innerHTML = ``;
+
+                    // add timer icon overlay
+                    gearOverlay = `<img class="gearOverlay" src="assets/ui/icons/timer.png">`;
+                    const completionOverlaySrc = "assets/ui/icons/checkmark.png";
 
                     activeTimers.push(() => {
                         const timeLeftMs = activeResearch.finishTime - Date.now();
+
+                        const overlayElement = itemDiv.querySelector(".gearOverlay");
+
                         if (timeLeftMs <= 0) {
-                            priceTag.innerHTML = "READY";
-                            priceTag.style.backgroundColor = "var(--c-research-back)"; 
-                            priceTag.style.borderColor = "var(--c-research-border)"; 
-                        } else {
-                            timeSpan.innerText = formatSeconds(timeLeftMs / 1000);
+
+                            // switch overlay
+                            if (overlayElement && !overlayElement.src.endsWith(completionOverlaySrc)) {
+                                overlayElement.src = completionOverlaySrc;
+                            }
+
                         }
+                        
+                        priceTag.innerText = formatSeconds(timeLeftMs / 1000);
+                        
                     });
                 }  
                 else {
@@ -133,6 +145,7 @@ export class MarketManager {
                 <div class="gearSlotBg" style="background-color: ${itemData.tier.color}"></div>
                 <div class="gearSlotFrame"></div>
                 <img class="gearSlotImg" src="assets/gear/${itemId}/default.png">
+                ${gearOverlay}
             `;
             itemDiv.appendChild(priceTag);
 
@@ -268,7 +281,7 @@ export class MarketManager {
                 
                 actionBtn.innerHTML = `Order: ${formatBigNumber(pPrice)} <img src="assets/ui/icons/credits.png">`;
 
-                if (pPlayer.credits.currency >= priceCents) actionBtn.style.opacity = 1;
+                if (pPlayer.credits.currency >= priceCents && pPlayer.activeResearch.length < pPlayer.researchCapacity) actionBtn.style.opacity = 1;
                 else actionBtn.style.opacity = 0.4;
 
                 actionBtn.onclick = () => {

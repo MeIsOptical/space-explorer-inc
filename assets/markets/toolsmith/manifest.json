@@ -3,7 +3,7 @@
     "icon": "pickaxe",
     "type": "default",
     "offers": {
-        "industrial_drill": 48000,
-        "cluster_pickaxe": 300000
+        "industrial_drill": 50000,
+        "cluster_pickaxe": 400000
     }
 }

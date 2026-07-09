@@ -41,7 +41,7 @@ body {
     background-color: var(--c-back-section-div);
     border-bottom: 6px solid var(--c-border-section-div);
     box-sizing: border-box;
-    padding: calc(env(safe-area-inset-top) + 15px) 15px 15px 15px;
+    padding: calc(env(safe-area-inset-top) + 12px) 12px 12px 12px;
     z-index: 99;
 }
 
@@ -54,7 +54,7 @@ body {
     align-items: flex-start;
     flex-direction: row;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 #headerRight {
     align-items: flex-end;
@@ -881,6 +881,16 @@ body {
     height: 10px;
 }
 
+.gearOverlay {
+    position: absolute;
+    top: -5%; right: -5%;
+    width: 30%;
+    z-index: 5;
+    pointer-events: none;
+    filter: drop-shadow(0px 0px 4px #000000)
+            drop-shadow(0px 0px 4px #000000);
+}
+
 /* #endregion */
 
 
@@ -1042,8 +1052,8 @@ body {
 
 /* ACTION BUTTONS */
 #gearPopupActionBtn, #marketItemPopupActionBtn {
-    padding: 15px;
-    font-size: 1rem;
+    padding: 12px;
+    font-size: 0.8rem;
     width: 100%;
 }
 
@@ -1093,19 +1103,20 @@ body {
 
 
 #playerLevelText {
-    margin: 0 0 5px 0;
-    font-size: 0.54rem;
+    margin: 0;
+    font-size: 0.6rem;
     font-weight: bold;
 }
 
 #playerXpText {
-    font-size: 0.5rem;
+    margin: 3px 0;
+    font-size: 0.52rem;
     font-weight: normal;
 }
 
 
 #openSkillsBtn {
-    height: 110%;
+    height: 100%;
 }
 
 /* #endregion */

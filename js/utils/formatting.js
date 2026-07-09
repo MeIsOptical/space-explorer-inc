@@ -35,7 +35,7 @@ export function formatBigNumber(pValue) {
 
 
 export function formatSeconds(pValue) {
-    if (pValue === 0) return "0s";
+    if (pValue <= 0) pValue = 0;
 
     let remains = pValue;
     let formattedTime = "";

@@ -4,6 +4,6 @@
     "type": "research",
     "color": "var(--c-research-main)",
     "offers": {
-        "guided_boomerang": { "price": 1200000, "duration": 30 }
+        "guided_boomerang": { "price": 1500000, "duration": 30 }
     }
 }
