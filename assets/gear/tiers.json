@@ -35,8 +35,13 @@
         "maxRoll": 4800
     },
     {
+        "name": "Research",
+        "color": "var(--c-research-main)",
+        "maxRoll": -1
+    },
+    {
         "name": "Exotic",
-        "color": "#63d4a9",
+        "color": "#cfff4a",
         "maxRoll": 7600
     },
     {

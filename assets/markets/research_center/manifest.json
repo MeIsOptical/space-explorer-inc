@@ -4,5 +4,6 @@
     "type": "research",
     "color": "var(--c-research-main)",
     "offers": {
+        "dull_knife": { "price": 10, "duration": 120 }
     }
 }

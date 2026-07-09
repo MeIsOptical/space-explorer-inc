@@ -28,7 +28,8 @@
     --c-skill-locked: #313d63;
 
     /* RESEARCH */
-    --c-research-main: #4fff9e;
-    --c-research-back: #2da060;
-    --c-research-border: #4fff9e;
+    --c-research-main: #4fffb0;
+    --c-research-back: #2da07d;
+    --c-research-border: #4fffb0;
+    --c-research-tier: #a1ffd5;
 }
