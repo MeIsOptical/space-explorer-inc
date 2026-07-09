@@ -1,0 +1,11 @@
+{
+    "name": "Rain Boots",
+    "description": "Will keep you dry whatever the weather may be.",
+    "tier": 4,
+    "slot": "feet",
+    "resourceCategory": "fishing",
+    "damageBonus": 0,
+    "resourceBonus": 6,
+    "xpBonus": 2,
+    "ricochetChance": 0
+}

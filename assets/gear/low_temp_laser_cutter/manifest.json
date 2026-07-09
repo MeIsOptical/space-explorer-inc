@@ -1,0 +1,11 @@
+{
+    "name": "Low-Temp Laser Cutter",
+    "description": "Simple laser cutting technology, handy for any kind of resource collection.",
+    "tier": 5,
+    "slot": "tool",
+    "resourceCategory": "any",
+    "damageBonus": 70,
+    "resourceBonus": 0,
+    "xpBonus": 9,
+    "ricochetChance": 0
+}

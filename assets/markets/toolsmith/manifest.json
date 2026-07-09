@@ -3,7 +3,8 @@
     "icon": "pickaxe",
     "type": "default",
     "offers": {
-        "industrial_drill": 50000,
-        "cluster_pickaxe": 400000
+        "low_temp_laser_cutter": 12000,
+        "industrial_drill": 80000,
+        "cluster_pickaxe": 600000
     }
 }
