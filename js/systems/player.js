@@ -39,6 +39,10 @@ export class Player {
         this.lastDamagedResId = null;
         this.autoDamageTimer = 1.0;
         this.initAutoDamage();
+        
+        // research
+        this.researchCapacity = 1;
+        this.activeResearch = [];
     }
 
 
@@ -259,6 +263,33 @@ export class Player {
                 }
             }
         }, 100);
+    }
+
+    //#endregion
+
+
+
+
+
+
+
+
+
+
+
+
+    //#region RESEARCH
+
+
+    startResearch(pItemId, pMarketId, pDurationSeconds) {
+        if (this.activeResearch.length >= this.researchCapacity) return false;
+        
+        this.activeResearch.push({
+            itemId: pItemId,
+            marketId: pMarketId,
+            finishTime: Date.now() + (pDurationSeconds * 1000)
+        });
+        return true;
     }
 
     //#endregion

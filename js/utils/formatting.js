@@ -29,3 +29,30 @@ export function formatBigNumber(pValue) {
 
     return bigIntValue.toString();
 }
+
+
+
+
+
+export function formatSeconds(pValue) {
+    if (pValue === 0) return "0s";
+
+    let remains = pValue;
+    let formattedTime = "";
+
+    // hours
+    const hours = Math.floor(remains / 3600);
+    remains = remains % 3600;
+    if (hours > 0) formattedTime += `${String(hours).padStart(2, '0')}:`;
+
+    // minutes
+    const minutes = Math.floor(remains / 60);
+    remains = remains % 60;
+    formattedTime += `${String(minutes).padStart(2, '0')}:`;
+
+    // seconds
+    const seconds = Math.floor(remains);
+    if (seconds > 0 || formattedTime !== "") formattedTime += String(seconds).padStart(2, '0');
+
+    return formattedTime;
+}

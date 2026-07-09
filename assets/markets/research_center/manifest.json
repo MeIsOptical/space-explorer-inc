@@ -1,0 +1,8 @@
+{
+    "name": "Research Center",
+    "icon": "research",
+    "type": "research",
+    "color": "var(--c-research-main)",
+    "offers": {
+    }
+}

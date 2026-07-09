@@ -1,6 +1,7 @@
 {
     "name": "Natural Garments",
     "icon": "plant",
+    "type": "default",
     "offers": {
         "dull_knife": 50,
         "dusty_goggles": 65,

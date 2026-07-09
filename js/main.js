@@ -301,6 +301,9 @@ if (!RUN_CONFIG.ignoreDB) {
         if (lp.xp !== undefined) player.xp = lp.xp;
         if (lp.levelPoints !== undefined) player.levelPts = lp.levelPoints;
 
+        // research
+        if (lp.activeResearch !== undefined) player.activeResearch = lp.activeResearch;
+
         // currencies
         if (lp.credits !== undefined) {
             player.credits.setCents(lp.credits);
@@ -379,6 +382,9 @@ if (!RUN_CONFIG.ignoreDB) {
                 level: player.level,
                 xp: player.xp,
                 levelPoints: player.levelPts,
+
+                // research
+                activeResearch: player.activeResearch,
                 
                 // currencies
                 credits: player.credits.currency,

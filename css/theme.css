@@ -26,4 +26,9 @@
     --c-skill-unlockable: #a4aece;
     --c-skill-locked-back: #23262a;
     --c-skill-locked: #313d63;
+
+    /* RESEARCH */
+    --c-research-main: #4fff9e;
+    --c-research-back: #2da060;
+    --c-research-border: #4fff9e;
 }

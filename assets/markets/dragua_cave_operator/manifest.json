@@ -1,6 +1,7 @@
 {
     "name": "Cave Operator",
     "icon": "pickaxe",
+    "type": "default",
     "offers": {
         "hard_hat": 1200,
         "metal_plated_boots": 1200,
