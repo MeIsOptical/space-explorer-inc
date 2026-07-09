@@ -222,11 +222,28 @@ export class Planet {
 
         // ricochet chance
         if (!pIsRicochet && playerStats.ricochetChance > 0) {
-            if (Math.random() < playerStats.ricochetChance) {
-                const otherNodes = this.resourceNodes.filter(n => n.id !== pResId && Date.now() >= n.cooldownUntil);
-                
-                if (otherNodes.length > 0) {
-                    const randomNode = otherNodes[Math.floor(Math.random() * otherNodes.length)];
+            let chance = playerStats.ricochetChance;
+            let ricochetCount = Math.floor(chance);
+
+            // check fractional chance for extra bounces
+            if (Math.random() < (chance % 1)) {
+                ricochetCount++;
+            }
+
+            if (ricochetCount > 0) {
+                // get all valid unique targets
+                let availableNodes = this.resourceNodes.filter(n => n.id !== pResId && Date.now() >= n.cooldownUntil);
+
+                for (let i = 0; i < ricochetCount; i++) {
+                    if (availableNodes.length === 0) break; // stop if out of unique nodes
+
+                    // select random resource from the pool
+                    const randomIndex = Math.floor(Math.random() * availableNodes.length);
+                    const randomNode = availableNodes[randomIndex];
+
+                    // remove the selected resource from the pool so it cannot be hit twice
+                    availableNodes.splice(randomIndex, 1);
+
                     this.processHit(randomNode.id, pTriggers, false, true);
                 }
             }

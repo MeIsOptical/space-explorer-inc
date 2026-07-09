@@ -36,7 +36,7 @@
     },
     {
         "name": "Research",
-        "color": "var(--c-research-main)",
+        "color": "var(--c-research-tier)",
         "maxRoll": -1
     },
     {

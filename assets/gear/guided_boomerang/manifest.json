@@ -1,0 +1,11 @@
+{
+    "name": "Guided Boomerang",
+    "description": "An advanced boomerang that excels at multi-targeting.",
+    "tier": 8,
+    "slot": "tool",
+    "resourceCategory": "any",
+    "damageBonus": 100,
+    "resourceBonus": 12,
+    "xpBonus": 4,
+    "ricochetChance": 1.5
+}
