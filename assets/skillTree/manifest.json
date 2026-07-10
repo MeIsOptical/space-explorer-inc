@@ -23,6 +23,7 @@
     },
 
 
+
     "wastelessCollecting": {
         "name": "Wasteless Collecting",
         "description": "Increase resources collected by 1x.",
@@ -120,9 +121,23 @@
         "name": "Muscle Memory++",
         "description": "Automatically damage the last hit resource every 1 second.",
         "icon": "pickaxe",
-        "cost": 14,
+        "cost": 15,
         "skills": [
             { "type": "autoDamage", "value": 1 }
+        ],
+        "requires": ["muscleMemoryPlus"]
+    },
+
+
+
+    "flawlessTechnique": {
+        "name": "Flawless Technique",
+        "description": "Increase damage by 4 & resources collected by 2x.",
+        "icon": "medal",
+        "cost": 20,
+        "skills": [
+            { "type": "damageBonus", "value": 4 },
+            { "type": "resourceBonus", "value": 2 }
         ],
         "requires": ["muscleMemoryPlus"]
     },
@@ -172,11 +187,11 @@
 
     "militaryTraining": {
         "name": "Military Training",
-        "description": "Increase damage by 5 & XP multiplier by 1x.",
+        "description": "Increase damage by 8 & XP multiplier by 1x.",
         "icon": "military helmet",
         "cost": 9,
         "skills": [
-            { "type": "damageBonus", "value": 5 },
+            { "type": "damageBonus", "value": 8 },
             { "type": "xpBonus", "value": 1 }
         ],
         "requires": ["multitasker"]
@@ -209,7 +224,6 @@
 
 
     
-
 
 
 
