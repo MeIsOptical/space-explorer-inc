@@ -4,7 +4,7 @@
     "tier": 7,
     "slot": "tool",
     "resourceCategory": "mining",
-    "damageBonus": 120,
+    "damageBonus": 160,
     "resourceBonus": 11,
     "xpBonus": 7,
     "ricochetChance": 0.15

@@ -87,7 +87,7 @@
         "hits": 35,
         "cooldown": 15,
         "worth": 45,
-        "xp": 250
+        "xp": 255
     },
     "diamonds": {
         "name": "Diamonds",
@@ -95,16 +95,16 @@
         "category": "mining",
         "hits": 1400,
         "cooldown": 5,
-        "worth": 60,
+        "worth": 65,
         "xp": 40
     },
     "lava_fish": {
         "name": "Lava Fish",
         "color": "#ff5921",
         "category": "fishing",
-        "hits": 50,
-        "cooldown": 14,
-        "worth": 120,
+        "hits": 60,
+        "cooldown": 13,
+        "worth": 140,
         "xp": 450
     },
     "magma_cream": {
@@ -113,8 +113,8 @@
         "category": "hunting",
         "hits": 600,
         "cooldown": 3,
-        "worth": 200,
-        "xp": 160
+        "worth": 210,
+        "xp": 165
     },
     "obsidian": {
         "name": "Obsidian",
@@ -122,7 +122,7 @@
         "category": "mining",
         "hits": 5000,
         "cooldown": 6,
-        "worth": 240,
-        "xp": 85
+        "worth": 250,
+        "xp": 90
     }
 }
