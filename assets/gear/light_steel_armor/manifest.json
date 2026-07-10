@@ -1,0 +1,11 @@
+{
+    "name": "Light Steel Armor",
+    "description": "",
+    "tier": 5,
+    "slot": "chest",
+    "resourceCategory": "any",
+    "damageBonus": 16,
+    "resourceBonus": 4,
+    "xpBonus": 4,
+    "ricochetChance": 0.06
+}

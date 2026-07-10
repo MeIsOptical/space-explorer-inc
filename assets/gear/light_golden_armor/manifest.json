@@ -1,0 +1,11 @@
+{
+    "name": "Light Golden Armor",
+    "description": "",
+    "tier": 6,
+    "slot": "chest",
+    "resourceCategory": "any",
+    "damageBonus": 32,
+    "resourceBonus": 5,
+    "xpBonus": 5,
+    "ricochetChance": 0.08
+}

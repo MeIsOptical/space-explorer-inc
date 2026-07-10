@@ -43,6 +43,9 @@
     
     "low_temp_laser_cutter",
 
+    "light_steel_armor",
+    "light_golden_armor",
+
     "guided_boomerang",
     "plasma_pickaxe"
 ]

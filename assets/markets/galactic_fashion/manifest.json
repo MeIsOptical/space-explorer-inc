@@ -1,0 +1,8 @@
+{
+    "name": "Galactic Fashion",
+    "icon": "shirt",
+    "type": "default",
+    "offers": {
+        "light_steel_armor": 10000
+    }
+}

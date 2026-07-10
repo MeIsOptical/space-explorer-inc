@@ -4,7 +4,7 @@
     "y": 5,
     "glow": 4,
     "resources": [],
-    "markets": ["toolsmith", "research_center"],
+    "markets": ["toolsmith", "galactic_fashion", "research_center"],
     "canUnlock": true,
     "inDev": true,
     "price": 20000
