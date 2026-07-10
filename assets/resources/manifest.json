@@ -42,7 +42,7 @@
         "hits": 30,
         "cooldown": 4,
         "worth": 3.5,
-        "xp": 20
+        "xp": 21
     },
     "fish": {
         "name": "Fish",
@@ -51,7 +51,7 @@
         "hits": 10,
         "cooldown": 16,
         "worth": 12,
-        "xp": 60
+        "xp": 65
     },
     "iron": {
         "name": "Iron",
@@ -87,7 +87,7 @@
         "hits": 35,
         "cooldown": 15,
         "worth": 45,
-        "xp": 230
+        "xp": 250
     },
     "diamonds": {
         "name": "Diamonds",
@@ -98,32 +98,23 @@
         "worth": 60,
         "xp": 40
     },
-    "basalt": {
-        "name": "Basalt",
-        "color": "#7d5a4c",
-        "category": "mining",
-        "hits": 1800,
-        "cooldown": 2,
-        "worth": 75,
-        "xp": 60
-    },
     "lava_fish": {
         "name": "Lava Fish",
-        "color": "#ff6f1c",
+        "color": "#ff5921",
         "category": "fishing",
         "hits": 50,
         "cooldown": 14,
-        "worth": 90,
-        "xp": 400
+        "worth": 120,
+        "xp": 450
     },
     "magma_cream": {
         "name": "Magma Cream",
-        "color": "#ff5921",
+        "color": "#ffba0a",
         "category": "hunting",
-        "hits": 500,
+        "hits": 600,
         "cooldown": 3,
         "worth": 200,
-        "xp": 130
+        "xp": 160
     },
     "obsidian": {
         "name": "Obsidian",
@@ -132,6 +123,6 @@
         "hits": 5000,
         "cooldown": 6,
         "worth": 240,
-        "xp": 90
+        "xp": 85
     }
 }

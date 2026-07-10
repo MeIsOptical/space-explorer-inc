@@ -1,0 +1,11 @@
+{
+    "name": "Plasma Pickaxe",
+    "description": "A pickaxe that literally melts resources.",
+    "tier": 8,
+    "slot": "tool",
+    "resourceCategory": "mining",
+    "damageBonus": 360,
+    "resourceBonus": 7,
+    "xpBonus": 16,
+    "ricochetChance": 0
+}

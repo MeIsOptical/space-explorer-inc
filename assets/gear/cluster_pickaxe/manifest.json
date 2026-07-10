@@ -5,7 +5,7 @@
     "slot": "tool",
     "resourceCategory": "mining",
     "damageBonus": 120,
-    "resourceBonus": 10,
+    "resourceBonus": 11,
     "xpBonus": 7,
-    "ricochetChance": 0.12
+    "ricochetChance": 0.15
 }

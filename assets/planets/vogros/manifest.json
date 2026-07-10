@@ -3,9 +3,9 @@
     "x": 1,
     "y": -4,
     "glow": 7,
-    "resources": ["basalt", "lava_fish", "magma_cream", "obsidian"],
+    "resources": ["lava_fish", "magma_cream", "obsidian"],
     "markets": [],
     "canUnlock": true,
-    "inDev": true,
+    "inDev": false,
     "price": 3000000
 }
