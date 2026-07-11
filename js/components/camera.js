@@ -72,7 +72,7 @@ export class Camera {
             const delta = e.deltaY > 0 ? -zoomSensitivity : zoomSensitivity;
             this.targetScale += delta;
             
-            this.targetScale = Math.max(0.2, Math.min(this.targetScale, 3)); 
+            this.targetScale = Math.max(0.15, Math.min(this.targetScale, 3)); 
             
             // calculate scale ratio to adjust position
             const scaleRatio = this.targetScale / oldScale;

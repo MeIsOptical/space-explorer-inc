@@ -122,44 +122,180 @@ export class SkillTree {
         nodesContainer.innerHTML = "";
         linesContainer.innerHTML = "";
 
-        // save to class for live updater
         this.nodeCoords = {}; 
-        const radiusStep = 90; 
+        const radiusStep = 120; 
 
         const nodeIds = Object.keys(this.manifest);
         const roots = nodeIds.filter(id => !this.manifest[id].requires || this.manifest[id].requires.length === 0);
 
-        // recursive placement
-        const assignCoords = (pNodeId, pDepth, pAngleStart, pAngleEnd) => {
+        // pass 1: calculate branches weights
+        const nodeWeights = {};
+        const calculateWeight = (pNodeId) => {
+            if (nodeWeights[pNodeId]) return nodeWeights[pNodeId];
+
+            const children = nodeIds.filter(id => 
+                this.manifest[id].requires && 
+                this.manifest[id].requires[0] === pNodeId
+            );
+
+            if (children.length === 0) {
+                nodeWeights[pNodeId] = 1;
+                return 1;
+            }
+
+            let weight = 0;
+            children.forEach(childId => {
+                weight += calculateWeight(childId);
+            });
+
+            nodeWeights[pNodeId] = weight;
+            return weight;
+        };
+
+        roots.forEach(rootId => calculateWeight(rootId));
+
+        // pass 2: local vector placement
+        const assignCoords = (pNodeId, pDepth, pX, pY, pAngle, pSpread) => {
+            // place relative to its parent's position and trajectory
             if (pDepth === 0) {
                 this.nodeCoords[pNodeId] = { x: 0, y: 0 };
             } else {
-                const angle = (pAngleStart + pAngleEnd) / 2;
-                const radius = pDepth * radiusStep;
                 this.nodeCoords[pNodeId] = {
-                    x: radius * Math.cos(angle),
-                    y: radius * Math.sin(angle)
+                    x: pX + radiusStep * Math.cos(pAngle),
+                    y: pY + radiusStep * Math.sin(pAngle)
                 };
             }
 
-            const children = nodeIds.filter(id => this.manifest[id].requires && this.manifest[id].requires.includes(pNodeId));
+            const children = nodeIds.filter(id => 
+                this.manifest[id].requires && 
+                this.manifest[id].requires[0] === pNodeId
+            );
 
             if (children.length > 0) {
-                const angleRange = pAngleEnd - pAngleStart;
-                const childRange = pDepth === 0 ? Math.PI * 2 : angleRange * 0.93; 
-                const start = pDepth === 0 ? 0 : ((pAngleStart + pAngleEnd) / 2) - (childRange / 2);
-                const step = childRange / children.length;
+                const totalWeight = children.reduce((sum, id) => sum + nodeWeights[id], 0);
+                
+                let currentStart = pAngle - (pSpread / 2);
 
-                children.forEach((childId, i) => {
-                    assignCoords(childId, pDepth + 1, start + (i * step), start + ((i + 1) * step));
+                children.forEach(childId => {
+                    const slice = (nodeWeights[childId] / totalWeight) * pSpread;
+                    const childAngle = currentStart + slice / 2;
+                    
+                    const nextSpread = children.length === 1 ? slice : slice * 1.42;
+            
+                    assignCoords(
+                        childId, 
+                        pDepth + 1, 
+                        this.nodeCoords[pNodeId].x, 
+                        this.nodeCoords[pNodeId].y, 
+                        childAngle, 
+                        nextSpread
+                    );
+                    currentStart += slice;
                 });
             }
         };
 
         roots.forEach((rootId, i) => {
-            const step = (Math.PI * 2) / roots.length;
-            assignCoords(rootId, 0, i * step, (i + 1) * step);
+            const rootSpread = (Math.PI * 2) / roots.length;
+            const rootAngle = (i * rootSpread) + (rootSpread / 2);
+            assignCoords(rootId, 0, 0, 0, rootAngle, rootSpread);
         });
+
+
+        // pass 3: realign convergent nodes
+        nodeIds.forEach(id => {
+            const node = this.manifest[id];
+            
+            // only apply to nodes with multiple requirements
+            if (node.requires && node.requires.length > 1) {
+                const parents = [];
+
+                node.requires.forEach(reqId => {
+                    if (this.nodeCoords[reqId]) {
+                        parents.push(this.nodeCoords[reqId]);
+                    }
+                });
+
+                if (parents.length === 2) {
+                    const p1 = parents[0];
+                    const p2 = parents[1];
+                    
+                    const oldX = this.nodeCoords[id].x;
+                    const oldY = this.nodeCoords[id].y;
+
+                    // find exact midpoint
+                    const midX = (p1.x + p2.x) / 2;
+                    const midY = (p1.y + p2.y) / 2;
+
+                    const dx = p2.x - p1.x;
+                    const dy = p2.y - p1.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist === 0) return; 
+
+                    let perpX = -dy / dist;
+                    let perpY = dx / dist;
+
+                    // ensure the vector points forwards
+                    const outX = oldX - midX;
+                    const outY = oldY - midY;
+                    const dotProduct = (perpX * outX) + (perpY * outY);
+
+                    if (dotProduct < 0) {
+                        perpX = -perpX;
+                        perpY = -perpY;
+                    }
+
+                    const halfDist = dist / 2;
+                    let height = radiusStep; 
+                    
+                    if (halfDist > radiusStep * 0.5) {
+                        height = radiusStep;
+                    } else {
+                        height = Math.sqrt((radiusStep * radiusStep) - (halfDist * halfDist));
+                    }
+
+                    // assign coordinates
+                    const newX = midX + (perpX * height);
+                    const newY = midY + (perpY * height);
+
+                    // update angle
+                    const outAngle = Math.atan2(perpY, perpX);
+                    const firstParent = this.nodeCoords[node.requires[0]];
+                    const oldAngle = Math.atan2(oldY - firstParent.y, oldX - firstParent.x);
+                    const rotation = outAngle - oldAngle;
+
+                    this.nodeCoords[id] = { x: newX, y: newY };
+                    
+                    const rotateAndShift = (targetId) => {
+                        const children = nodeIds.filter(childId => 
+                            this.manifest[childId].requires && 
+                            this.manifest[childId].requires[0] === targetId
+                        );
+                        
+                        children.forEach(childId => {
+                            const cx = this.nodeCoords[childId].x;
+                            const cy = this.nodeCoords[childId].y;
+
+                            const vx = cx - oldX;
+                            const vy = cy - oldY;
+
+                            const rx = (vx * Math.cos(rotation)) - (vy * Math.sin(rotation));
+                            const ry = (vx * Math.sin(rotation)) + (vy * Math.cos(rotation));
+
+                            this.nodeCoords[childId].x = newX + rx;
+                            this.nodeCoords[childId].y = newY + ry;
+
+                            rotateAndShift(childId);
+                        });
+                    };
+                    
+                    rotateAndShift(id);
+                } 
+            }
+        });
+
+
 
         // generate the nodes
         nodeIds.forEach(id => {

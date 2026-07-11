@@ -47,6 +47,48 @@
     },
 
 
+
+
+    "ricochets": {
+        "name": "Ricochets",
+        "description": "Increase ricochet chance by 5%.",
+        "icon": "ricochet",
+        "cost": 6,
+        "skills": [
+            { "type": "ricochetChance", "value": 0.05 }
+        ],
+        "requires": ["wastelessCollectingPlus"]
+    },
+
+
+    "ricochetsPlus": {
+        "name": "Ricochets+",
+        "description": "Increase ricochet chance by 5%.",
+        "icon": "ricochet",
+        "cost": 8,
+        "skills": [
+            { "type": "ricochetChance", "value": 0.05 }
+        ],
+        "requires": ["ricochets"]
+    },
+
+
+
+    "ricochetsPlusPlus": {
+        "name": "Ricochets++",
+        "description": "Increase ricochet chance by 5%.",
+        "icon": "ricochet",
+        "cost": 12,
+        "skills": [
+            { "type": "ricochetChance", "value": 0.05 }
+        ],
+        "requires": ["ricochetsPlus"]
+    },
+
+
+
+
+
     "timeEfficient": {
         "name": "Time Efficient",
         "description": "Reduce all resource cooldowns by 5%.",
@@ -60,38 +102,26 @@
 
     "timeEfficientPlus": {
         "name": "Time Efficient+",
-        "description": "Reduce all resource cooldowns by 10%.",
+        "description": "Reduce all resource cooldowns by 5%.",
         "icon": "timer",
         "cost": 10,
         "skills": [
-            { "type": "cooldownReduction", "value": 0.1 }
+            { "type": "cooldownReduction", "value": 0.05 }
         ],
         "requires": ["timeEfficient"]
     },
 
-
-    "ricochets": {
-        "name": "Ricochets",
-        "description": "Hitting a resource has a 5% chance of hitting a second one.",
-        "icon": "ricochet",
-        "cost": 6,
+    "timeEfficientPlusPlus": {
+        "name": "Time Efficient++",
+        "description": "Reduce all resource cooldowns by 10%.",
+        "icon": "timer",
+        "cost": 15,
         "skills": [
-            { "type": "ricochetChance", "value": 0.05 }
+            { "type": "cooldownReduction", "value": 0.1 }
         ],
-        "requires": ["wastelessCollectingPlus"]
+        "requires": ["timeEfficientPlus"]
     },
 
-
-    "ricochetsPlus": {
-        "name": "Ricochets+",
-        "description": "Hitting a resource has a 5% chance of hitting a second one.",
-        "icon": "ricochet",
-        "cost": 8,
-        "skills": [
-            { "type": "ricochetChance", "value": 0.05 }
-        ],
-        "requires": ["ricochets"]
-    },
 
 
 
@@ -139,7 +169,7 @@
             { "type": "damageBonus", "value": 4 },
             { "type": "resourceBonus", "value": 2 }
         ],
-        "requires": ["muscleMemoryPlus"]
+        "requires": ["muscleMemoryPlusPlus"]
     },
 
     
@@ -223,6 +253,22 @@
     },
 
 
+
+
+
+    "spaceNinja": {
+        "name": "Space Ninja",
+        "description": "Increase damage by 4 & ricochet chance by 10%.",
+        "icon": "medal",
+        "cost": 16,
+        "skills": [
+            { "type": "damageBonus", "value": 4 },
+            { "type": "ricochetChance", "value": 0.1 }
+        ],
+        "requires": ["wise", "militaryTraining"]
+    },
+
+
     
 
 
@@ -300,6 +346,19 @@
         "requires": ["tradeKnowledge"]
     },
 
+
+    "resourceAnalytics": {
+        "name": "Resource Analytics",
+        "description": "Increase XP multiplier by 2x.",
+        "icon": "book plus",
+        "cost": 16,
+        "skills": [
+            { "type": "xpBonus", "value": 2 }
+        ],
+        "requires": ["improvedTradeKnowledge"]
+    },
+
+
     "advancedTradeKnowledge": {
         "name": "Advanced Trade Knowledge",
         "description": "Automatically sell +3 of each resource based on their cooldown.",
@@ -309,6 +368,23 @@
             { "type": "autoSell", "value": 3 }
         ],
         "requires": ["improvedTradeKnowledge"]
+    },
+
+
+
+
+    
+
+    "spaceOddity": {
+        "name": "Space Oddity",
+        "description": "Increase resources collected by 2x & inventory capacity by 4.",
+        "icon": "medal",
+        "cost": 20,
+        "skills": [
+            { "type": "resourceBonus", "value": 2 },
+            { "type": "inventoryBonus", "value": 4 }
+        ],
+        "requires": ["advancedTradeKnowledge", "colossalPockets"]
     },
 
 
@@ -361,5 +437,31 @@
             { "type": "cooldownReduction", "value": 0.05 }
         ],
         "requires": ["biggerPockets"]
+    },
+
+
+
+    "colossalPockets": {
+        "name": "Colossal Pockets",
+        "description": "Increase inventory capacity by 2.",
+        "icon": "crate plus",
+        "cost": 12,
+        "skills": [
+            { "type": "inventoryBonus", "value": 2 }
+        ],
+        "requires": ["massivePockets"]
+    },
+
+
+
+    "veryOrganized": {
+        "name": "Very Organized",
+        "description": "Reduce all resource cooldowns by 5%.",
+        "icon": "timer",
+        "cost": 11,
+        "skills": [
+            { "type": "cooldownReduction", "value": 0.05 }
+        ],
+        "requires": ["massivePockets"]
     }
 }

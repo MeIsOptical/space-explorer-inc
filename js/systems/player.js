@@ -56,7 +56,7 @@ export class Player {
 
 
     get maxXp() {
-        return BigInt(Math.round(((2.6 * this.level) ** 1.6) + 50));
+        return BigInt(Math.round(((2.6 * this.level) ** 1.62) + 50));
     }
 
 
