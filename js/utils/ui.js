@@ -58,16 +58,31 @@ export function populateItemPopup(pPrefix, pItemId, pItemData, pPlayer) {
 
 
 
-export function setupPopupClose(pOverlay, pCloseBtn) {
-    pCloseBtn.onclick = () => {
-        pOverlay.style.display = "none";
-        playSound(SOUND_IDS.popupClose);
-    };
+export function setupPopupClose(pOverlay, pCloseBtn, pOnClose) {
+
+    if (Array.isArray(pCloseBtn)) {
+        pCloseBtn.forEach(btn => {
+            btn.onclick = () => {
+                pOverlay.style.display = "none";
+                playSound(SOUND_IDS.popupClose);
+                if (pOnClose) pOnClose();
+            };
+        });
+
+    }
+    else {
+        pCloseBtn.onclick = () => {
+            pOverlay.style.display = "none";
+            playSound(SOUND_IDS.popupClose);
+            if (pOnClose) pOnClose();
+        };
+    }
 
     pOverlay.onclick = (event) => {
         if (event.target === pOverlay) {
             pOverlay.style.display = "none";
             playSound(SOUND_IDS.popupClose);
+            if (pOnClose) pOnClose();
         }
     };
 }
@@ -190,5 +205,40 @@ export function updateXpBarUI(pPlayer) {
             skillTreeBtn.style.opacity = 0.4;
         }
     }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+export async function displayMailPopup(pData) {
+
+
+    return new Promise((resolve) => {
+        const overlay = document.getElementById("mailboxOverlay");
+        const title = document.getElementById("mailboxTitle");
+        const text = document.getElementById("mailboxText");
+        const actionBtn = document.getElementById("mailBoxBtn");
+        const closeBtn = document.getElementById("mailBoxClose");
+
+        title.innerHTML = pData.title.replace(/<c:(.*?)>(.*?)<\/c>/g, "<span style='color: var(--c-$1); text-decoration: underline;'>$2</span>");
+
+        // parse custom color tags
+        text.innerHTML = pData.text.replace(/<c:(.*?)>(.*?)<\/c>/g, "<span style='color: var(--c-$1); text-decoration: underline;'>$2</span>");
+        
+        actionBtn.innerHTML = pData.button;
+
+        setupPopupClose(overlay, [actionBtn, closeBtn], resolve);
+
+        overlay.style.display = "flex";
+    });
 
 }

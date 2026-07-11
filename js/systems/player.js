@@ -43,6 +43,9 @@ export class Player {
         // research
         this.researchCapacity = 1;
         this.activeResearch = [];
+
+        // mailbox
+        this.pastMail = [];
     }
 
 

@@ -150,6 +150,7 @@ body {
     height: 100vh;
     background-color: var(--c-back-main);
     z-index: 9999999;
+    transition: all 0s;
 }
 
 #loadingTitle, #loadingStatus, #loadingError {
@@ -951,7 +952,7 @@ body {
 /* #region POPUP STYLES */
 
 /* OVERLAYS */
-#gearPopupOverlay, #marketPopupOverlay, #marketItemPopupOverlay {
+#gearPopupOverlay, #marketPopupOverlay, #marketItemPopupOverlay, #mailboxOverlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background-color: rgba(0, 0, 0, 0.75);
@@ -959,11 +960,11 @@ body {
     align-items: center;
     justify-content: center;
 }
-#gearPopupOverlay, #marketPopupOverlay { z-index: 100; }
+#gearPopupOverlay, #marketPopupOverlay, #mailboxOverlay { z-index: 100; }
 #marketItemPopupOverlay { z-index: 110; }
 
 /* CONTAINERS */
-#gearPopup, #marketPopup, #marketItemPopup {
+#gearPopup, #marketPopup, #marketItemPopup, #mailboxDiv {
     background-color: var(--c-back-section-div);
     border: 4px solid var(--c-border-section-div);
     position: relative;
@@ -976,6 +977,10 @@ body {
     gap: 15px;
 }
 
+#mailboxDiv {
+    gap: 0;
+}
+
 /* Market popup override */
 #marketPopup {
     width: 90%;
@@ -984,7 +989,7 @@ body {
 }
 
 /* CLOSE BUTTONS */
-#gearPopupClose, #marketPopupClose, #marketItemPopupClose {
+#gearPopupClose, #marketPopupClose, #marketItemPopupClose, #mailBoxClose {
     position: absolute;
     top: 8px; right: 8px;
     background: none;
@@ -1017,6 +1022,17 @@ body {
     text-transform: capitalize;
     text-align: center;
 }
+
+#mailboxTitle {
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin: 0; padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+}
+
+
 /* Market Title override */
 #marketPopupName {
     margin: 0; padding: 0;
@@ -1050,8 +1066,15 @@ body {
     padding: 10px 0;
 }
 
+#mailboxText {
+    display: block;
+    font-size: 0.75rem;
+    margin: 20px 0; padding: 0;
+    line-height: 1.1rem;
+}
+
 /* ACTION BUTTONS */
-#gearPopupActionBtn, #marketItemPopupActionBtn {
+#gearPopupActionBtn, #marketItemPopupActionBtn, #mailBoxBtn {
     padding: 12px;
     font-size: 0.8rem;
     width: 100%;
@@ -1246,7 +1269,7 @@ body {
 
 
 
-/* #region SKILL POPUP (Bottom Attached) */
+/* #region SKILL POPUP */
 
 #skillPopup {
     position: absolute;

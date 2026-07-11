@@ -1,0 +1,30 @@
+{
+
+    "closedTesting": {
+        "title": "<c:gear-xp>Closed Testing</c>",
+        "text": "Hello testers!<br><br>Thank you for playing while the game is <c:gear-xp>still in development</c>. Please reach out if you encounter any problems!<br><br>Enjoy,<br><c:brand>Optical Labs</c>",
+        "button": "Close"
+    },
+    
+
+    "welcome1": {
+        "title": "Caretaker (Tutorial)",
+        "text": "Welcome to <c:credits>Space Explorer Inc.</c>!<br><br>If you thought you were here for fun, <c:gear-damage>you're absolutely wrong</c>.",
+        "button": "Next"
+    },
+    "welcome2": {
+        "title": "Caretaker (Tutorial)",
+        "text": "You are here to bring us profits. This is your life from now on:<br><br><c:gear-resources>Extract resources</c> from planets and <c:credits>sell them</c> in the <c:credits>Collector tab</c>.",
+        "button": "Next"
+    },
+    "welcome3": {
+        "title": "Caretaker (Tutorial)",
+        "text": "Use <c:credits>credits</c> at local markets to buy <c:research-main>better gear</c> or <c:gear-ricochet>unlock new planets</c>.<br><br>You can also unlock <c:skill>skills</c> as you gain <c:gear-xp>experience</c>, which allows you to work even more efficiently.",
+        "button": "Next"
+    },
+    "welcome4": {
+        "title": "Caretaker (Tutorial)",
+        "text": "We look forward to your profitable contributions.<br><br><c:gear-damage>Do not disappoint us...</c>",
+        "button": "Start Journey"
+    }
+}

@@ -49,7 +49,7 @@ import { Database } from "./systems/database.js";
 import { loadSounds, playSound, SOUND_IDS } from "./systems/audio.js";
 
 // utils
-import { updateXpBarUI } from "./utils/ui.js";
+import { updateXpBarUI, displayMailPopup } from "./utils/ui.js";
 import { initWakeLock } from "./utils/wakeLock.js";
 
 //#endregion
@@ -283,6 +283,7 @@ async function bootGame() {
 
 
 
+
     setLoadingStatus("Loading database...");
 
     //#region DATABASE
@@ -333,6 +334,11 @@ async function bootGame() {
                 player.skillTree.unlockedNodes = lp.skillTreeNodes;
                 player.skillTree.updateLiveUI();
                 updateXpBarUI(player);
+            }
+
+            // read mail
+            if (lp.pastMail !== undefined) {
+                player.pastMail = lp.pastMail;
             }
 
             // gear inventory
@@ -406,7 +412,10 @@ async function bootGame() {
                     equipped: equippedIndices,
 
                     // resources
-                    resources: player.resources
+                    resources: player.resources,
+
+                    // mailbox
+                    pastMail: player.pastMail
                 }
             };
 
@@ -432,8 +441,35 @@ async function bootGame() {
 
 
 
+
+    // load mailbox
+    const mailResponse = await fetch("assets/mailbox/messages.json");
+    const mailData = await mailResponse.json();
+
+
     // hide loading screen
     loadingScreen.style.display = "none";
+
+
+
+    // display new messages
+
+    // get all unread message ids
+    player.pastMail = player.pastMail.filter(id => mailData[id]);
+    const unreadIds = Object.keys(mailData).filter(id => !player.pastMail.includes(id));
+
+    // loop through unread messages
+    for (const id of unreadIds) {
+        const message = mailData[id];
+        
+        await displayMailPopup(message);
+
+        // mark as read
+        player.pastMail.push(id);
+    }
+
+
+
 
 }
 
