@@ -229,7 +229,7 @@ export async function displayMailPopup(pData) {
         const actionBtn = document.getElementById("mailBoxBtn");
         const closeBtn = document.getElementById("mailBoxClose");
 
-        title.innerHTML = pData.title.replace(/<c:(.*?)>(.*?)<\/c>/g, "<span style='color: var(--c-$1); text-decoration: underline;'>$2</span>");
+        title.innerHTML = pData.title.replace(/<c:(.*?)>(.*?)<\/c>/g, "<span style='color: var(--c-$1);'>$2</span>");
 
         // parse custom color tags
         text.innerHTML = pData.text.replace(/<c:(.*?)>(.*?)<\/c>/g, "<span style='color: var(--c-$1); text-decoration: underline;'>$2</span>");
