@@ -196,7 +196,7 @@ export class MarketManager {
 
         if (this.itemFrameId) cancelAnimationFrame(this.itemFrameId);
 
-        populateItemPopup("marketItemPopup", pItemId, pItemData);
+        populateItemPopup("marketItemPopup", pItemId, pItemData, pPlayer);
         actionBtn.style.backgroundColor = ""; 
 
         // show popup first so the loops don't cancel immediately

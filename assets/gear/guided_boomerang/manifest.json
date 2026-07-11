@@ -4,8 +4,8 @@
     "tier": 8,
     "slot": "tool",
     "resourceCategory": "any",
-    "damageBonus": 65,
-    "resourceBonus": 12,
+    "damageBonus": 60,
+    "resourceBonus": 10,
     "xpBonus": 5,
-    "ricochetChance": 1.5
+    "ricochetChance": 1.2
 }

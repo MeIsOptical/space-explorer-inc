@@ -211,7 +211,7 @@ export class Camera {
 
         // update dom
         if (this.content) {
-            this.content.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
+            this.content.style.transform = `translate3d(${this.translateX}px, ${this.translateY}px, 0) scale(${this.scale})`;
         }
     }
 }

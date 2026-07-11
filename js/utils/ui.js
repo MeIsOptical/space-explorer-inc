@@ -20,7 +20,7 @@ export function isVisible(pElement) {
 
 
 
-export function populateItemPopup(pPrefix, pItemId, pItemData) {
+export function populateItemPopup(pPrefix, pItemId, pItemData, pPlayer) {
     const img = document.getElementById(`${pPrefix}Img`);
     const name = document.getElementById(`${pPrefix}Name`);
     const tier = document.getElementById(`${pPrefix}Tier`);
@@ -34,6 +34,10 @@ export function populateItemPopup(pPrefix, pItemId, pItemData) {
     tier.style.color = pItemData.tier.color;
     description.innerText = pItemData.description;
 
+    // get stat multiplier
+    const playerStats = pPlayer.skillTree.getStatBonuses();
+    const gearMultiplier = 1 + (playerStats.gearStatMultiplier || 0);
+
     // set dynamic stats
     statsContainer.innerHTML = "";
 
@@ -44,10 +48,10 @@ export function populateItemPopup(pPrefix, pItemId, pItemData) {
         statsContainer.innerHTML += `<div style="text-decoration: underline">Applies to <span style="color: #ffffff; font-weight: bold">${pItemData.resourceCategory.name}</span>:</div>`;
     }
 
-    if (pItemData.damageBonus > 0) statsContainer.innerHTML += `<div>⏵ Damage: <span style="color: var(--c-gear-damage)">+${pItemData.damageBonus}</span></div>`;
-    if (pItemData.resourceBonus > 0) statsContainer.innerHTML += `<div>⏵ Resources: <span style="color: var(--c-gear-resources)">+${pItemData.resourceBonus}x</span></div>`;
-    if (pItemData.xpBonus > 0) statsContainer.innerHTML += `<div>⏵ XP: <span style="color: var(--c-gear-xp)">+${pItemData.xpBonus}x</span></div>`;
-    if (pItemData.ricochetChance > 0) statsContainer.innerHTML += `<div>⏵ Ricochet Chance: <span style="color: var(--c-gear-ricochet)">+${pItemData.ricochetChance * 100}%</span></div>`;
+    if (pItemData.damageBonus > 0) statsContainer.innerHTML += `<div>⏵ Damage: <span style="color: var(--c-gear-damage)">+${pItemData.damageBonus * gearMultiplier}</span></div>`;
+    if (pItemData.resourceBonus > 0) statsContainer.innerHTML += `<div>⏵ Resources: <span style="color: var(--c-gear-resources)">+${pItemData.resourceBonus * gearMultiplier}x</span></div>`;
+    if (pItemData.xpBonus > 0) statsContainer.innerHTML += `<div>⏵ XP: <span style="color: var(--c-gear-xp)">+${pItemData.xpBonus * gearMultiplier}x</span></div>`;
+    if (pItemData.ricochetChance > 0) statsContainer.innerHTML += `<div>⏵ Ricochet Chance: <span style="color: var(--c-gear-ricochet)">+${pItemData.ricochetChance * gearMultiplier * 100}%</span></div>`;
 }
 
 

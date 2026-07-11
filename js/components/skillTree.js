@@ -119,6 +119,12 @@ export class SkillTree {
         const linesContainer = document.getElementById("skillTreeLines");
         if (!nodesContainer || !linesContainer) return;
 
+        // cache
+        if (nodesContainer.children.length > 0) {
+            this.updateLiveUI();
+            return;
+        }
+
         nodesContainer.innerHTML = "";
         linesContainer.innerHTML = "";
 

@@ -32,7 +32,7 @@ export class Collector {
 
             listing.innerHTML = `
                 <div class="resourceListingText">
-                    <p class="resourceListingTitle" style="color: ${resource.color}">${resource.name}<span class="resourceListingWorth">(${resource.worth}<img src="assets/ui/icons/credits.png" class="numImg small">)</span></p>
+                    <p class="resourceListingTitle" style="color: ${resource.color}">${resource.name}<span class="resourceListingWorth" id="resource-worth-${key}">(${resource.worth}<img src="assets/ui/icons/credits.png" class="numImg small">)</span></p>
                     <p>Stored: <span id="resource-stored-${key}">0</span> (<span id="resource-total-${key}">0</span><img src="assets/ui/icons/credits.png" class="numImg small">)</p>
                 </div>
                 
@@ -57,21 +57,33 @@ export class Collector {
 
 
     updateUI() {
+
+        // get multiplier
+        const playerStats = this.player.skillTree.getStatBonuses();
+        const multiplier = 1 + (playerStats.creditMultiplier || 0);
+
         Object.keys(this.resourceManager.resources).forEach(key => {
             const sellBtn = document.getElementById(`sellBtn-${key}`);
             const storedSpan = document.getElementById(`resource-stored-${key}`);
             const totalSpan = document.getElementById(`resource-total-${key}`);
+            const worthSpan = document.getElementById(`resource-worth-${key}`);
             
             if (sellBtn && storedSpan && totalSpan) {
                 let quantity = this.player.resources[key] || 0n;
-                let worthFloat = this.resourceManager.getResourceById(key).worth;
+                let baseWorthFloat = this.resourceManager.getResourceById(key).worth;
                 
-                let worthInCents = BigInt(Math.round(worthFloat * 100));
+                // apply multiplier
+                let effectiveWorth = baseWorthFloat * multiplier;
+                let worthInCents = BigInt(Math.round(effectiveWorth * 100));
                 
+                // update worth text
+                if (worthSpan) {
+                    worthSpan.innerHTML = `(${Number(effectiveWorth.toFixed(2))}<img src="assets/ui/icons/credits.png" class="numImg small">)`;
+                }
+
                 storedSpan.innerText = this.player.formatResource(key);
                 
                 let totalCents = quantity * worthInCents;
-
                 let totalWorthWhole = totalCents / 100n;
 
                 if (totalWorthWhole >= 1000n) {
@@ -79,19 +91,12 @@ export class Collector {
                 }
                 else {
                     let displayDec = totalCents % 100n;
-                    
                     totalSpan.innerText = totalWorthWhole.toString() + "." + displayDec.toString().padStart(2, '0');
-
-                    
                 }
-
 
                 // button opacity
                 if (quantity <= 0n) sellBtn.style.opacity = 0.4;
                 else sellBtn.style.opacity = 1;
-
-
-
             }
         });
     }
@@ -122,7 +127,11 @@ export class Collector {
             let actualAmount = pAmount > playerHas ? playerHas : pAmount;
             
             let worthFloat = this.resourceManager.getResourceById(pId).worth;
-            let worthInCents = BigInt(Math.round(worthFloat * 100));
+
+            const playerStats = this.player.skillTree.getStatBonuses();
+            const multiplier = 1 + (playerStats.creditMultiplier || 0);
+            let worthInCents = BigInt(Math.round(worthFloat * 100 * multiplier));
+
             let totalProfitCents = actualAmount * worthInCents;
             
             this.player.credits.addCents(totalProfitCents);

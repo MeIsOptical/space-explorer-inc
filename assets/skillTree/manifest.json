@@ -35,6 +35,86 @@
         "requires": ["physicalTraining"]
     },
 
+
+
+
+    "muscleMemory": {
+        "name": "Muscle Memory",
+        "description": "Automatically damage the last hit resource every 1 second.",
+        "icon": "pickaxe",
+        "cost": 7,
+        "skills": [
+            { "type": "autoDamage", "value": 1 }
+        ],
+        "requires": ["wastelessCollecting"]
+    },
+
+
+    "sharpEyed": {
+        "name": "Sharp-Eyed",
+        "description": "Increase value of all resources by 5%.",
+        "icon": "discount",
+        "cost": 14,
+        "skills": [
+            { "type": "creditMultiplier", "value": 0.05 }
+        ],
+        "requires": ["muscleMemory"]
+    },
+
+
+    "sharpEyedPlus": {
+        "name": "Sharp-Eyed+",
+        "description": "Increase value of all resources by 5%.",
+        "icon": "discount",
+        "cost": 18,
+        "skills": [
+            { "type": "creditMultiplier", "value": 0.05 }
+        ],
+        "requires": ["sharpEyed"]
+    },
+
+
+    "muscleMemoryPlus": {
+        "name": "Muscle Memory+",
+        "description": "Automatically damage the last hit resource every 1 second.",
+        "icon": "pickaxe",
+        "cost": 10,
+        "skills": [
+            { "type": "autoDamage", "value": 1 }
+        ],
+        "requires": ["muscleMemory"]
+    },
+
+    "muscleMemoryPlusPlus": {
+        "name": "Muscle Memory++",
+        "description": "Automatically damage the last hit resource every 1 second.",
+        "icon": "pickaxe",
+        "cost": 15,
+        "skills": [
+            { "type": "autoDamage", "value": 1 }
+        ],
+        "requires": ["muscleMemoryPlus"]
+    },
+
+
+
+    "flawlessTechnique": {
+        "name": "Flawless Technique",
+        "description": "Increase damage by 4 & resources collected by 2x.",
+        "icon": "medal",
+        "cost": 20,
+        "skills": [
+            { "type": "damageBonus", "value": 4 },
+            { "type": "resourceBonus", "value": 2 }
+        ],
+        "requires": ["muscleMemoryPlusPlus"]
+    },
+
+
+
+
+
+
     "wastelessCollectingPlus": {
         "name": "Wasteless Collecting+",
         "description": "Increase resources collected by 1x.",
@@ -45,6 +125,48 @@
         ],
         "requires": ["wastelessCollecting"]
     },
+
+
+
+
+
+    "timeEfficient": {
+        "name": "Time Efficient",
+        "description": "Reduce all resource cooldowns by 5%.",
+        "icon": "timer",
+        "cost": 7,
+        "skills": [
+            { "type": "cooldownReduction", "value": 0.05 }
+        ],
+        "requires": ["wastelessCollectingPlus"]
+    },
+
+
+    "timeEfficientPlus": {
+        "name": "Time Efficient+",
+        "description": "Reduce all resource cooldowns by 5%.",
+        "icon": "timer",
+        "cost": 10,
+        "skills": [
+            { "type": "cooldownReduction", "value": 0.05 }
+        ],
+        "requires": ["timeEfficient"]
+    },
+
+    "timeEfficientPlusPlus": {
+        "name": "Time Efficient++",
+        "description": "Reduce all resource cooldowns by 5%.",
+        "icon": "timer",
+        "cost": 15,
+        "skills": [
+            { "type": "cooldownReduction", "value": 0.05 }
+        ],
+        "requires": ["timeEfficientPlus"]
+    },
+
+
+
+
 
 
 
@@ -89,88 +211,8 @@
 
 
 
-    "timeEfficient": {
-        "name": "Time Efficient",
-        "description": "Reduce all resource cooldowns by 5%.",
-        "icon": "timer",
-        "cost": 7,
-        "skills": [
-            { "type": "cooldownReduction", "value": 0.05 }
-        ],
-        "requires": ["wastelessCollectingPlus"]
-    },
 
-    "timeEfficientPlus": {
-        "name": "Time Efficient+",
-        "description": "Reduce all resource cooldowns by 5%.",
-        "icon": "timer",
-        "cost": 10,
-        "skills": [
-            { "type": "cooldownReduction", "value": 0.05 }
-        ],
-        "requires": ["timeEfficient"]
-    },
-
-    "timeEfficientPlusPlus": {
-        "name": "Time Efficient++",
-        "description": "Reduce all resource cooldowns by 10%.",
-        "icon": "timer",
-        "cost": 15,
-        "skills": [
-            { "type": "cooldownReduction", "value": 0.1 }
-        ],
-        "requires": ["timeEfficientPlus"]
-    },
-
-
-
-
-    "muscleMemory": {
-        "name": "Muscle Memory",
-        "description": "Automatically damage the last hit resource every 1 second.",
-        "icon": "pickaxe",
-        "cost": 7,
-        "skills": [
-            { "type": "autoDamage", "value": 1 }
-        ],
-        "requires": ["wastelessCollecting"]
-    },
-
-    "muscleMemoryPlus": {
-        "name": "Muscle Memory+",
-        "description": "Automatically damage the last hit resource every 1 second.",
-        "icon": "pickaxe",
-        "cost": 10,
-        "skills": [
-            { "type": "autoDamage", "value": 1 }
-        ],
-        "requires": ["muscleMemory"]
-    },
-
-    "muscleMemoryPlusPlus": {
-        "name": "Muscle Memory++",
-        "description": "Automatically damage the last hit resource every 1 second.",
-        "icon": "pickaxe",
-        "cost": 15,
-        "skills": [
-            { "type": "autoDamage", "value": 1 }
-        ],
-        "requires": ["muscleMemoryPlus"]
-    },
-
-
-
-    "flawlessTechnique": {
-        "name": "Flawless Technique",
-        "description": "Increase damage by 4 & resources collected by 2x.",
-        "icon": "medal",
-        "cost": 20,
-        "skills": [
-            { "type": "damageBonus", "value": 4 },
-            { "type": "resourceBonus", "value": 2 }
-        ],
-        "requires": ["muscleMemoryPlusPlus"]
-    },
+    
 
     
 
@@ -228,16 +270,22 @@
     },
 
 
-    "engineerPower": {
-        "name": "Engineer Power",
-        "description": "Automatically sell +2 of each resource based on their cooldown.",
-        "icon": "market",
+
+
+    "tinkerer": {
+        "name": "Tinkerer",
+        "description": "Increase all gear stats by 5%.",
+        "icon": "cybernetic",
         "cost": 8,
         "skills": [
-            { "type": "autoSell", "value": 2 }
+            { "type": "gearStatMultiplier", "value": 0.05 }
         ],
         "requires": ["fasterLearner"]
     },
+
+
+
+
 
 
     "wise": {
@@ -249,7 +297,20 @@
             { "type": "resourceBonus", "value": 1 },
             { "type": "xpBonus", "value": 2 }
         ],
-        "requires": ["engineerPower"]
+        "requires": ["tinkerer"]
+    },
+
+
+
+    "rerouting": {
+        "name": "Rerouting",
+        "description": "Automatically sell +2 of each resource based on their cooldown.",
+        "icon": "rerouting",
+        "cost": 10,
+        "skills": [
+            { "type": "autoSell", "value": 2 }
+        ],
+        "requires": ["tinkerer"]
     },
 
 
@@ -302,11 +363,11 @@
 
     "bulkProcessingPlusPlus": {
         "name": "Bulk Processing++",
-        "description": "Sell +3 resource per click to the Collector.",
+        "description": "Sell +4 resource per click to the Collector.",
         "icon": "credits",
         "cost": 8,
         "skills": [
-            { "type": "sellAmountBonus", "value": 3 }
+            { "type": "sellAmountBonus", "value": 4 }
         ],
         "requires": ["bulkProcessingPlus"]
     },
@@ -314,11 +375,11 @@
 
     "bulkProcessingPlusPlusPlus": {
         "name": "Bulk Processing+++",
-        "description": "Sell +4 resource per click to the Collector.",
+        "description": "Sell +8 resource per click to the Collector.",
         "icon": "credits",
         "cost": 12,
         "skills": [
-            { "type": "sellAmountBonus", "value": 4 }
+            { "type": "sellAmountBonus", "value": 8 }
         ],
         "requires": ["bulkProcessingPlusPlus"]
     },
@@ -347,17 +408,6 @@
     },
 
 
-    "resourceAnalytics": {
-        "name": "Resource Analytics",
-        "description": "Increase XP multiplier by 2x.",
-        "icon": "book plus",
-        "cost": 16,
-        "skills": [
-            { "type": "xpBonus", "value": 2 }
-        ],
-        "requires": ["improvedTradeKnowledge"]
-    },
-
 
     "advancedTradeKnowledge": {
         "name": "Advanced Trade Knowledge",
@@ -373,18 +423,43 @@
 
 
 
+    "qualityControl": {
+        "name": "Quality Control",
+        "description": "Increase value of all resources by 5%.",
+        "icon": "discount",
+        "cost": 12,
+        "skills": [
+            { "type": "creditMultiplier", "value": 0.05 }
+        ],
+        "requires": ["tradeKnowledge"]
+    },
+
+    "qualityControlPlus": {
+        "name": "Quality Control+",
+        "description": "Increase value of all resources by 5%.",
+        "icon": "discount",
+        "cost": 16,
+        "skills": [
+            { "type": "creditMultiplier", "value": 0.05 }
+        ],
+        "requires": ["qualityControl"]
+    },
+
+
+
+
     
 
     "spaceOddity": {
         "name": "Space Oddity",
-        "description": "Increase resources collected by 2x & inventory capacity by 4.",
+        "description": "Increase value of all resources by 10% & inventory capacity by 2.",
         "icon": "medal",
         "cost": 20,
         "skills": [
-            { "type": "resourceBonus", "value": 2 },
-            { "type": "inventoryBonus", "value": 4 }
+            { "type": "creditMultiplier", "value": 0.1 },
+            { "type": "inventoryBonus", "value": 2 }
         ],
-        "requires": ["advancedTradeKnowledge", "colossalPockets"]
+        "requires": ["qualityControlPlus", "colossalPockets"]
     },
 
 
@@ -406,6 +481,8 @@
         "requires": ["skillTree"]
     },
 
+
+
     "biggerPockets": {
         "name": "Bigger Pockets",
         "description": "Increase inventory capacity by 2.",
@@ -416,6 +493,22 @@
         ],
         "requires": ["bigPockets"]
     },
+
+
+
+
+    "organized": {
+        "name": "Organized",
+        "description": "Reduce all resource cooldowns by 5%.",
+        "icon": "timer",
+        "cost": 7,
+        "skills": [
+            { "type": "cooldownReduction", "value": 0.05 }
+        ],
+        "requires": ["bigPockets"]
+    },
+
+
 
     "massivePockets": {
         "name": "Massive Pockets",
@@ -428,16 +521,44 @@
         "requires": ["biggerPockets"]
     },
 
-    "organized": {
-        "name": "Organized",
-        "description": "Reduce all resource cooldowns by 5%.",
-        "icon": "timer",
-        "cost": 7,
+
+
+    "properMaintenance": {
+        "name": "Proper Maintenance",
+        "description": "Increase all gear stats by 5%.",
+        "icon": "cybernetic",
+        "cost": 12,
         "skills": [
-            { "type": "cooldownReduction", "value": 0.05 }
+            { "type": "gearStatMultiplier", "value": 0.05 }
         ],
         "requires": ["biggerPockets"]
     },
+
+
+    "properMaintenancePlus": {
+        "name": "Proper Maintenance+",
+        "description": "Increase all gear stats by 5%.",
+        "icon": "cybernetic",
+        "cost": 16,
+        "skills": [
+            { "type": "gearStatMultiplier", "value": 0.05 }
+        ],
+        "requires": ["properMaintenance"]
+    },
+
+
+
+    "properMaintenancePlusPlus": {
+        "name": "Proper Maintenance++",
+        "description": "Increase all gear stats by 5%.",
+        "icon": "cybernetic",
+        "cost": 16,
+        "skills": [
+            { "type": "gearStatMultiplier", "value": 0.05 }
+        ],
+        "requires": ["properMaintenancePlus"]
+    },
+
 
 
 
@@ -458,7 +579,7 @@
         "name": "Very Organized",
         "description": "Reduce all resource cooldowns by 5%.",
         "icon": "timer",
-        "cost": 11,
+        "cost": 14,
         "skills": [
             { "type": "cooldownReduction", "value": 0.05 }
         ],

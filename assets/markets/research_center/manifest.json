@@ -5,6 +5,6 @@
     "color": "var(--c-research-main)",
     "offers": {
         "guided_boomerang": { "price": 1500000, "duration": 45 },
-        "plasma_pickaxe": { "price": 4000000, "duration": 20 }
+        "plasma_pickaxe": { "price": 3000000, "duration": 20 }
     }
 }

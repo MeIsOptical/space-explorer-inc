@@ -181,7 +181,7 @@ export class GearManager {
         const cancelBtn = document.getElementById("gearDeleteCancelBtn");
 
         // build generic display
-        populateItemPopup("gearPopup", pItem.id, pItem);
+        populateItemPopup("gearPopup", pItem.id, pItem, pPlayer);
 
         // delete logic
         deleteBtn.style.display = "block";
