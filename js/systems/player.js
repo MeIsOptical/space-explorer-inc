@@ -186,13 +186,15 @@ export class Player {
             const equippedItem = this.equipped[slotType];
             if (equippedItem) {
                 if (equippedItem.resourceCategory.id === pCategory || equippedItem.resourceCategory.id == "any") {
-                    totalDamage += (equippedItem.damageBonus * gearMultiplier);
-                    resourceMultiplier += (equippedItem.resourceBonus * gearMultiplier);
-                    xpMultiplier += (equippedItem.xpBonus * gearMultiplier);
+                    totalDamage += Math.round(equippedItem.damageBonus * gearMultiplier);
+                    resourceMultiplier += Math.round(equippedItem.resourceBonus * gearMultiplier);
+                    xpMultiplier += Math.round(equippedItem.xpBonus * gearMultiplier);
                     ricochetChance += (equippedItem.ricochetChance * gearMultiplier);
                 }
             }
         });
+
+        //console.log({ totalDamage, resourceMultiplier, xpMultiplier, cooldownReduction, ricochetChance });
 
         return { totalDamage, resourceMultiplier, xpMultiplier, cooldownReduction, ricochetChance };
     }

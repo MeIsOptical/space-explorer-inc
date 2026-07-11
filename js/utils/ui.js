@@ -48,10 +48,10 @@ export function populateItemPopup(pPrefix, pItemId, pItemData, pPlayer) {
         statsContainer.innerHTML += `<div style="text-decoration: underline">Applies to <span style="color: #ffffff; font-weight: bold">${pItemData.resourceCategory.name}</span>:</div>`;
     }
 
-    if (pItemData.damageBonus > 0) statsContainer.innerHTML += `<div>⏵ Damage: <span style="color: var(--c-gear-damage)">+${pItemData.damageBonus * gearMultiplier}</span></div>`;
-    if (pItemData.resourceBonus > 0) statsContainer.innerHTML += `<div>⏵ Resources: <span style="color: var(--c-gear-resources)">+${pItemData.resourceBonus * gearMultiplier}x</span></div>`;
-    if (pItemData.xpBonus > 0) statsContainer.innerHTML += `<div>⏵ XP: <span style="color: var(--c-gear-xp)">+${pItemData.xpBonus * gearMultiplier}x</span></div>`;
-    if (pItemData.ricochetChance > 0) statsContainer.innerHTML += `<div>⏵ Ricochet Chance: <span style="color: var(--c-gear-ricochet)">+${pItemData.ricochetChance * gearMultiplier * 100}%</span></div>`;
+    if (pItemData.damageBonus > 0) statsContainer.innerHTML += `<div>⏵ Damage: <span style="color: var(--c-gear-damage)">+${Math.round(pItemData.damageBonus * gearMultiplier)}</span></div>`;
+    if (pItemData.resourceBonus > 0) statsContainer.innerHTML += `<div>⏵ Resources: <span style="color: var(--c-gear-resources)">+${Math.round(pItemData.resourceBonus * gearMultiplier)}x</span></div>`;
+    if (pItemData.xpBonus > 0) statsContainer.innerHTML += `<div>⏵ XP: <span style="color: var(--c-gear-xp)">+${Math.round(pItemData.xpBonus * gearMultiplier)}x</span></div>`;
+    if (pItemData.ricochetChance > 0) statsContainer.innerHTML += `<div>⏵ Ricochet Chance: <span style="color: var(--c-gear-ricochet)">+${Math.round(pItemData.ricochetChance * gearMultiplier * 100)}%</span></div>`;
 }
 
 
