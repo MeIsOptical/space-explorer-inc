@@ -121,6 +121,8 @@ export class SkillTree {
 
         // cache
         if (nodesContainer.children.length > 0) {
+            const allNodes = document.querySelectorAll(".skillNode");
+            allNodes.forEach(node => node.classList.remove("selected"));
             this.updateLiveUI();
             return;
         }
