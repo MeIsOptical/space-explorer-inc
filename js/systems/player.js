@@ -305,7 +305,7 @@ export class Player {
             window.AndroidBridge.scheduleNotification(
                 "RESEARCH COMPLETE!", 
                 "Your order is ready to be claimed!", 
-                pDurationSeconds,
+                pDurationSeconds * 1000,
                 1, // WILL NOT WORK ONCE this.researchCapacity IS > 1 --- same in marketManager and with window.AndroidBridge.cancelNotification(1); below
                 "research_channel",
                 "Research"
