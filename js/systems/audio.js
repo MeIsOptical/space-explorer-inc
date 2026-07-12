@@ -14,7 +14,7 @@ export const SOUND_IDS = {
     popupClose: "ui/defaultClick",
     gearEquip: "ui/defaultClick",
     gearUnequip: "ui/defaultClick",
-    gearDelete: "ui/gearDelete",
+    gearDelete: "ui/break",
     resourceHit: "ui/hit",
     resourceBreak: "ui/break",
     buyGear: "ui/credits",

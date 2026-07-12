@@ -52,6 +52,10 @@ import { loadSounds, playSound, SOUND_IDS } from "./systems/audio.js";
 import { updateXpBarUI, displayMailPopup } from "./utils/ui.js";
 import { initWakeLock } from "./utils/wakeLock.js";
 
+
+// temp
+import { sendNotif } from "./utils/notif.js";
+
 //#endregion
 
 
@@ -467,9 +471,6 @@ async function bootGame() {
         // mark as read
         player.pastMail.push(id);
     }
-
-
-
 
 }
 

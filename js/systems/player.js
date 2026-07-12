@@ -5,6 +5,7 @@ import { playSound, SOUND_IDS } from "./audio.js";
 import { formatBigNumber } from "../utils/formatting.js";
 import { SkillTree } from "../components/skillTree.js";
 import { updateXpBarUI } from "../utils/ui.js";
+import { sendNotif } from "../utils/notif.js";
 
 
 
@@ -43,6 +44,7 @@ export class Player {
         // research
         this.researchCapacity = 1;
         this.activeResearch = [];
+        this.initResearchNotifications();
 
         // mailbox
         this.pastMail = [];
@@ -294,10 +296,28 @@ export class Player {
         this.activeResearch.push({
             itemId: pItemId,
             marketId: pMarketId,
-            finishTime: Date.now() + (pDurationSeconds * 1000)
+            finishTime: Date.now() + (pDurationSeconds * 1000),
+            notified: false
         });
         return true;
     }
+
+
+    // handle notification
+    initResearchNotifications() {
+        // check for finished research every second
+        setInterval(() => {
+            const now = Date.now();
+            
+            this.activeResearch.forEach(res => {
+                if (now >= res.finishTime && !res.notified) {
+                    res.notified = true;
+                    sendNotif("<c:research-main>RESEARCH COMPLETE!</c>", "Your order is ready to be claimed!", SOUND_IDS.startResearch);
+                }
+            });
+        }, 1000);
+    }
+
 
     //#endregion
 }

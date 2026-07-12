@@ -1,4 +1,6 @@
 
+
+
 /* #region GENERAL */
 
 * {
@@ -1237,6 +1239,8 @@ body {
 
 
 
+
+
 /* #region SKILLS HEADER */
 
 #skillsHeader {
@@ -1264,6 +1268,11 @@ body {
 }
 
 /* #endregion */
+
+
+
+
+
 
 
 
@@ -1321,3 +1330,74 @@ body {
 }
 
 /* #endregion */
+
+
+
+
+
+
+
+
+
+
+
+/* #region NOTIFICATIONS */
+
+#notifsDiv {
+    position: relative;
+    width: 100%;
+    height: 0;
+    z-index: 98;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notifContainer {
+    position: absolute;
+    top: 0;
+    width: 85%;
+    max-width: 400px;
+    background-color: var(--c-back-section-div);
+    border: 4px solid var(--c-border-section-div);
+    border-top: none;
+    box-sizing: border-box;
+    padding: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+    
+    transform: translateY(-100%);
+    animation: slideDownNotif 0.4s ease-out forwards;
+    text-align: center;
+}
+
+.notifContainer.hide {
+    animation: slideUpNotif 0.4s ease-in forwards;
+}
+
+.notifTitle {
+    margin: 5px 0; padding: 0;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.notifDesc {
+    margin: 0; padding: 0;
+    font-size: 0.62rem;
+    line-height: 1.2rem;
+}
+
+@keyframes slideDownNotif {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes slideUpNotif {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+/* #endregion */
+
+
