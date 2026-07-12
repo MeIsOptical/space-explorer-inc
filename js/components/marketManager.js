@@ -217,6 +217,11 @@ export class MarketManager {
                 actionBtn.style.backgroundColor = "#ff4a4a"; 
                 actionBtn.onclick = () => {
                     pPlayer.activeResearch.splice(activeResIndex, 1);
+
+                    // cancel android notification
+                    if (window.AndroidBridge) {
+                        window.AndroidBridge.cancelNotification(1);
+                    }
                     
                     const refundAmount = RUN_CONFIG.dev ? 0 : priceCents;
                     if (refundAmount > 0) pPlayer.credits.addCents(refundAmount);

@@ -14,9 +14,6 @@
         "popupOpen": {
             "format": "wav"
         },
-        "gearDelete": {
-            "format": "wav"
-        },
         "credits": {
             "format": "wav"
         },

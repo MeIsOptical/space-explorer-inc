@@ -299,6 +299,19 @@ export class Player {
             finishTime: Date.now() + (pDurationSeconds * 1000),
             notified: false
         });
+
+        // schedule android offline notification
+        if (window.AndroidBridge) {
+            window.AndroidBridge.scheduleNotification(
+                "RESEARCH COMPLETE!", 
+                "Your order is ready to be claimed!", 
+                pDurationSeconds,
+                1, // WILL NOT WORK ONCE this.researchCapacity IS > 1 --- same in marketManager and with window.AndroidBridge.cancelNotification(1); below
+                "research_channel",
+                "Research"
+            );
+        }
+
         return true;
     }
 
@@ -313,6 +326,11 @@ export class Player {
                 if (now >= res.finishTime && !res.notified) {
                     res.notified = true;
                     sendNotif("<c:research-main>RESEARCH COMPLETE!</c>", "Your order is ready to be claimed!", SOUND_IDS.startResearch);
+
+                    // cancel android notification
+                    if (window.AndroidBridge) {
+                        window.AndroidBridge.cancelNotification(1);
+                    }
                 }
             });
         }, 1000);
