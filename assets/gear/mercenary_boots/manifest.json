@@ -4,7 +4,7 @@
     "tier": 4,
     "slot": "feet",
     "resourceCategory": "any",
-    "damageBonus": 8,
+    "damageBonus": 6,
     "resourceBonus": 4,
     "xpBonus": 1,
     "ricochetChance": 0

@@ -7,5 +7,5 @@
     "damageBonus": 60,
     "resourceBonus": 10,
     "xpBonus": 5,
-    "ricochetChance": 1.2
+    "ricochetChance": 0.8
 }

@@ -1,11 +1,11 @@
 {
     "name": "Fiber Laser Cutter",
-    "description": "Just call it a light sword at this point...",
+    "description": "Can cut through just about anything.",
     "tier": 8,
     "slot": "tool",
     "resourceCategory": "any",
-    "damageBonus": 75,
-    "resourceBonus": 7,
-    "xpBonus": 14,
+    "damageBonus": 210,
+    "resourceBonus": 4,
+    "xpBonus": 10,
     "ricochetChance": 0.06
 }
