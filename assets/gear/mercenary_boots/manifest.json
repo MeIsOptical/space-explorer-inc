@@ -1,0 +1,11 @@
+{
+    "name": "Mercenary Boots",
+    "description": "This is a good start if you plan on being successful.",
+    "tier": 4,
+    "slot": "feet",
+    "resourceCategory": "any",
+    "damageBonus": 8,
+    "resourceBonus": 4,
+    "xpBonus": 1,
+    "ricochetChance": 0
+}

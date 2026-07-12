@@ -4,7 +4,7 @@
     "tier": 2,
     "slot": "chest",
     "resourceCategory": "any",
-    "damageBonus": 2,
+    "damageBonus": 3,
     "resourceBonus": 0,
     "xpBonus": 0,
     "ricochetChance": 0

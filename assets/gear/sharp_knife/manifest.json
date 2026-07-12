@@ -4,8 +4,8 @@
     "tier": 3,
     "slot": "tool",
     "resourceCategory": "hunting",
-    "damageBonus": 10,
-    "resourceBonus": 3,
+    "damageBonus": 12,
+    "resourceBonus": 4,
     "xpBonus": 0,
     "ricochetChance": 0
 }
