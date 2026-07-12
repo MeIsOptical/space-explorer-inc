@@ -4,7 +4,7 @@
     "tier": 4,
     "slot": "feet",
     "resourceCategory": "mining",
-    "damageBonus": 6,
+    "damageBonus": 12,
     "resourceBonus": 5,
     "xpBonus": 0,
     "ricochetChance": 0

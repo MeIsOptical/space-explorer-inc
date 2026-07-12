@@ -4,7 +4,7 @@
     "tier": 6,
     "slot": "tool",
     "resourceCategory": "fishing",
-    "damageBonus": 12,
+    "damageBonus": 16,
     "resourceBonus": 5,
     "xpBonus": 9,
     "ricochetChance": 0

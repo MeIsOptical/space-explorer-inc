@@ -5,7 +5,7 @@ import { RUN_CONFIG } from "../main.js";
 import { playSound, SOUND_IDS } from "../systems/audio.js";
 
 
-const GRID_SIZE = 70;
+const GRID_SIZE = 60;
 
 
 export class PlanetMap {
@@ -85,7 +85,7 @@ export class PlanetMap {
     }
 
 
-    targetPlanet(pPlanet) {
+    targetPlanet(pPlanet, pZoom) {
 
         // remove selection from other planets
         this.deselectPlanet();
@@ -103,7 +103,7 @@ export class PlanetMap {
         const planetCenterX = (pPlanet.x * GRID_SIZE) + (pPlanet.element.offsetWidth / 2);
         const planetCenterY = (pPlanet.y * GRID_SIZE) + (pPlanet.element.offsetHeight / 2);
 
-        const targetScale = 1.4;
+        const targetScale = pZoom || this.camera.targetScale;
         const targetTranslateX = centerX - (planetCenterX * targetScale);
         const targetTranslateY = centerY - (planetCenterY * targetScale) - 140;
 

@@ -250,7 +250,7 @@ async function bootGame() {
     // travel
     const travelSection = new Section("travel", () => {
         setTimeout(() => {
-            planetMap.targetPlanet(player.currentPlanet);
+            planetMap.targetPlanet(player.currentPlanet, 2);
         }, 0);
     });
     planetMap.container = travelSection.container; // link map container

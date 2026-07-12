@@ -54,7 +54,7 @@
         "name": "Sharp-Eyed",
         "description": "Increase value of all resources by 5%.",
         "icon": "discount",
-        "cost": 14,
+        "cost": 12,
         "skills": [
             { "type": "creditMultiplier", "value": 0.05 }
         ],
@@ -66,7 +66,7 @@
         "name": "Sharp-Eyed+",
         "description": "Increase value of all resources by 5%.",
         "icon": "discount",
-        "cost": 18,
+        "cost": 16,
         "skills": [
             { "type": "creditMultiplier", "value": 0.05 }
         ],
@@ -89,7 +89,7 @@
         "name": "Muscle Memory++",
         "description": "Automatically damage the last hit resource every 1 second.",
         "icon": "pickaxe",
-        "cost": 15,
+        "cost": 14,
         "skills": [
             { "type": "autoDamage", "value": 1 }
         ],
@@ -102,7 +102,7 @@
         "name": "Flawless Technique",
         "description": "Increase damage by 4 & resources collected by 2x.",
         "icon": "medal",
-        "cost": 20,
+        "cost": 18,
         "skills": [
             { "type": "damageBonus", "value": 4 },
             { "type": "resourceBonus", "value": 2 }
@@ -388,8 +388,8 @@
     "tradeKnowledge": {
         "name": "Trade Knowledge",
         "description": "Automatically sell +1 of each resource based on their cooldown.",
-        "icon": "market",
-        "cost": 8,
+        "icon": "rerouting",
+        "cost": 6,
         "skills": [
             { "type": "autoSell", "value": 1 }
         ],
@@ -399,8 +399,8 @@
     "improvedTradeKnowledge": {
         "name": "Improved Trade Knowledge",
         "description": "Automatically sell +2 of each resource based on their cooldown.",
-        "icon": "market",
-        "cost": 14,
+        "icon": "rerouting",
+        "cost": 10,
         "skills": [
             { "type": "autoSell", "value": 2 }
         ],
@@ -412,8 +412,8 @@
     "advancedTradeKnowledge": {
         "name": "Advanced Trade Knowledge",
         "description": "Automatically sell +3 of each resource based on their cooldown.",
-        "icon": "market",
-        "cost": 18,
+        "icon": "rerouting",
+        "cost": 14,
         "skills": [
             { "type": "autoSell", "value": 3 }
         ],
@@ -501,7 +501,7 @@
         "name": "Organized",
         "description": "Reduce all resource cooldowns by 5%.",
         "icon": "timer",
-        "cost": 7,
+        "cost": 6,
         "skills": [
             { "type": "cooldownReduction", "value": 0.05 }
         ],
@@ -527,7 +527,7 @@
         "name": "Proper Maintenance",
         "description": "Increase all gear stats by 5%.",
         "icon": "cybernetic",
-        "cost": 12,
+        "cost": 7,
         "skills": [
             { "type": "gearStatMultiplier", "value": 0.05 }
         ],
@@ -539,7 +539,7 @@
         "name": "Proper Maintenance+",
         "description": "Increase all gear stats by 5%.",
         "icon": "cybernetic",
-        "cost": 16,
+        "cost": 10,
         "skills": [
             { "type": "gearStatMultiplier", "value": 0.05 }
         ],
@@ -552,7 +552,7 @@
         "name": "Proper Maintenance++",
         "description": "Increase all gear stats by 5%.",
         "icon": "cybernetic",
-        "cost": 16,
+        "cost": 14,
         "skills": [
             { "type": "gearStatMultiplier", "value": 0.05 }
         ],
