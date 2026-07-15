@@ -1,0 +1,11 @@
+{
+    "name": "Katana",
+    "description": "A long and very sharp melee weapon.",
+    "tier": 6,
+    "slot": "tool",
+    "resourceCategory": "hunting",
+    "damageBonus": 70,
+    "resourceBonus": 13,
+    "xpBonus": 4,
+    "ricochetChance": 0.02
+}

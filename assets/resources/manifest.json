@@ -35,6 +35,7 @@
         "worth": 1.5,
         "xp": 7
     },
+
     "leather": {
         "name": "Leather",
         "color": "#cc793d",
@@ -53,6 +54,7 @@
         "worth": 12,
         "xp": 65
     },
+
     "iron": {
         "name": "Iron",
         "color": "#ded8c3",
@@ -71,6 +73,7 @@
         "worth": 21,
         "xp": 26
     },
+
     "cosmic_stone": {
         "name": "Cosmic Stone",
         "color": "#f5e084",
@@ -80,14 +83,15 @@
         "worth": 36,
         "xp": 24
     },
+
     "frozen_fish": {
         "name": "Frozen Fish",
         "color": "#99fff3",
         "category": "fishing",
-        "hits": 35,
+        "hits": 40,
         "cooldown": 15,
         "worth": 45,
-        "xp": 255
+        "xp": 240
     },
     "diamonds": {
         "name": "Diamonds",
@@ -98,31 +102,53 @@
         "worth": 65,
         "xp": 40
     },
+
+
+    "beam_roots": {
+        "name": "Beam Roots",
+        "color": "#a692fc",
+        "category": "plants",
+        "hits": 800,
+        "cooldown": 7,
+        "worth": 80,
+        "xp": 60
+    },
+
+    "venom": {
+        "name": "Venom",
+        "color": "#e65a84",
+        "category": "hunting",
+        "hits": 1200,
+        "cooldown": 3,
+        "worth": 140,
+        "xp": 70
+    },
+
     "lava_fish": {
         "name": "Lava Fish",
         "color": "#ff5921",
         "category": "fishing",
-        "hits": 60,
+        "hits": 80,
         "cooldown": 13,
-        "worth": 140,
-        "xp": 450
+        "worth": 180,
+        "xp": 400
     },
     "magma_cream": {
         "name": "Magma Cream",
         "color": "#ffba0a",
         "category": "hunting",
-        "hits": 600,
-        "cooldown": 3,
-        "worth": 210,
-        "xp": 165
+        "hits": 2000,
+        "cooldown": 4,
+        "worth": 200,
+        "xp": 140
     },
     "obsidian": {
         "name": "Obsidian",
         "color": "#6b5a8a",
         "category": "mining",
-        "hits": 5000,
+        "hits": 7000,
         "cooldown": 6,
-        "worth": 250,
-        "xp": 90
+        "worth": 240,
+        "xp": 70
     }
 }

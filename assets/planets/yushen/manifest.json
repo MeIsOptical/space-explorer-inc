@@ -1,0 +1,11 @@
+{
+    "name": "Yushen",
+    "x": -5,
+    "y": -7,
+    "glow": 4,
+    "resources": ["beam_roots", "venom"],
+    "markets": ["ancient_temple"],
+    "canUnlock": true,
+    "inDev": true,
+    "price": 800000
+}

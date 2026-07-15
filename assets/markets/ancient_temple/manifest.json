@@ -1,0 +1,8 @@
+{
+    "name": "Ancient Temple",
+    "icon": "rocks",
+    "type": "default",
+    "offers": {
+        "katana": 75000
+    }
+}
