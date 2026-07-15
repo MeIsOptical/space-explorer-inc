@@ -4,6 +4,7 @@
     "type": "research",
     "color": "var(--c-research-main)",
     "offers": {
+        "charged_katana": { "price": 575000, "duration": 60 },
         "fiber_laser_cutter": { "price": 750000, "duration": 35 },
         "guided_boomerang": { "price": 1500000, "duration": 50 },
         "plasma_pickaxe": { "price": 3000000, "duration": 20 },

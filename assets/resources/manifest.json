@@ -104,33 +104,41 @@
     },
 
 
-    "beam_roots": {
-        "name": "Beam Roots",
-        "color": "#a692fc",
-        "category": "plants",
-        "hits": 800,
-        "cooldown": 7,
-        "worth": 80,
-        "xp": 60
-    },
-
     "venom": {
         "name": "Venom",
-        "color": "#e65a84",
+        "color": "#de5065",
         "category": "hunting",
         "hits": 1200,
-        "cooldown": 3,
-        "worth": 140,
-        "xp": 70
+        "cooldown": 4,
+        "worth": 80,
+        "xp": 90
+    },
+    "beam_roots": {
+        "name": "Beam Roots",
+        "color": "#ae9cff",
+        "category": "plants",
+        "hits": 800,
+        "cooldown": 1.4,
+        "worth": 180,
+        "xp": 55
     },
 
+    "obsidian": {
+        "name": "Obsidian",
+        "color": "#6b5a8a",
+        "category": "mining",
+        "hits": 7000,
+        "cooldown": 6,
+        "worth": 210,
+        "xp": 70
+    },
     "lava_fish": {
         "name": "Lava Fish",
         "color": "#ff5921",
         "category": "fishing",
         "hits": 80,
         "cooldown": 13,
-        "worth": 180,
+        "worth": 240,
         "xp": 400
     },
     "magma_cream": {
@@ -139,16 +147,7 @@
         "category": "hunting",
         "hits": 2000,
         "cooldown": 4,
-        "worth": 200,
+        "worth": 300,
         "xp": 140
-    },
-    "obsidian": {
-        "name": "Obsidian",
-        "color": "#6b5a8a",
-        "category": "mining",
-        "hits": 7000,
-        "cooldown": 6,
-        "worth": 240,
-        "xp": 70
     }
 }

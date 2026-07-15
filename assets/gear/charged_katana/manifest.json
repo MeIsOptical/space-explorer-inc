@@ -1,0 +1,11 @@
+{
+    "name": "Charged Katana",
+    "description": "Unlike a regular katana, this one is charged with electricity.",
+    "tier": 8,
+    "slot": "tool",
+    "resourceCategory": "hunting",
+    "damageBonus": 145,
+    "resourceBonus": 15,
+    "xpBonus": 7,
+    "ricochetChance": 0.12
+}

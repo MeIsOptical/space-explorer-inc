@@ -1,6 +1,6 @@
 {
-    "name": "Ancient Temple",
-    "icon": "rocks",
+    "name": "Ruined Temple",
+    "icon": "castle",
     "type": "default",
     "offers": {
         "katana": 75000
