@@ -38,7 +38,6 @@ import { Section } from "./components/section.js";
 import { PlanetMap } from "./components/planetMap.js";
 import { Collector } from "./components/collector.js";
 import { GearManager } from "./components/gearManager.js";
-import { Gear } from "./components/gear.js";
 import { MarketManager } from "./components/marketManager.js";
 
 // systems
@@ -49,12 +48,9 @@ import { Database } from "./systems/database.js";
 import { loadSounds, playSound, SOUND_IDS } from "./systems/audio.js";
 
 // utils
-import { updateXpBarUI, displayMailPopup } from "./utils/ui.js";
+import { displayMailPopup } from "./utils/ui.js";
 import { initWakeLock } from "./utils/wakeLock.js";
-
-
-// temp
-import { sendNotif } from "./utils/notif.js";
+import { loadProgress, saveProgress } from "./utils/progress.js";
 
 //#endregion
 
@@ -253,6 +249,7 @@ async function bootGame() {
 
     // travel
     const travelSection = new Section("travel", () => {
+        planetMap.updatePlanetMarkers();
         setTimeout(() => {
             planetMap.targetPlanet(player.currentPlanet, 1.3);
         }, 0);
@@ -296,134 +293,19 @@ async function bootGame() {
 
         const database = new Database();
         await database.init();
+        player.database = database;
         if (RUN_CONFIG.clearDB) await database.clear();
 
         // load saved content
-        const loadedData = await database.readData();
-
-        // load save data if it exists
-        if (loadedData && loadedData.player) {
-
-            setLoadingStatus("Restoring progress...");
-
-            const lp = loadedData.player; // shorthand
-
-            // level & xp
-            if (lp.level !== undefined) player.level = lp.level;
-            if (lp.xp !== undefined) player.xp = lp.xp;
-            if (lp.levelPoints !== undefined) player.levelPts = lp.levelPoints;
-
-            // research
-            if (lp.activeResearch !== undefined) player.activeResearch = lp.activeResearch;
-
-            // currencies
-            if (lp.credits !== undefined) {
-                player.credits.setCents(lp.credits);
-                player.credits.displayElement.innerText = player.credits.display();
-            }
-
-            // unlocked planets
-            if (lp.unlockedPlanets !== undefined) {
-                player.unlockedPlanets = lp.unlockedPlanets;
-            }
-
-            // set current planet
-            if (lp.currentPlanetId !== undefined) {
-                const savedPlanet = planetMap.getPlanetById(lp.currentPlanetId);
-                if (savedPlanet) player.landOn(savedPlanet);
-            }
-
-            // skill tree
-            if (lp.skillTreeNodes !== undefined) {
-                player.skillTree.unlockedNodes = lp.skillTreeNodes;
-                player.skillTree.updateLiveUI();
-                updateXpBarUI(player);
-            }
-
-            // read mail
-            if (lp.pastMail !== undefined) {
-                player.pastMail = lp.pastMail;
-            }
-
-            // gear inventory
-            if (lp.gear !== undefined) {
-                player.gear = []; // clear defaults
-                lp.gear.forEach(gearId => {
-                    player.gear.push(new Gear(gearId, gearManager));
-                });
-
-                // reconnect equipped gear using saved indices
-                if (lp.equipped !== undefined) {
-                    player.equipped = {};
-                    Object.entries(lp.equipped).forEach(([slot, invIndex]) => {
-                        if (player.gear[invIndex]) {
-                            player.equipGear(player.gear[invIndex]);
-                        }
-                    });
-                }
-            }
-
-            // resources
-            if (lp.resources !== undefined) {
-                Object.entries(lp.resources).forEach(([key, value]) => {
-                    if (player.resources[key] !== undefined) {
-                        player.resources[key] = value;
-                    }
-                });
-            }
-
-        }
-
-
-
+        await loadProgress(setLoadingStatus, player, planetMap, gearManager);
 
 
         // start saving
-        const SAVE_FREQ = 3; // seconds
+        const SAVE_FREQ = 2; // seconds
 
         setInterval(async () => {
             
-            // map gear objects to simple string ids
-            const gearIds = player.gear.map(g => g.id);
-            
-            // map equipped gear to their index in the inventory array
-            const equippedIndices = {};
-            Object.entries(player.equipped).forEach(([slot, gearItem]) => {
-                equippedIndices[slot] = player.gear.indexOf(gearItem);
-            });
-
-
-            const currentData = {
-                player: {
-                    // stats
-                    level: player.level,
-                    xp: player.xp,
-                    levelPoints: player.levelPts,
-
-                    // research
-                    activeResearch: player.activeResearch,
-                    
-                    // currencies
-                    credits: player.credits.currency,
-
-                    // progression
-                    unlockedPlanets: player.unlockedPlanets,
-                    currentPlanetId: player.currentPlanet.id,
-                    skillTreeNodes: player.skillTree.unlockedNodes,
-
-                    // gear
-                    gear: gearIds,
-                    equipped: equippedIndices,
-
-                    // resources
-                    resources: player.resources,
-
-                    // mailbox
-                    pastMail: player.pastMail
-                }
-            };
-
-            await database.saveData(currentData);
+            await saveProgress(player);
 
         }, SAVE_FREQ * 1000);
 

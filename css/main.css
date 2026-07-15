@@ -329,6 +329,34 @@ body {
     transform: scale(2.95);
 }
 
+
+
+
+
+
+
+.planetMarker {
+    --marker-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--marker-size);
+    display: none;
+    z-index: 10;
+    pointer-events: none;
+    filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.5));
+    animation: floatMarker 1.5s ease-in-out infinite;
+}
+
+.planetContainer.visible .planetMarker {
+    display: block;
+}
+
+@keyframes floatMarker {
+    0%, 100% { transform: translate(-50%, -100%); }
+    50% { transform: translate(-50%, calc(-100% - 6px)); }
+}
+
 /* #endregion */
 
 

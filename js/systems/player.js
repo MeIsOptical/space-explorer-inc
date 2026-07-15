@@ -6,6 +6,7 @@ import { formatBigNumber } from "../utils/formatting.js";
 import { SkillTree } from "../components/skillTree.js";
 import { updateXpBarUI } from "../utils/ui.js";
 import { sendNotif } from "../utils/notif.js";
+import { saveProgress } from "../utils/progress.js";
 
 
 
@@ -311,6 +312,8 @@ export class Player {
                 "Research"
             );
         }
+
+        saveProgress(this);
 
         return true;
     }

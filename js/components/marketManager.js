@@ -6,6 +6,7 @@ import { Market } from "./market.js";
 import { Gear } from "./gear.js";
 import { playSound, SOUND_IDS } from "../systems/audio.js";
 import { RUN_CONFIG } from "../main.js";
+import { saveProgress } from "../utils/progress.js";
 
 
 
@@ -230,6 +231,7 @@ export class MarketManager {
                     playSound(SOUND_IDS.defaultClick);
                     
                     overlay.style.display = "none";
+                    saveProgress(pPlayer);
                     this.showPopup(pMarket, pPlayer); 
                 };
 

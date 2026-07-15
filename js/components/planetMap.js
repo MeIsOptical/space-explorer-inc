@@ -248,6 +248,11 @@ export class PlanetMap {
             imgWrapper.appendChild(imgElement);
             planetElement.appendChild(imgWrapper);
 
+            // add marker
+            const markerElement = document.createElement("img");
+            markerElement.className = "planetMarker";
+            planetElement.appendChild(markerElement);
+
 
             // append planet to map
             mapElement.appendChild(planetElement);
@@ -340,4 +345,27 @@ export class PlanetMap {
             this.popupElement.classList.remove("show");
         }
     }
+
+
+
+
+    updatePlanetMarkers() {
+        const allPlanets = this.mapElement.querySelectorAll('.planetContainer');
+        allPlanets.forEach(el => el.classList.remove('visible'));
+
+        if (this.player.currentPlanet) {
+            const currentEl = document.getElementById("planet-" + this.player.currentPlanet.id);
+            if (currentEl) {
+                const markerEl = currentEl.querySelector('.planetMarker');
+                if (markerEl) markerEl.src = "assets/ui/space map/red-marker.png";
+                currentEl.classList.add('visible');
+
+            }
+        }
+    }
 }
+
+
+
+
+
