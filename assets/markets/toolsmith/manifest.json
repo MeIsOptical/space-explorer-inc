@@ -3,7 +3,9 @@
     "icon": "pickaxe",
     "type": "default",
     "offers": {
-        "low_temp_laser_cutter": 12000,
+        "stone_sword": 1600,
+        "iron_sword": 10000,
+        "low_temp_laser_cutter": 14000,
         "industrial_drill": 80000,
         "cluster_pickaxe": 600000
     }

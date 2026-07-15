@@ -1,0 +1,11 @@
+{
+    "name": "Stone Sword",
+    "description": "A basic sword made from regular stone.",
+    "tier": 4,
+    "slot": "tool",
+    "resourceCategory": "hunting",
+    "damageBonus": 22,
+    "resourceBonus": 7,
+    "xpBonus": 2,
+    "ricochetChance": 0
+}

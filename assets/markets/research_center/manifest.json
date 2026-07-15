@@ -6,6 +6,7 @@
     "offers": {
         "fiber_laser_cutter": { "price": 750000, "duration": 35 },
         "guided_boomerang": { "price": 1500000, "duration": 50 },
-        "plasma_pickaxe": { "price": 3000000, "duration": 20 }
+        "plasma_pickaxe": { "price": 3000000, "duration": 20 },
+        "knowledge_refiner": { "price": 10000000, "duration": 240 }
     }
 }

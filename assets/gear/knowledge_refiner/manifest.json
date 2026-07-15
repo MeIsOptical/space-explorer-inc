@@ -1,0 +1,11 @@
+{
+    "name": "Knowledge Refiner",
+    "description": "A helmet that connects directly to the hippocampus to enhance knowledge in real time.",
+    "tier": 8,
+    "slot": "head",
+    "resourceCategory": "any",
+    "damageBonus": 0,
+    "resourceBonus": 0,
+    "xpBonus": 20,
+    "ricochetChance": 0
+}

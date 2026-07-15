@@ -27,6 +27,8 @@
 
     "dull_knife",
     "sharp_knife",
+    "stone_sword",
+    "iron_sword",
 
     "wooden_fishing_rod",
     "iron_fishing_rod",
@@ -49,5 +51,6 @@
 
     "fiber_laser_cutter",
     "guided_boomerang",
-    "plasma_pickaxe"
+    "plasma_pickaxe",
+    "knowledge_refiner"
 ]

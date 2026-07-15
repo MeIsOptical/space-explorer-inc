@@ -1,0 +1,11 @@
+{
+    "name": "Iron Sword",
+    "description": "A classic weapon amongst warriors.",
+    "tier": 5,
+    "slot": "tool",
+    "resourceCategory": "hunting",
+    "damageBonus": 36,
+    "resourceBonus": 10,
+    "xpBonus": 3,
+    "ricochetChance": 0
+}
