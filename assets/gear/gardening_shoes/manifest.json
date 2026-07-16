@@ -1,0 +1,11 @@
+{
+    "name": "Gardening Shoes",
+    "description": "Comfortable shoes for long days in the dirt.",
+    "tier": 4,
+    "slot": "feet",
+    "resourceCategory": "plants",
+    "damageBonus": 0,
+    "resourceBonus": 0,
+    "xpBonus": 8,
+    "ricochetChance": 0.03
+}

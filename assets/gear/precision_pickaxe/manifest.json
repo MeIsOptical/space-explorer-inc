@@ -4,8 +4,8 @@
     "tier": 5,
     "slot": "tool",
     "resourceCategory": "mining",
-    "damageBonus": 24,
-    "resourceBonus": 2,
-    "xpBonus": 10,
+    "damageBonus": 26,
+    "resourceBonus": 0,
+    "xpBonus": 12,
     "ricochetChance": 0
 }

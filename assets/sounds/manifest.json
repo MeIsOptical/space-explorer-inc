@@ -2,8 +2,8 @@
 
 {
     "music": {
-        "grind": {
-            "format": "wav"
+        "main theme": {
+            "format": "mp3"
         }
         
     },
