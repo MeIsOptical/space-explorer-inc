@@ -36,8 +36,7 @@ export const SOUND_IDS = {
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const soundBuffers = {};
 
-
-
+const validMusic = [];
 
 
 export async function loadSounds(pLoadingStatus) {
@@ -57,6 +56,10 @@ export async function loadSounds(pLoadingStatus) {
         // loop through sounds in categroy
         for (const [soundName, soundInfo] of Object.entries(categoryData)) {
             const soundPath = `assets/sounds/${category}/${soundName}.${soundInfo.format}`;
+
+            if (category === "music") {
+                validMusic.push(`${category}/${soundName}`);
+            }
 
             // fetch sound
             const loadPromise = fetch(soundPath)
@@ -107,4 +110,60 @@ export function playSound(pName, pVolume = 2) {
     gainNode.connect(audioCtx.destination);
 
     source.start(0);
+}
+
+
+
+
+
+
+
+
+
+
+// music
+
+let musicSource = null;
+let musicGainNode = null;
+let currentMusicVolume = 0.3;
+
+export function startMusic(pVolume) {
+
+    // pick random music
+    const rndMusic = validMusic[Math.floor(Math.random() * validMusic.length)];
+
+
+    if (audioCtx.state === "suspended") {
+        audioCtx.resume();
+    }
+
+    const buffer = soundBuffers[rndMusic];
+    if (!buffer) return;
+
+    // stop current music
+    if (musicSource) {
+        musicSource.stop();
+    }
+
+    musicSource = audioCtx.createBufferSource();
+    musicSource.buffer = buffer;
+    musicSource.loop = true;
+
+    if (!musicGainNode) {
+        musicGainNode = audioCtx.createGain();
+        musicGainNode.connect(audioCtx.destination);
+    }
+
+    if (pVolume !== undefined) currentMusicVolume = pVolume;
+    musicGainNode.gain.value = currentMusicVolume;
+
+    musicSource.connect(musicGainNode);
+    musicSource.start(0);
+}
+
+
+export function muteMusic(pIsMuted) {
+    if (musicGainNode) {
+        musicGainNode.gain.value = pIsMuted ? 0 : currentMusicVolume;
+    }
 }

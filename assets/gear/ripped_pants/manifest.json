@@ -1,0 +1,11 @@
+{
+    "name": "Ripped Pants",
+    "description": "Whoever wore these must have had a bad time...",
+    "tier": 1,
+    "slot": "legs",
+    "resourceCategory": "any",
+    "damageBonus": 1,
+    "resourceBonus": 0,
+    "xpBonus": 0,
+    "ricochetChance": 0
+}

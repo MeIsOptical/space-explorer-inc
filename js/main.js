@@ -20,6 +20,9 @@ const setLoadingError = (pText) => {
 export let isGameFocused = true;
 document.addEventListener("visibilitychange", () => {
     isGameFocused = document.visibilityState === "visible";
+
+    // toggle music mute
+    muteMusic(!isGameFocused);
 });
 
 
@@ -45,7 +48,7 @@ import { Currency } from "./systems/currency.js";
 import { Player } from "./systems/player.js";
 import { ResourcesManager } from "./systems/resources.js";
 import { Database } from "./systems/database.js";
-import { loadSounds, playSound, SOUND_IDS } from "./systems/audio.js";
+import { SOUND_IDS, loadSounds, playSound, startMusic, muteMusic } from "./systems/audio.js";
 
 // utils
 import { displayMailPopup } from "./utils/ui.js";
@@ -92,6 +95,8 @@ async function bootGame() {
     //#region SOUND EFFECTS
 
     await loadSounds(setLoadingStatus);
+    startMusic();
+    muteMusic(!isGameFocused);
 
     //#endregion
 

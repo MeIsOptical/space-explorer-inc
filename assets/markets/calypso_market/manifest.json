@@ -4,7 +4,8 @@
     "type": "default",
     "offers": {
         "canvas_shoes": 2,
-        "ripped_shirt": 3,
+        "ripped_pants": 3,
+        "ripped_shirt": 4,
         "basic_pickaxe": 5,
         "worn_shirt": 25,
         "regular_pickaxe": 30,

@@ -2,6 +2,9 @@
 
 {
     "music": {
+        "grind": {
+            "format": "wav"
+        }
         
     },
     "ui": {
